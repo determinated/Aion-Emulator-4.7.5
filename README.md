@@ -83,7 +83,13 @@ Here is some of new features Implemented by @GiGatR00n:
 
 42. Another fixes i didn't remember right now...
 
+-------------------CREDITS TO-------------------
+GiGatR00n
+Wasacacax
+A7Xatomic
+Alot more developers that help this project
 
-NOTE: If you want contribute for this project contacts us in skype (Wasacacax / GiGatR00n / A7Xatomic!)
+NOTE: If you want contribute for this project contacts me in skype: Hide30001
 
-We gonna stay tunned with progress and fixes of importants stuffs, if we didn't detect good changes here this project gonna die, this thinked for help you and hel community to fix errors at fast way with many good developers and make an stable a trusted aion emulator for private servers
+Today August, 13 2019 i'm here posting this files so we can work on it and make a great free emulator for everybody that want it.
+I'm here today and i'll be here for the next years working on it everyday.
