@@ -83,7 +83,7 @@ Here is some of new features Implemented by @GiGatR00n:
 
 42. Another fixes i didn't remember right now...
 
--------------------CREDITS TO-------------------
+CREDITS TO:
 GiGatR00n
 Wasacacax
 A7Xatomic
