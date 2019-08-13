@@ -87,7 +87,7 @@ CREDITS TO:
 GiGatR00n
 Wasacacax
 A7Xatomic
-Alot more developers that help this project
+and alot more developers that help this project!
 
 NOTE: If you want contribute for this project contacts me in skype: Hide30001
 
