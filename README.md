@@ -84,12 +84,12 @@ Here is some of new features Implemented by @GiGatR00n:
 42. Another fixes i didn't remember right now...
 
 CREDITS TO:
-GiGatR00n
-Wasacacax
+GiGatR00n,
+Wasacacax,
 A7Xatomic
 and alot more developers that help this project!
 
-NOTE: If you want contribute for this project contacts me in skype: Hide30001
+NOTE: If you want contribute for this project contact me in skype: Hide30001
 
 Today August, 13 2019 i'm here posting this files so we can work on it and make a great free emulator for everybody that want it.
 I'm here today and i'll be here for the next years working on it everyday.
