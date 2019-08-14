@@ -1,3 +1,11 @@
+Hi i'm working on this files atm and i'm sharing what i'm doing here! I share these files here so people who are interest can work on it with me and make a better and stable emu.
+
+NOTE: If you want contribute for this project contact me in skype: Hide30001
+
+Today August, 14 2019 i'm here posting this files so we can work on it and make a great free emulator for everybody that want it.
+I'm here today and i'll be here for the next years working on it everyday.
+
+
 This release is make it for update and fixes based into GiGatR00n release at Ragezone Forum...
 Here is some of new features Implemented by @GiGatR00n:
 
