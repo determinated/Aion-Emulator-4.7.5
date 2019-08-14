@@ -1,5 +1,5 @@
-~GiGa Emulator Buglist~
-~Current Version 4.7~
+GiGatR00n Emulator Reworking Proccess.
+~Current Version 4.7.5~
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 WHAT'S CURRENTLY TODO AND WHICH PROBLEMS
@@ -13,9 +13,9 @@ THANKS FOR YOUR CAREFULLY READING!
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 
-
 >HIGH<
 ///////////////////////////////////////////////////////////////
+
 - (100%) x86 and x64 Packets and Crypt Finished by GiGatR00n
 - Need to making parsers for Items and Skills
 - Need to check datapack (since patch 4.7.5 some parts got changed)
