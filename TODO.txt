@@ -56,6 +56,8 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 
 (All the instances files need to be checked.)
 
+- The bases flags doesnt stay on your map after relog. You need to go to all the map so they can show up again.
+
 ///////////////////////////////////////////////////////////////
 
 --------------------------------------------------------------------------------------------------
