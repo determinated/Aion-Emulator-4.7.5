@@ -10,22 +10,9 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
- *
- *
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.model.templates.item;
 
@@ -39,17 +26,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum AcquisitionType {
 
-    AP(0),
-    ABYSS(1),
-    REWARD(2), // They are the same now
-    COUPON(2);
-    private int id;
+	AP(0),
+	ABYSS(1),
+	REWARD(2), // They are the same now
+	COUPON(2);
 
-    private AcquisitionType(int id) {
-        this.id = id;
-    }
+	private int id;
 
-    public int getId() {
-        return id;
-    }
+	private AcquisitionType(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
 }
