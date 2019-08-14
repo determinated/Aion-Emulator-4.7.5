@@ -51,9 +51,6 @@
     <base_location id="110" world="600100000" name_id="404384" name="East Picket"/>
     <base_location id="111" world="600100000" name_id="404392" name="North Picket"/>
     <base_location id="112" world="600100000" name_id="404383" name="South Picket"/>
-	<!-- Agents Fight -->
-	<base_location id="116" world="600100000" name_id="404399" name="Empowered Veille"/>
-	<base_location id="117" world="600100000" name_id="404399" name="Empowered Mastarius"/>
 	<!-- Panesterra -->
 	<base_location id="118" world="400020000" name_id="404400" name="Belani Fort"/>
 	<base_location id="119" world="400020000" name_id="404401" name="Belfarth Fort"/>

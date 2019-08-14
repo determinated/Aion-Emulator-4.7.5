@@ -33,14 +33,14 @@ public class Idian_Depths_CorridorAI2 extends ActionItemNpcAI2 {
 		switch (getNpcId()) {
 			case 731641: //Levinshor To Idian Depths.
 			    if (player.getLevel() >= 65) {
-				    TeleportService2.teleportTo(player, 210090000, 671.0f, 646.0f, 514.8738f, (byte) 0, TeleportAnimation.JUMP_ANIMATION);
+				    TeleportService2.teleportTo(player, 210090000, 671.0f, 646.0f, 514.8738f, (byte) 0, TeleportAnimation.JUMP_AIMATION);
                 } else {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_Telepoter_Under_User);
 				}
 			break;
 			case 731642: //Kaldor To Idian Depths.
 				if (player.getLevel() >= 65) {
-				    TeleportService2.teleportTo(player, 220100000, 671.0f, 646.0f, 514.8738f, (byte) 0, TeleportAnimation.JUMP_ANIMATION);
+				    TeleportService2.teleportTo(player, 220100000, 671.0f, 646.0f, 514.8738f, (byte) 0, TeleportAnimation.JUMP_AIMATION);
                 } else {
 					PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_Telepoter_Under_User);
 				}

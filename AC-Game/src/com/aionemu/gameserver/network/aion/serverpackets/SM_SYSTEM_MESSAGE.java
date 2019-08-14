@@ -101,6 +101,8 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
         return new SM_SYSTEM_MESSAGE(1200004, value1, num2, value0);
     }
 
+    public static final SM_SYSTEM_MESSAGE STR_MSG_Telepoter_Under_User = new SM_SYSTEM_MESSAGE(1402945);
+    
     /**
      * Critical Hit! %0 inflicted %num2 critical damage on %1.
      */
