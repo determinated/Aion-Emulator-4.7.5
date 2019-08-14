@@ -48,7 +48,6 @@ public class SM_INSTANCE_COUNT_INFO extends AionServerPacket {
 
     @Override
     protected void writeImpl(AionConnection con) {
-    	PacketLoggerService.getInstance().logPacketSM(this.getPacketName());
         writeD(mapId);
         writeD(instanceId);
         writeD(1); // 1 solo 31 group 61 alliance unk for league

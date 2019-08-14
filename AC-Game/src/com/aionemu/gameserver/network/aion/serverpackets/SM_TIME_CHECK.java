@@ -60,7 +60,6 @@ public class SM_TIME_CHECK extends AionServerPacket {
      */
     @Override
     protected void writeImpl(AionConnection con) {
-    	PacketLoggerService.getInstance().logPacketSM(this.getPacketName());
         writeD(time);
         writeD(nanoTime);
 
