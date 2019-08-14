@@ -50,6 +50,12 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 
 - Need to recheck all the instances and their AIs
 
+- Need to check all the Instances Scrolls Reset
+
+- Need to check all the instances cooldtime inside static_data
+
+(All the instances files need to be checked.)
+
 ///////////////////////////////////////////////////////////////
 
 --------------------------------------------------------------------------------------------------
