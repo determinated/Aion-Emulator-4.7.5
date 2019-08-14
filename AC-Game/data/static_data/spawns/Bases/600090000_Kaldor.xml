@@ -1,878 +1,442 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spawns>
 	<spawn_map map_id="600090000">
-		<!-- [KALDOR EAST GATE] -->
-		<base_spawn id="113">
-			<simple_race race="ELYOS">
-				<!-- Elyos East Gate Flag -->
-				<spawn npc_id="702601" >
-					<spot x="742.43036" y="983.42694" z="157.11964" h="0"/>
-				</spawn>
-				<!-- Elyos East Gate BOSS -->
-				<spawn npc_id="251880" handler="BOSS">
-					<spot x="743.6812" y="975.341" z="153.08237" h="31"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="743.6812" y="975.341" z="153.08237" h="31"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="744.6812" y="976.341" z="153.08237" h="31"/>
-				</spawn>
-				<!-- Elyos East Gate Guard Knight -->
-				<spawn npc_id="251841" respawn_time="295">
-					<spot x="740.37195" y="991.96356" z="151.625" h="30"/>
-					<spot x="745.27203" y="992.00397" z="151.78426" h="30"/>
-				</spawn>
-				<!-- Elyos East Gate Guard Ranger -->
-				<spawn npc_id="251846" respawn_time="295">
-					<spot x="753.3258" y="969.18695" z="161.7106" h="78"/>
-					<spot x="731.7595" y="969.06696" z="161.71411" h="103"/>
-					<spot x="754.49146" y="999.70496" z="160.7574" h="45"/>
-					<spot x="762.44934" y="1000.0334" z="160.7574" h="15"/>
-					<spot x="783.8409" y="1004.51465" z="161.16402" h="48"/>
-					<spot x="790.2182" y="1004.16754" z="161.16402" h="12"/>
-					<spot x="731.0699" y="999.72656" z="160.7574" h="14"/>
-					<spot x="723.3938" y="999.712" z="160.7574" h="45"/>
-					<spot x="702.1431" y="1004.3249" z="161.164" h="12"/>
-					<spot x="695.777" y="1004.27466" z="161.164" h="47"/>
-				</spawn>
-				<!-- Elyos East Gate Guard Gunner -->
-				<spawn npc_id="251851" respawn_time="295">
-					<spot x="749.4926" y="976.8373" z="153.11363" h="30"/>
-					<spot x="736.2258" y="976.60065" z="152.92493" h="30"/>
-				</spawn>
-				<!-- Elyos East Gate Guard Priest -->
-				<spawn npc_id="251866" respawn_time="295">
-					<spot x="720.39954" y="980.29834" z="161.71326" h="13"/>
-					<spot x="765.86237" y="979.9343" z="161.71158" h="46"/>
-				</spawn>
-				<!-- Elyos Fence East Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272255" respawn_time="295">
-					<spot x="742.86737" y="988.29895" z="151.11795" static_id="160"/>
-				</spawn>
-			</simple_race>
-			<simple_race race="ASMODIANS">
-			    <!-- Asmodians East Gate Flag -->
-				<spawn npc_id="702602" >
-					<spot x="742.43036" y="983.42694" z="157.11964" h="0"/>
-				</spawn>
-				<!-- Asmodians East Gate BOSS -->
-				<spawn npc_id="251960" handler="BOSS">
-					<spot x="743.6812" y="975.341" z="153.08237" h="31"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="743.6812" y="975.341" z="153.08237" h="31"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="744.6812" y="976.341" z="153.08237" h="31"/>
-				</spawn>
-				<!-- Asmodians East Gate Guard Knight -->
-				<spawn npc_id="251921" respawn_time="295">
-					<spot x="740.37195" y="991.96356" z="151.625" h="30"/>
-					<spot x="745.27203" y="992.00397" z="151.78426" h="30"/>
-				</spawn>
-				<!-- Asmodians East Gate Guard Ranger -->
-				<spawn npc_id="251926" respawn_time="295">
-					<spot x="753.3258" y="969.18695" z="161.7106" h="78"/>
-					<spot x="731.7595" y="969.06696" z="161.71411" h="103"/>
-					<spot x="754.49146" y="999.70496" z="160.7574" h="45"/>
-					<spot x="762.44934" y="1000.0334" z="160.7574" h="15"/>
-					<spot x="783.8409" y="1004.51465" z="161.16402" h="48"/>
-					<spot x="790.2182" y="1004.16754" z="161.16402" h="12"/>
-					<spot x="731.0699" y="999.72656" z="160.7574" h="14"/>
-					<spot x="723.3938" y="999.712" z="160.7574" h="45"/>
-					<spot x="702.1431" y="1004.3249" z="161.164" h="12"/>
-					<spot x="695.777" y="1004.27466" z="161.164" h="47"/>
-				</spawn>
-				<!-- Asmodians East Gate Guard Gunner -->
-				<spawn npc_id="251931" respawn_time="295">
-					<spot x="749.4926" y="976.8373" z="153.11363" h="30"/>
-					<spot x="736.2258" y="976.60065" z="152.92493" h="30"/>
-				</spawn>
-				<!-- Asmodians East Gate Guard Priest -->
-				<spawn npc_id="251946" respawn_time="295">
-					<spot x="720.39954" y="980.29834" z="161.71326" h="13"/>
-					<spot x="765.86237" y="979.9343" z="161.71158" h="46"/>
-				</spawn>
-				<!-- Asmodians Fence East Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272258" respawn_time="295">
-					<spot x="742.86737" y="988.29895" z="151.11795" static_id="185"/>
-				</spawn>
-			</simple_race>
-			<simple_race race="NPC">
-			    <!-- Balaur East Gate Flag -->
-				<spawn npc_id="702603" >
-					<spot x="742.43036" y="983.42694" z="157.11964" h="0"/>
-				</spawn>
-				<!-- Balaur East Gate BOSS -->
-				<spawn npc_id="252040" handler="BOSS">
-					<spot x="743.6812" y="975.341" z="153.08237" h="31"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="744.6812" y="975.341" z="153.08237" h="31"/>
-				</spawn>
-				<!-- Balaur East Gate Guard Knight -->
-				<spawn npc_id="252001" respawn_time="295">
-					<spot x="740.37195" y="991.96356" z="151.625" h="30"/>
-					<spot x="745.27203" y="992.00397" z="151.78426" h="30"/>
-				</spawn>
-				<!-- Balaur East Gate Guard Ranger -->
-				<spawn npc_id="252011" respawn_time="295">
-					<spot x="753.3258" y="969.18695" z="161.7106" h="78"/>
-					<spot x="731.7595" y="969.06696" z="161.71411" h="103"/>
-					<spot x="754.49146" y="999.70496" z="160.7574" h="45"/>
-					<spot x="762.44934" y="1000.0334" z="160.7574" h="15"/>
-					<spot x="783.8409" y="1004.51465" z="161.16402" h="48"/>
-					<spot x="790.2182" y="1004.16754" z="161.16402" h="12"/>
-					<spot x="731.0699" y="999.72656" z="160.7574" h="14"/>
-					<spot x="723.3938" y="999.712" z="160.7574" h="45"/>
-					<spot x="702.1431" y="1004.3249" z="161.164" h="12"/>
-					<spot x="695.777" y="1004.27466" z="161.164" h="47"/>
-				</spawn>
-				<!-- Balaur East Gate Guard Gunner -->
-				<spawn npc_id="252021" respawn_time="295">
-					<spot x="749.4926" y="976.8373" z="153.11363" h="30"/>
-					<spot x="736.2258" y="976.60065" z="152.92493" h="30"/>
-				</spawn>
-				<!-- Balaur East Gate Guard Priest -->
-				<spawn npc_id="252026" respawn_time="295">
-					<spot x="720.39954" y="980.29834" z="161.71326" h="13"/>
-					<spot x="765.86237" y="979.9343" z="161.71158" h="46"/>
-				</spawn>
-				<!-- Balaur Fence East Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272261" respawn_time="295">
-					<spot x="742.86737" y="988.29895" z="151.11795" static_id="451"/>
-				</spawn>
-			</simple_race>
-		</base_spawn>
-		<!-- [KALDOR NORTH GATE] -->
-		<base_spawn id="114">
-			<simple_race race="ELYOS">
-				<!-- Elyos North Gate Flag -->
-				<spawn npc_id="702604" >
-					<spot x="558.29633" y="667.45917" z="157.11964" h="0"/>
-				</spawn>
-				<!-- Elyos North Gate BOSS -->
-				<spawn npc_id="251881" handler="BOSS">
-					<spot x="560.67114" y="658.60504" z="151.36345" h="34"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="560.67114" y="658.60504" z="151.36345" h="34"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="561.67114" y="657.60504" z="151.36345" h="34"/>
-				</spawn>
-				<!-- Elyos North Gate Guard Knight -->
-				<spawn npc_id="251842" respawn_time="295">
-					<spot x="559.6384" y="676.56757" z="153.01288" h="33"/>
-					<spot x="554.58685" y="675.726" z="153.03452" h="33"/>
-					<spot x="567.1276" y="662.2478" z="152.18788" h="63"/>
-					<spot x="551.04675" y="659.3605" z="151.92006" h="2"/>
-				</spawn>
-				<!-- Elyos North Gate Guard Ranger -->
-				<spawn npc_id="251847" respawn_time="295">
-					<spot x="546.99493" y="672.8841" z="158.96373" h="21"/>
-					<spot x="540.8805" y="672.13" z="158.96373" h="47"/>
-					<spot x="567.3618" y="676.1633" z="159.13487" h="41"/>
-					<spot x="573.5996" y="677.1008" z="159.13487" h="20"/>
-				</spawn>
-				<!-- Elyos North Gate Teleporter A (Object Normal lvl:3) -->
-				<spawn npc_id="702593" respawn_time="295">
-					<spot x="561.62732" y="678.7240" z="153.68115" static_id="95"/>
-				</spawn>
-				<!-- Elyos North Gate Teleporter B (Object Normal lvl:3) -->
-				<spawn npc_id="702595" respawn_time="295">
-					<spot x="563.2450" y="668.33148" z="152.7072" static_id="132"/>
-				</spawn>
-				<!-- Elyos Fence North Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272255" respawn_time="295">
-					<spot x="557.69177" y="672.47235" z="152.60912" static_id="158"/>
-				</spawn>
-			</simple_race>
-			<simple_race race="ASMODIANS">
-			    <!-- Asmodians North Gate Flag -->
-				<spawn npc_id="702605" >
-					<spot x="558.29633" y="667.45917" z="157.11964" h="0"/>
-				</spawn>
-				<!-- Asmodians North Gate BOSS -->
-				<spawn npc_id="251961" handler="BOSS">
-					<spot x="560.67114" y="658.60504" z="151.36345" h="34"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="560.67114" y="658.60504" z="151.36345" h="34"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="561.67114" y="657.60504" z="151.36345" h="34"/>
-				</spawn>
-				<!-- Asmodians North Gate Guard Knight -->
-				<spawn npc_id="251922" respawn_time="295">
-					<spot x="559.6384" y="676.56757" z="153.01288" h="33"/>
-					<spot x="554.58685" y="675.726" z="153.03452" h="33"/>
-					<spot x="567.1276" y="662.2478" z="152.18788" h="63"/>
-					<spot x="551.04675" y="659.3605" z="151.92006" h="2"/>
-				</spawn>
-				<!-- Asmodians North Gate Guard Ranger -->
-				<spawn npc_id="251927" respawn_time="295">
-					<spot x="546.99493" y="672.8841" z="158.96373" h="21"/>
-					<spot x="540.8805" y="672.13" z="158.96373" h="47"/>
-					<spot x="567.3618" y="676.1633" z="159.13487" h="41"/>
-					<spot x="573.5996" y="677.1008" z="159.13487" h="20"/>
-				</spawn>
-				<!-- Asmodians North Gate Teleporter A (Object Normal lvl:3) -->
-				<spawn npc_id="702594" respawn_time="295">
-					<spot x="561.62732" y="678.724" z="153.68115" static_id="95"/>
-				</spawn>
-				<!-- Asmodians North Gate Teleporter B (Object Normal lvl:3) -->
-				<spawn npc_id="702596" respawn_time="295">
-					<spot x="563.2450" y="668.33148" z="152.7072" static_id="132"/>
-				</spawn>
-				<!-- Asmodians Fence North Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272258" respawn_time="295">
-					<spot x="557.69177" y="672.47235" z="152.60912" static_id="258"/>
-				</spawn>
-			</simple_race>
-			<simple_race race="NPC">
-			    <!-- Balaur North Gate Flag -->
-				<spawn npc_id="702606" >
-					<spot x="558.29633" y="667.45917" z="157.11964" h="0"/>
-				</spawn>
-				<!-- Balaur North Gate BOSS -->
-				<spawn npc_id="252041" handler="BOSS">
-					<spot x="560.67114" y="658.60504" z="151.36345" h="34"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="560.67114" y="658.60504" z="151.36345" h="34"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="561.67114" y="657.60504" z="151.36345" h="34"/>
-				</spawn>
-				<!-- Balaur North Gate Guard Knight -->
-				<spawn npc_id="252002" respawn_time="295">
-					<spot x="559.6384" y="676.56757" z="153.01288" h="33"/>
-					<spot x="554.58685" y="675.726" z="153.03452" h="33"/>
-					<spot x="567.1276" y="662.2478" z="152.18788" h="63"/>
-					<spot x="551.04675" y="659.3605" z="151.92006" h="2"/>
-				</spawn>
-				<!-- Balaur North Gate Guard Ranger -->
-				<spawn npc_id="252012" respawn_time="295">
-					<spot x="546.99493" y="672.8841" z="158.96373" h="21"/>
-					<spot x="540.8805" y="672.13" z="158.96373" h="47"/>
-					<spot x="567.3618" y="676.1633" z="159.13487" h="41"/>
-					<spot x="573.5996" y="677.1008" z="159.13487" h="20"/>
-				</spawn>
-				<!-- Balaur Fence North Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272261" respawn_time="295">
-					<spot x="557.69177" y="672.47235" z="152.60912" static_id="159"/>
-				</spawn>
-			</simple_race>
-		</base_spawn>
-		<!-- [KALDOR SOUTH GATE] -->
-		<base_spawn id="115">
-			<simple_race race="ELYOS">
-				<!-- Elyos South Gate Flag -->
-				<spawn npc_id="702607" >
-					<spot x="1075.7573" y="703.51898" z="189.66057" h="0"/>
-				</spawn>
-				<!-- Elyos South Gate BOSS -->
-				<spawn npc_id="251882" handler="BOSS">
-					<spot x="1074.0819" y="692.9082" z="185.31311" h="27"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="1074.0819" y="692.9082" z="185.31311" h="27"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="1075.0819" y="693.9082" z="185.31311" h="27"/>
-				</spawn>
-				<!-- Elyos South Gate Guard Knight -->
-				<spawn npc_id="251843" respawn_time="295">
-					<spot x="1079.8624" y="710.11725" z="185.125" h="26"/>
-					<spot x="1074.8894" y="711.0786" z="185.25" h="26"/>
-				</spawn>
-				<!-- Elyos South Gate Guard Ranger -->
-				<spawn npc_id="251848" respawn_time="295">
-					<spot x="1066.8235" y="710.5525" z="191.4078" h="13"/>
-					<spot x="1060.7317" y="712.1872" z="191.4078" h="38"/>
-					<spot x="1093.3885" y="705.34436" z="191.57895" h="13"/>
-					<spot x="1087.2705" y="706.4651" z="191.57895" h="41"/>
-				</spawn>
-				<!-- Elyos South Gate Guard Gunner -->
-				<spawn npc_id="251852" respawn_time="295">
-					<spot x="1082.2035" y="693.4733" z="184.86227" h="55"/>
-					<spot x="1065.0693" y="696.65314" z="185.20918" h="115"/>
-				</spawn>
-				<!-- Elyos South Gate Teleporter A (Object Normal lvl:3) -->
-				<spawn npc_id="702597" respawn_time="295">
-					<spot x="1072.7261" y="711.32611" z="185.47467" static_id="544"/>
-				</spawn>
-				<!-- Elyos South Gate Teleporter B (Object Normal lvl:3) -->
-				<spawn npc_id="702599" respawn_time="295">
-					<spot x="1071.1566" y="704.1889" z="185.47467" static_id="508"/>
-				</spawn>
-				<!-- Elyos Fence South Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272255" respawn_time="295">
-					<spot x="1076.5396" y="706.71893" z="185.25739" static_id="539"/>
-				</spawn>
-			</simple_race>
-			<simple_race race="ASMODIANS">
-			    <!-- Asmodians South Gate Flag -->
-				<spawn npc_id="702608" >
-					<spot x="1075.7573" y="703.51898" z="189.66057" h="0"/>
-				</spawn>
-				<!-- Asmodians South Gate BOSS -->
-				<spawn npc_id="251962" handler="BOSS">
-					<spot x="1074.0819" y="692.9082" z="185.31311" h="27"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="1074.0819" y="692.9082" z="185.31311" h="27"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="1075.0819" y="693.9082" z="185.31311" h="27"/>
-				</spawn>
-				<!-- Asmodians South Gate Guard Knight -->
-				<spawn npc_id="251923" respawn_time="295">
-					<spot x="1079.8624" y="710.11725" z="185.125" h="26"/>
-					<spot x="1074.8894" y="711.0786" z="185.25" h="26"/>
-				</spawn>
-				<!-- Asmodians South Gate Guard Ranger -->
-				<spawn npc_id="251928" respawn_time="295">
-					<spot x="1066.8235" y="710.5525" z="191.4078" h="13"/>
-					<spot x="1060.7317" y="712.1872" z="191.4078" h="38"/>
-					<spot x="1093.3885" y="705.34436" z="191.57895" h="13"/>
-					<spot x="1087.2705" y="706.4651" z="191.57895" h="41"/>
-				</spawn>
-				<!-- Asmodians South Gate Guard Gunner -->
-				<spawn npc_id="251932" respawn_time="295">
-					<spot x="1082.2035" y="693.4733" z="184.86227" h="55"/>
-					<spot x="1065.0693" y="696.65314" z="185.20918" h="115"/>
-				</spawn>
-				<!-- Asmodians South Gate Teleporter A (Object Normal lvl:3) -->
-				<spawn npc_id="702598" respawn_time="295">
-					<spot x="1072.7261" y="711.32611" z="185.47467" static_id="544"/>
-				</spawn>
-				<!-- Asmodians South Gate Teleporter B (Object Normal lvl:3) -->
-				<spawn npc_id="702600" respawn_time="295">
-					<spot x="1071.1566" y="704.1889" z="185.47467" static_id="508"/>
-				</spawn>
-				<!-- Asmodians Fence South Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272258" respawn_time="295">
-					<spot x="1076.5396" y="706.71893" z="185.25739" static_id="540"/>
-				</spawn>
-			</simple_race>
-			<simple_race race="NPC">
-			    <!-- Balaur South Gate Flag -->
-				<spawn npc_id="702609" >
-					<spot x="1075.7573" y="703.51898" z="189.66057" h="0"/>
-				</spawn>
-				<!-- Balaur South Gate BOSS -->
-				<spawn npc_id="252042" handler="BOSS">
-					<spot x="1074.0819" y="692.9082" z="185.31311" h="27"/>
-				</spawn>
-				<spawn npc_id="234765" handler="ATTACKER">
-					<spot x="1074.0819" y="692.9082" z="185.31311" h="27"/>
-				</spawn>
-				<spawn npc_id="234777" handler="ATTACKER">
-					<spot x="1075.0819" y="693.9082" z="185.31311" h="27"/>
-				</spawn>
-				<!-- Balaur South Gate Guard Knight -->
-				<spawn npc_id="252003" respawn_time="295">
-					<spot x="1079.8624" y="710.11725" z="185.125" h="26"/>
-					<spot x="1074.8894" y="711.0786" z="185.25" h="26"/>
-				</spawn>
-				<!-- Balaur South Gate Guard Ranger -->
-				<spawn npc_id="252013" respawn_time="295">
-					<spot x="1066.8235" y="710.5525" z="191.4078" h="13"/>
-					<spot x="1060.7317" y="712.1872" z="191.4078" h="38"/>
-					<spot x="1093.3885" y="705.34436" z="191.57895" h="13"/>
-					<spot x="1087.2705" y="706.4651" z="191.57895" h="41"/>
-				</spawn>
-				<!-- Balaur South Gate Guard Gunner -->
-				<spawn npc_id="252022" respawn_time="295">
-					<spot x="1082.2035" y="693.4733" z="184.86227" h="55"/>
-					<spot x="1065.0693" y="696.65314" z="185.20918" h="115"/>
-				</spawn>
-				<!-- Balaur Fence South Gate (Object Normal lvl:3) -->
-				<spawn npc_id="272261" respawn_time="295">
-					<spot x="1076.5396" y="706.71893" z="185.25739" static_id="541"/>
-				</spawn>
-			</simple_race>
-		</base_spawn>
-		
-		<!-- [STONEREACH OUTPOST] -->
 		<base_spawn id="90">
+			<simple_race race="NPC">
+				<spawn npc_id="802367">
+					<spot x="243.8112" y="1167.274" z="131.1661"/>
+				</spawn>
+				<spawn npc_id="234038" handler="BOSS">
+					<spot x="252.7596" y="1167.316" z="129.76785"/>
+				</spawn>
+				<spawn npc_id="234104" handler="ATTACKER">
+					<spot x="254.9669" y="1167.341" z="129.76785" h="61"/>
+				</spawn>
+				<spawn npc_id="234047" handler="GUARD">
+					<spot x="276.4327" y="1181.668" z="128.66638" h="105"/>
+					<spot x="275.2483" y="1153.713" z="129.21124"/>
+				</spawn>
+				<spawn npc_id="234077" handler="GUARD">
+					<spot x="634.9641" y="1319.658" z="153.6837" h="90"/>
+					<spot x="643.0311" y="1340.31" z="153.6837" h="61"/>
+					<spot x="626.5145" y="1319.82" z="153.6837" h="90"/>
+					<spot x="309.2555" y="1158.282" z="129.25519"/>
+					<spot x="258.1723" y="1180.361" z="129.875"/>
+				</spawn>
+				<spawn npc_id="234083" handler="GUARD">
+					<spot x="613.8112" y="1332.063" z="153.5553"/>
+					<spot x="306.5052" y="1160.556" z="129.25519"/>
+					<spot x="306.2744" y="1176.234" z="128.72787"/>
+					<spot x="258.6583" y="1182.242" z="129.6856"/>
+				</spawn>
+				<spawn npc_id="234080" handler="GUARD">
+					<spot x="613.84" y="1341.702" z="153.6837"/>
+					<spot x="643.0405" y="1360.539" z="153.6837" h="61"/>
+					<spot x="310.2664" y="1161.311" z="129.25519"/>
+					<spot x="247.8373" y="1197.222" z="129.98227" h="31"/>
+					<spot x="268.286" y="1163.854" z="129.21124"/>
+				</spawn>
+				<spawn npc_id="234074" handler="GUARD">
+					<spot x="628.2596" y="1320.861" z="152.1471" h="90"/>
+					<spot x="613.1627" y="1361.282" z="153.6837"/>
+					<spot x="310.1776" y="1176.165" z="128.72787"/>
+					<spot x="250.5748" y="1202.09" z="129.98227" h="31"/>
+					<spot x="245.3567" y="1202.221" z="129.98227" h="31"/>
+					<spot x="242.7224" y="1178.294" z="130.0"/>
+				</spawn>
+				<spawn npc_id="234086" handler="GUARD">
+					<spot x="643.1763" y="1330.327" z="153.7316" h="61"/>
+					<spot x="308.3147" y="1179.149" z="128.72787"/>
+					<spot x="266.3361" y="1154.984" z="129.25525" h="15"/>
+				</spawn>
+				<spawn npc_id="234044" handler="GUARD">
+					<spot x="915.0061" y="1198.602" z="145.0262" h="75"/>
+					<spot x="633.1329" y="1320.617" z="152.2235" h="90"/>
+					<spot x="907.7121" y="1204.526" z="145.0262" h="75"/>
+					<spot x="292.9842" y="1165.274" z="128.38182"/>
+					<spot x="292.9183" y="1170.578" z="128.38182"/>
+				</spawn>
+				<spawn  respawn_time="295" npc_id="234136" handler="GUARD_VILLAGE">
+					<spot x="313.0647" y="1209.072" z="132.84859" h="90"/>
+				</spawn>
+			</simple_race>
 			<simple_race race="ELYOS">
-				<!-- Elyos Flag -->
-				<spawn npc_id="802365" >
-				    <spot x="242.19543" y="1167.5227" z="130.49934" h="119"/>
+				<spawn npc_id="802365">
+					<spot x="243.8112" y="1167.274" z="131.1661"/>
 				</spawn>
-				<!-- Lightbringer Flag -->
-				<spawn npc_id="802371" >
-				    <spot x="630.99011" y="1355.6576" z="154.63474" h="0"/>
+				<spawn npc_id="802427">
+					<spot x="250.82387" y="1156.4434" z="129.875"/>
 				</spawn>
-				<!-- BOSS Elyos [Boss] -->
-				<spawn npc_id="234033" handler="BOSS">
-				    <spot x="242.19543" y="1167.5227" z="130.49934" h="119"/>
+				<spawn npc_id="802389">
+					<spot x="239.80052" y="1156.4302" z="129.68806"/>
 				</spawn>
-				<!-- Chieftain Elyos [Semi-Boss] -->
-				<spawn npc_id="234039" respawn_time="295">
-				    <spot x="261.52307" y="1153.2434" z="129.20271" h="18"/>
+				<spawn npc_id="802393">
+					<spot x="240.0322" y="1152.8047" z="129.68806"/>
 				</spawn>
-				<spawn npc_id="234075" respawn_time="295">
-					<spot x="289.86926" y="1164.2974" z="128.875" h="2"/>
-                    <spot x="289.46747" y="1171.4521" z="128.96576" h="2"/>
-					<spot x="624.3116" y="1321.8691" z="150.375" h="118"/>
-                </spawn>
-                <spawn npc_id="234078" respawn_time="295">
-                    <spot x="292.526" y="1167.5056" z="128.71713" h="2"/>
-                    <spot x="269.24683" y="1146.9308" z="129.125" h="21"/>
-                    <spot x="263.70663" y="1186.4781" z="129.89334" h="35"/>
-                    <spot x="251.15196" y="1204.1317" z="129.81123" h="29"/>
-                    <spot x="246.04443" y="1202.6115" z="129.91321" h="28"/>
-					<spot x="624.1492" y="1318.5977" z="150.41235" h="119"/>
-                </spawn>
-                <spawn npc_id="234081" respawn_time="295">
-                    <spot x="303.55273" y="1186.9518" z="130.15295" h="107"/>
-                    <spot x="299.62427" y="1151.7306" z="128.88165" h="8"/>
-                    <spot x="256.88022" y="1201.8582" z="130.56845" h="29"/>
-                    <spot x="239.45172" y="1200.387" z="130.03427" h="15"/>
-					<spot x="641.2009" y="1321.2339" z="150.31653" h="53"/>
-                </spawn>
-                <spawn npc_id="234084" respawn_time="295">
-                    <spot x="304.82764" y="1190.1859" z="130.04478" h="115"/>
-                    <spot x="297.23666" y="1154.2572" z="128.90663" h="19"/>
-					<spot x="640.6598" y="1318.1488" z="150.41623" h="66"/>
-                </spawn>
-                <spawn npc_id="234087" respawn_time="295">
-                    <spot x="273.94684" y="1145.7435" z="128.98398" h="31"/>
-                    <spot x="267.1159" y="1186.4841" z="129.66577" h="21"/>
-					<spot x="641.73334" y="1307.3749" z="150.24026" h="61"/>
-					<spot x="622.6341" y="1304.1357" z="150.25" h="2"/>
-                </spawn>
-				<!-- Lightbringer [Tank] -->
-				<spawn npc_id="234533" respawn_time="295">
-				    <spot x="628.42" y="1335.93" z="152.93" h="0"/>
-                    <spot x="630.176" y="1332.364" z="150.35156" h="112"/>
-                    <spot x="630.2817" y="1340.4086" z="150.35156" h="112"/>
-                    <spot x="629.88354" y="1348.1432" z="150.41344" h="112"/>
-                    <spot x="629.7982" y="1356.4103" z="150.41344" h="112"/>
-                    <spot x="630.2571" y="1365.368" z="150.53748" h="112"/>
+				<spawn npc_id="804472">
+					<spot x="242.0335" y="1149.8489" z="129.68806"/>
 				</spawn>
-				<!-- Npc -->
-				<spawn npc_id="802385" respawn_time="295">
-				    <spot x="267.00" y="1143.18" z="130.77" h="31"/>
+				<spawn npc_id="802385">
+					<spot x="267.02676" y="1143.2122" z="129.125"/>
 				</spawn>
-				<spawn npc_id="802387" respawn_time="295">
-				    <spot x="263.71" y="1143.14" z="130.77" h="15"/>
+				<spawn npc_id="802387">
+					<spot x="263.7301" y="1143.1462" z="129.125"/>
 				</spawn>
-				<spawn npc_id="802389" respawn_time="295">
-				    <spot x="239.75" y="1156.43" z="130.77" h="0"/>
+				<spawn npc_id="804524" handler="PORTAL">
+					<spot x="242.34172" y="1180.9946" z="129.9221" static_id="202"/>
 				</spawn>
-				<spawn npc_id="802393" respawn_time="295">
-				    <spot x="239.98" y="1152.77" z="130.77" h="8"/>
+				<spawn npc_id="234039" handler="BOSS">
+					<spot x="252.7596" y="1167.316" z="129.76785"/>
 				</spawn>
-				<spawn npc_id="802427" respawn_time="295">
-				    <spot x="250.77" y="1156.44" z="130.77" h="0"/>
+				<spawn npc_id="234105" handler="ATTACKER">
+					<spot x="254.9669" y="1167.341" z="129.76785" h="61"/>
 				</spawn>
-				<spawn npc_id="804472" respawn_time="295">
-				    <spot x="241.98" y="1149.81" z="130.77" h="0"/>
+				<spawn npc_id="234048" handler="GUARD">
+					<spot x="276.4327" y="1181.668" z="128.66638" h="105"/>
+					<spot x="275.2483" y="1153.713" z="129.21124"/>
 				</spawn>
-				<!-- Teleporter (Object Normal lvl:3) -->
-				<spawn npc_id="804524" respawn_time="295">
-				    <spot x="242.34172" y="1180.9946" z="129.9221" static_id="202"/>
+				<spawn npc_id="234078" handler="GUARD">
+					<spot h="0" z="129.25519" y="1158.282" x="309.2555"/>
+					<spot h="0" z="129.875" y="1180.361" x="258.1723"/>
+					<spot h="90" z="150.35156" y="1319.658" x="634.9641"/>
+					<spot h="90" z="150.375" y="1319.82" x="626.5145"/>
+					<spot h="61" z="150.35156" y="1340.31" x="643.0311"/>
+				</spawn>
+				<spawn npc_id="234084" handler="GUARD">
+					<spot h="0" z="129.25519" y="1160.556" x="306.5052"/>
+					<spot h="0" z="128.72787" y="1176.234" x="306.2744"/>
+					<spot h="0" z="129.6856" y="1182.242" x="258.6583"/>
+					<spot h="0" z="150.32417" y="1332.063" x="613.8112"/>
+				</spawn>
+				<spawn npc_id="234081" handler="GUARD">
+					<spot h="0" z="150.32417" y="1341.702" x="613.84"/>
+					<spot h="61" z="150.49156" y="1360.539" x="643.0405"/>
+					<spot x="632.65" y="1271.17" z="151.99" walker_id="ldf5_fortress_npcpathmist_off_guard4"/>
+					<spot x="310.2664" y="1161.311" z="129.25519"/>
+					<spot x="247.8373" y="1197.222" z="129.98227" h="31"/>
+					<spot x="268.286" y="1163.854" z="129.21124"/>
+				</spawn>
+				<spawn npc_id="234075" handler="GUARD">
+					<spot x="628.2596" y="1320.861" z="152.1471" h="90"/>
+					<spot h="0" z="150.38156" y="1361.282" x="613.1627"/>
+					<spot x="310.1776" y="1176.165" z="128.72787"/>
+					<spot x="250.5748" y="1202.09" z="129.98227" h="31"/>
+					<spot x="245.3567" y="1202.221" z="129.98227" h="31"/>
+					<spot x="242.7224" y="1178.294" z="130.0"/>
+				</spawn>
+				<spawn npc_id="234087" handler="GUARD">
+					<spot h="0" z="128.72787" y="1179.149" x="308.3147"/>
+					<spot h="15" z="129.25525" y="1154.984" x="266.3361"/>
+					<spot h="61" z="150.35156" y="1330.327" x="643.1763"/>
+				</spawn>
+				<spawn npc_id="234045" handler="GUARD">
+					<spot x="915.0061" y="1198.602" z="145.0262" h="75"/>
+					<spot h="93" z="152.2235" y="1320.617" x="633.1329"/>
+					<spot h="0" z="128.38182" y="1170.578" x="292.9183"/>
+					<spot x="292.9183" y="1170.578" z="128.38182"/>
+				</spawn>
+				<spawn  respawn_time="295" npc_id="234134" handler="GUARD_VILLAGE">
+					<spot x="313.0647" y="1209.072" z="132.84859" h="90"/>
 				</spawn>
 			</simple_race>
 			<simple_race race="ASMODIANS">
-				<!-- Asmodians Flag -->
-				<spawn npc_id="802366" >
-				    <spot x="242.19543" y="1167.5227" z="130.49934" h="119"/>
+				<spawn npc_id="802366">
+					<spot x="243.8112" y="1167.274" z="131.1661"/>
 				</spawn>
-				<!-- Shadecaster Flag -->
-				<spawn npc_id="802372" >
-				    <spot x="630.99011" y="1355.6576" z="154.63474" h="0"/>
+				<spawn npc_id="802429">
+					<spot x="250.82387" y="1156.4434" z="129.875"/>
 				</spawn>
-				<!-- BOSS Asmodians [Boss] -->
-				<spawn npc_id="234034" handler="BOSS">
-				    <spot x="242.19543" y="1167.5227" z="130.49934" h="119"/>
-				</spawn>
-				<!-- Chieftain Asmodians [Semi-Boss] -->
-				<spawn npc_id="234040" respawn_time="295">
-				    <spot x="261.52307" y="1153.2434" z="129.20271" h="18"/>
-				</spawn>
-				<spawn npc_id="234076" respawn_time="295">
-					<spot x="289.86926" y="1164.2974" z="128.875" h="2"/>
-                    <spot x="289.46747" y="1171.4521" z="128.96576" h="2"/>
-					<spot x="624.3116" y="1321.8691" z="150.375" h="118"/>
-                </spawn>
-                <spawn npc_id="234079" respawn_time="295">
-                    <spot x="292.526" y="1167.5056" z="128.71713" h="2"/>
-                    <spot x="269.24683" y="1146.9308" z="129.125" h="21"/>
-                    <spot x="263.70663" y="1186.4781" z="129.89334" h="35"/>
-                    <spot x="251.15196" y="1204.1317" z="129.81123" h="29"/>
-                    <spot x="246.04443" y="1202.6115" z="129.91321" h="28"/>
-					<spot x="624.1492" y="1318.5977" z="150.41235" h="119"/>
-                </spawn>
-                <spawn npc_id="234082" respawn_time="295">
-                    <spot x="303.55273" y="1186.9518" z="130.15295" h="107"/>
-                    <spot x="299.62427" y="1151.7306" z="128.88165" h="8"/>
-                    <spot x="256.88022" y="1201.8582" z="130.56845" h="29"/>
-                    <spot x="239.45172" y="1200.387" z="130.03427" h="15"/>
-					<spot x="641.2009" y="1321.2339" z="150.31653" h="53"/>
-                </spawn>
-                <spawn npc_id="234085" respawn_time="295">
-                    <spot x="304.82764" y="1190.1859" z="130.04478" h="115"/>
-                    <spot x="297.23666" y="1154.2572" z="128.90663" h="19"/>
-					<spot x="640.6598" y="1318.1488" z="150.41623" h="66"/>
-                </spawn>
-                <spawn npc_id="234088" respawn_time="295">
-                    <spot x="273.94684" y="1145.7435" z="128.98398" h="31"/>
-                    <spot x="267.1159" y="1186.4841" z="129.66577" h="21"/>
-					<spot x="641.73334" y="1307.3749" z="150.24026" h="61"/>
-					<spot x="622.6341" y="1304.1357" z="150.25" h="2"/>
-                </spawn>
-				<!-- Shadecaster [Tank] -->
-				<spawn npc_id="234534" respawn_time="295">
-				    <spot x="628.42" y="1335.93" z="152.93" h="0"/>
-                    <spot x="630.176" y="1332.364" z="150.35156" h="112"/>
-                    <spot x="630.2817" y="1340.4086" z="150.35156" h="112"/>
-                    <spot x="629.88354" y="1348.1432" z="150.41344" h="112"/>
-                    <spot x="629.7982" y="1356.4103" z="150.41344" h="112"/>
-                    <spot x="630.2571" y="1365.368" z="150.53748" h="112"/>
-				</spawn>
-				<!-- Npc -->
-				<spawn npc_id="802386" respawn_time="295">
-				    <spot x="267.00" y="1143.18" z="130.77" h="31"/>
-				</spawn>
-		        <spawn npc_id="802388" respawn_time="295">
-				    <spot x="263.71" y="1143.14" z="130.77" h="15"/>
-				</spawn>
+				<!--  -->
 				<spawn npc_id="802390" respawn_time="295">
-				    <spot x="239.75" y="1156.43" z="130.77" h="0"/>
+					<spot x="239.8005" y="1156.43" z="129.3529"/>
 				</spawn>
+				<!--  -->
 				<spawn npc_id="802394" respawn_time="295">
-				    <spot x="239.98" y="1152.77" z="130.77" h="8"/>
+					<spot x="240.0322" y="1152.805" z="128.9179" h="8"/>
 				</spawn>
-				<spawn npc_id="802429" respawn_time="295">
-				    <spot x="250.77" y="1156.44" z="130.77" h="0"/>
-				</spawn>
+				<!--  -->
 				<spawn npc_id="804474" respawn_time="295">
-				    <spot x="241.98" y="1149.81" z="130.77" h="0"/>
+					<spot x="242.0335" y="1149.849" z="128.9429" h="15"/>
 				</spawn>
-				<!-- Teleporter (Object Normal lvl:3) -->
-				<spawn npc_id="804525" respawn_time="295">
-				    <spot x="242.34172" y="1180.9946" z="129.9221" static_id="202"/>
+				<spawn npc_id="802386">
+					<spot x="267.02676" y="1143.2122" z="129.125"/>
 				</spawn>
-				<!-- Infernal-Danuar Reliquary 4.7 (Object Normal lvl:3) -->
-				<spawn npc_id="804622" respawn_time="295">
-				    <spot x="774.39648" y="1023.0743" z="113.0941" static_id="163"/>
+				<spawn npc_id="802388">
+					<spot x="263.7301" y="1143.1462" z="129.125"/>
 				</spawn>
-				<!-- Lucky Lunarunerk
-				<Danuar Reliquary Novice> -->
-				<spawn npc_id="832267" respawn_time="295">
-				    <spot x="787.22864" y="1039.5432" z="111.20179" h="52"/>
+				<spawn npc_id="804525" handler="PORTAL">
+					<spot x="242.34172" y="1180.9946" z="129.9221" static_id="202"/>
 				</spawn>
-				<!-- Lucky Danuar Reliquary Gatekeeper
-				<Danuar Reliquary Novice> -->
-				<spawn npc_id="804650" respawn_time="295">
-				    <spot x="782.30536" y="1034.4692" z="111.08798" h="53"/>
+				<spawn npc_id="234040" handler="BOSS">
+					<spot x="252.7596" y="1167.316" z="129.76785"/>
 				</spawn>
-			</simple_race>
-			<simple_race race="NPC">
-				<!-- Balaur Flag -->
-				<spawn npc_id="802367" >
-				    <spot x="242.19543" y="1167.5227" z="130.49934" h="119"/>
+				<spawn npc_id="234106" handler="ATTACKER">
+					<spot x="254.9669" y="1167.341" z="129.76785" h="61"/>
 				</spawn>
-				<!-- Tank Flag -->
-				<spawn npc_id="802373" >
-				    <spot x="630.99011" y="1355.6576" z="154.63474" h="0"/>
+				<spawn npc_id="234049" handler="GUARD">
+					<spot x="276.4327" y="1181.668" z="128.66638" h="105"/>
+					<spot x="275.2483" y="1153.713" z="129.21124"/>
 				</spawn>
-				<!-- BOSS Balaur [Boss] -->
-				<spawn npc_id="234032" handler="BOSS">
-				    <spot x="242.19543" y="1167.5227" z="130.49934" h="119"/>
+				<spawn npc_id="234079" handler="GUARD">
+					<spot h="61" z="150.35156" y="1340.31" x="643.0311"/>
+					<spot h="90" z="150.375" y="1319.82" x="626.5145"/>
+					<spot h="90" z="150.375" y="1319.658" x="634.9641"/>
+					<spot x="309.2555" y="1158.282" z="129.25519"/>
+					<spot x="258.1723" y="1180.361" z="129.875"/>
 				</spawn>
-				<!-- Chieftain Balaur [Semi-Boss] -->
-				<spawn npc_id="234038" respawn_time="295">
-				    <spot x="261.52307" y="1153.2434" z="129.20271" h="18"/>
+				<spawn npc_id="234085" handler="GUARD">
+					<spot h="0" z="150.32417" y="1332.063" x="613.8112"/>
+					<spot x="306.5052" y="1160.556" z="129.25519"/>
+					<spot x="306.2744" y="1176.234" z="128.72787"/>
+					<spot x="258.6583" y="1182.242" z="129.6856"/>
 				</spawn>
-				<spawn npc_id="234074" respawn_time="295">
-					<spot x="289.86926" y="1164.2974" z="128.875" h="2"/>
-                    <spot x="289.46747" y="1171.4521" z="128.96576" h="2"/>
-					<spot x="624.3116" y="1321.8691" z="150.375" h="118"/>
-                </spawn>
-                <spawn npc_id="234077" respawn_time="295">
-                    <spot x="292.526" y="1167.5056" z="128.71713" h="2"/>
-                    <spot x="269.24683" y="1146.9308" z="129.125" h="21"/>
-                    <spot x="263.70663" y="1186.4781" z="129.89334" h="35"/>
-                    <spot x="251.15196" y="1204.1317" z="129.81123" h="29"/>
-                    <spot x="246.04443" y="1202.6115" z="129.91321" h="28"/>
-					<spot x="624.1492" y="1318.5977" z="150.41235" h="119"/>
-                </spawn>
-                <spawn npc_id="234080" respawn_time="295">
-                    <spot x="303.55273" y="1186.9518" z="130.15295" h="107"/>
-                    <spot x="299.62427" y="1151.7306" z="128.88165" h="8"/>
-                    <spot x="256.88022" y="1201.8582" z="130.56845" h="29"/>
-                    <spot x="239.45172" y="1200.387" z="130.03427" h="15"/>
-					<spot x="244.68977" y="1180.6931" z="130.0000" h="0"/>
-					<spot x="641.2009" y="1321.2339" z="150.31653" h="53"/>
-                </spawn>
-                <spawn npc_id="234083" respawn_time="295">
-                    <spot x="304.82764" y="1190.1859" z="130.04478" h="115"/>
-                    <spot x="297.23666" y="1154.2572" z="128.90663" h="19"/>
-					<spot x="280.6062" y="1181.1364" z="128.83711" h="77"/>
-					<spot x="640.6598" y="1318.1488" z="150.41623" h="66"/>
-                </spawn>
-                <spawn npc_id="234086" respawn_time="295">
-                    <spot x="273.94684" y="1145.7435" z="128.98398" h="31"/>
-                    <spot x="267.1159" y="1186.4841" z="129.66577" h="21"/>
-					<spot x="248.861" y="1156.709" z="129.4098" h="18"/>
-					<spot x="641.73334" y="1307.3749" z="150.24026" h="61"/>
-					<spot x="622.6341" y="1304.1357" z="150.25" h="2"/>
-                </spawn>
-				<!-- Tank -->
-				<spawn npc_id="234541" respawn_time="295">
-				    <spot x="628.42" y="1335.93" z="152.93" h="0"/>
-                    <spot x="630.176" y="1332.364" z="150.35156" h="112"/>
-                    <spot x="630.2817" y="1340.4086" z="150.35156" h="112"/>
-                    <spot x="629.88354" y="1348.1432" z="150.41344" h="112"/>
-                    <spot x="629.7982" y="1356.4103" z="150.41344" h="112"/>
-                    <spot x="630.2571" y="1365.368" z="150.53748" h="112"/>
+				<spawn npc_id="234082" handler="GUARD">
+					<spot h="0" z="150.32417" y="1341.702" x="613.84"/>
+					<spot h="61" z="150.49156" y="1360.539" x="643.0405"/>
+					<spot x="310.2664" y="1161.311" z="129.25519"/>
+					<spot x="247.8373" y="1197.222" z="129.98227" h="31"/>
+					<spot x="268.286" y="1163.854" z="129.21124"/>
+				</spawn>
+				<spawn npc_id="234052" handler="GUARD">
+					<spot x="630.5566" y="1328.002" z="152.3412" h="90"/>
+				</spawn>
+				<spawn npc_id="234076" handler="GUARD">
+					<spot x="628.2596" y="1320.861" z="152.1471" h="90"/>
+					<spot x="613.1627" y="1361.282" z="153.6837"/>
+					<spot x="310.1776" y="1176.165" z="128.72787"/>
+					<spot x="250.5748" y="1202.09" z="129.98227" h="31"/>
+					<spot x="245.3567" y="1202.221" z="129.98227" h="31"/>
+				</spawn>
+				<spawn npc_id="234088" handler="GUARD">
+					<spot h="61" z="150.35156" y="1330.327" x="643.1763"/>
+					<spot x="308.3147" y="1179.149" z="128.72787"/>
+					<spot x="266.3361" y="1154.984" z="129.25525" h="15"/>
+				</spawn>
+				<spawn npc_id="234046" handler="GUARD">
+					<spot x="915.0061" y="1198.602" z="145.0262" h="75"/>
+					<spot x="633.1329" y="1320.617" z="152.2235" h="90"/>
+					<spot x="907.7121" y="1204.526" z="145.0262" h="75"/>
+					<spot x="292.9842" y="1165.274" z="128.38182"/>
+					<spot x="292.9183" y="1170.578" z="128.38182"/>
+				</spawn>
+				<spawn  respawn_time="295" npc_id="234135" handler="GUARD_VILLAGE">
+					<spot x="313.0647" y="1209.072" z="132.84859" h="90"/>
 				</spawn>
 			</simple_race>
 		</base_spawn>
-		<!-- [FLAMECREST OUTPOST] -->
 		<base_spawn id="91">
+			<simple_race race="NPC">
+ 				<spawn npc_id="802370">
+					<spot x="1361.706" y="1123.096" z="186.4658"/>
+				</spawn>
+ 				<spawn npc_id="234041" handler="BOSS">
+					<spot x="1351.861" y="1125.893" z="184.75" h="51"/>
+				</spawn>
+ 				<spawn npc_id="234107" handler="ATTACKER">
+					<spot x="1349.689" y="1126.833" z="184.75" h="110"/>
+				</spawn>
+ 				<spawn npc_id="234068" handler="GUARD">
+					<spot x="1344.012" y="1114.293" z="184.75" h="51"/>
+				</spawn>
+				<spawn npc_id="234095" handler="GUARD">
+					<spot x="912.9733" y="1229.901" z="145.3225" h="105"/>
+					<spot h="75" z="143.625" y="1206.089" x="915.5917"/>
+					<spot h="102" z="143.67592" y="1246.84" x="925.1771"/>
+					<spot x="1307.107" y="1156.25" z="182.48997" h="51"/>
+					<spot x="1337.014" y="1134.039" z="184.5" h="57"/>
+					<spot x="1361.23" y="1150.031" z="184.8024" h="20"/>
+				</spawn>
+ 				<spawn npc_id="234098" handler="GUARD">
+					<spot x="907.785" y="1223.68" z="146.0986" h="105"/>
+					<spot x="1308.397" y="1152.322" z="183.31555" h="39"/>
+					<spot x="1300.633" y="1134.092" z="184.4473" h="39"/>
+					<spot x="1352.423" y="1127.954" z="184.75" h="51"/>
+				</spawn>
+ 				<spawn npc_id="234092" handler="GUARD">
+					<spot h="75" z="143.625" y="1196.776" x="916.1495"/>
+					<spot x="935.2706" y="1211.848" z="145.2201" h="47"/>
+					<spot h="75" z="143.625" y="1205.542" x="906.0449"/>
+					<spot x="1304.01" y="1152.919" z="183.64156" h="51"/>
+				</spawn>
+ 				<spawn npc_id="234089" handler="GUARD">
+					<spot x="948.5677" y="1226.521" z="145.1006" h="47"/>
+					<spot x="1298.897" y="1139.572" z="184.28513" h="41"/>
+					<spot x="1363.829" y="1154.566" z="184.84183" h="20"/>
+					<spot x="1360.317" y="1155.409" z="184.88763" h="20"/>
+				</spawn>
+ 				<spawn npc_id="234101" handler="GUARD">
+					<spot x="928.6661" y="1203.582" z="146.0986" h="47"/>
+					<spot x="1296.285" y="1135.989" z="184.5" h="41"/>
+					<spot x="1343.646" y="1140.068" z="184.5" h="61"/>
+					<spot x="1350.5779" y="1124.8751" z="184.75" h="38"/>
+				</spawn>
+ 				<spawn npc_id="234059" handler="GUARD">
+					<spot x="1315.644" y="1137.956" z="184.57335" h="51"/>
+					<spot x="1313.856" y="1133.398" z="184.57335" h="51"/>
+				</spawn>
+ 				<spawn npc_id="234062" handler="GUARD">
+					<spot x="1326.385" y="1118.661" z="184.75" h="34"/>
+					<spot x="1335.313" y="1145.61" z="184.75" h="67"/>
+				</spawn>
+ 				<spawn npc_id="234139" handler="GUARD_VILLAGE">
+					<spot x="1302.578" y="1210.031" z="188.125" h="90"/>
+				</spawn>
+			</simple_race>
 			<simple_race race="ELYOS">
-				<!-- Elyos Flag -->
-				<spawn npc_id="802368" >
-				    <spot x="1360.5796" y="1123.341" z="185.23705" h="54"/>
+ 				<spawn npc_id="802368">
+					<spot x="1361.706" y="1123.096" z="186.4658"/>
 				</spawn>
-				<!-- Lightbringer Flag -->
-				<spawn npc_id="802374" >
-				    <spot x="932.84442" y="1228.9944" z="147.81581" h="0"/>
+ 				<spawn npc_id="802428">
+					<spot x="1359.0824" y="1132.9552" z="184.59215"/>
 				</spawn>
-				<!-- BOSS Elyos [Boss] -->
-				<spawn npc_id="234036" handler="BOSS">
-				    <spot x="1360.5796" y="1123.341" z="185.23705" h="54"/>
+ 				<spawn npc_id="802399">
+					<spot x="1368.1208" y="1131.5698" z="184.62614"/>
 				</spawn>
-				<!-- Chieftain Elyos [Semi-Boss] -->
-				<spawn npc_id="234042" respawn_time="295">
-				    <spot x="1348.7448" y="1141.4253" z="184.875" h="73"/>
+ 				<spawn npc_id="802403">
+					<spot x="1369.6438" y="1135.1962" z="184.62614"/>
 				</spawn>
-				<spawn npc_id="234090" respawn_time="295">
-                    <spot x="1318.6945" y="1138.7604" z="184.57639" h="56"/>
-                    <spot x="1316.9454" y="1131.8516" z="184.75" h="56"/>
-                    <spot x="1334.6675" y="1110.6403" z="184.49506" h="27"/>
-                    <spot x="1362.7496" y="1157.6515" z="184.88443" h="25"/>
-					<spot x="907.05597" y="1213.7678" z="143.77203" h="99"/>
-					<spot x="919.263" y="1195.5396" z="144.13649" h="49"/>
-                </spawn>
-                <spawn npc_id="234093" respawn_time="295">
-                    <spot x="1315.842" y="1136.2621" z="184.86176" h="55"/>
-                    <spot x="1341.332" y="1148.2637" z="184.875" h="79"/>
-                    <spot x="1345.2062" y="1158.4895" z="184.69286" h="38"/>
-                    <spot x="1324.2373" y="1118.6719" z="184.75" h="39"/>
-					<spot x="904.6236" y="1211.0267" z="144.0" h="99"/>
-					<spot x="921.3912" y="1198.1447" z="143.86597" h="39"/>
-                </spawn>
-                <spawn npc_id="234096" respawn_time="295">
-                    <spot x="1298.9265" y="1120.6259" z="184.5" h="42"/>
-                </spawn>
-                <spawn npc_id="234099" respawn_time="295">
-                    <spot x="1296.8147" y="1118.0234" z="184.5" h="52"/>
-                    <spot x="1338.2922" y="1149.4663" z="184.76826" h="90"/>
-					<spot x="922.947" y="1201.2289" z="143.54819" h="61"/>
-                </spawn>
-                <spawn npc_id="234102" respawn_time="295">
-                    <spot x="1309.2677" y="1157.2106" z="183.13214" h="70"/>
-                    <spot x="1338.2676" y="1111.0758" z="184.375" h="32"/>
-                    <spot x="1332.176" y="1155.5979" z="184.72174" h="25"/>
-					<spot x="901.8115" y="1208.2383" z="144.03845" h="101"/>
-					<spot x="1338.0823" y="1128.0096" z="184.5" h="44"/>
-                </spawn>
-				<!-- Lightbringer [Tank] -->
-				<spawn npc_id="234537" respawn_time="295">
-				    <spot x="936.39" y="1236.91" z="145.19" h="0"/>
-                    <spot x="921.6402" y="1216.7058" z="143.59645" h="96"/>
-                    <spot x="927.7258" y="1225.2026" z="143.7078" h="96"/>
-                    <spot x="934.044" y="1232.9413" z="143.7078" h="96"/>
-					<spot x="940.2303" y="1239.6564" z="143.83183" h="96"/>
-					<spot x="946.553" y="1247.4895" z="143.83183" h="97"/>
+ 				<spawn npc_id="804473">
+					<spot x="1368.325" y="1139.9451" z="184.72882"/>
 				</spawn>
-				<!-- Npc -->
-				<spawn npc_id="802395" respawn_time="295">
-				    <spot x="1344.983" y="1155.6213" z="184.69417" h="89"/>
+ 				<spawn npc_id="802397">
+					<spot x="1348.0026" y="1152.9432" z="184.69437"/>
 				</spawn>
-				<spawn npc_id="802397" respawn_time="295">
-				    <spot x="1348.7007" y="1154.3773" z="184.69394" h="76"/>
+ 				<spawn npc_id="802395">
+					<spot x="1344.9497" y="1154.4572" z="184.69467"/>
 				</spawn>
-				<spawn npc_id="802399" respawn_time="295">
-				    <spot x="1368.3418" y="1131.3605" z="184.43634" h="50"/>
+ 				<spawn npc_id="804526" handler="PORTAL">
+					<spot x="1356.4497" y="1109.9414" z="184.69438" static_id="19"/>
 				</spawn>
-				<spawn npc_id="802403" respawn_time="295">
-				    <spot x="1369.5192" y="1135.2122" z="184.65985" h="63"/>
+ 				<spawn npc_id="234042" handler="BOSS">
+					<spot x="1351.861" y="1125.893" z="184.75" h="51"/>
 				</spawn>
-				<spawn npc_id="802428" respawn_time="295">
-				    <spot x="1359.0852" y="1132.9181" z="184.68217" h="62"/>
+ 				<spawn npc_id="234108" handler="ATTACKER">
+					<spot x="1349.689" y="1126.833" z="184.75" h="110"/>
 				</spawn>
-				<spawn npc_id="804473" respawn_time="295">
-				    <spot x="1368.278" y="1139.8643" z="184.756" h="67"/>
+ 				<spawn npc_id="234069" handler="GUARD">
+					<spot x="1344.012" y="1114.293" z="184.75" h="51"/>
 				</spawn>
-				<!-- Teleporter (Object Normal lvl:3) -->
-				<spawn npc_id="804526" respawn_time="295">
-				    <spot x="1356.4497" y="1109.9414" z="184.69438" static_id="19"/>
+				<spawn npc_id="234096" handler="GUARD">
+					<spot x="912.9733" y="1229.901" z="145.3225" h="105"/>
+					<spot h="75" z="143.68959" y="1206.089" x="915.5917"/>
+					<spot x="878.96" y="1180.51" z="146.98" walker_id="ldf5_fortress_npcpathmist_off_guard6"/>
+					<spot x="925.1771" y="1246.84" z="146.8533" h="15"/>
+					<spot x="1307.107" y="1156.25" z="182.48997" h="51"/>
+					<spot x="1337.014" y="1134.039" z="184.5" h="57"/>
+					<spot x="1361.23" y="1150.031" z="184.8024" h="20"/>
 				</spawn>
-				<!-- Infernal-Danuar Reliquary 4.7 (Object Normal lvl:3) -->
-				<spawn npc_id="804621" respawn_time="295">
-				    <spot x="774.39648" y="1023.0743" z="113.0941" static_id="163"/>
+ 				<spawn npc_id="234099" handler="GUARD">
+					<spot h="105" z="143.59645" y="1223.68" x="907.785"/>
+					<spot x="1308.397" y="1152.322" z="183.31555" h="39"/>
+					<spot x="1300.633" y="1134.092" z="184.4473" h="39"/>
+					<spot h="51" z="184.75" y="1127.954" x="1352.423"/>
 				</spawn>
-				<!-- Lucky Lunarunerk
-				<Danuar Reliquary Novice> -->
-				<spawn npc_id="832267" respawn_time="295">
-				    <spot x="787.22864" y="1039.5432" z="111.20179" h="52"/>
+ 				<spawn npc_id="234093" handler="GUARD">
+					<spot h="75" z="143.84079" y="1196.776" x="916.1495"/>
+					<spot x="935.2706" y="1211.848" z="145.2201" h="47"/>
+					<spot h="75" z="143.68959" y="1205.542" x="906.0449"/>
+					<spot x="1304.01" y="1152.919" z="183.64156" h="51"/>
 				</spawn>
-				<!-- Lucky Danuar Reliquary Gatekeeper
-				<Danuar Reliquary Novice> -->
-				<spawn npc_id="804650" respawn_time="295">
-				    <spot x="782.30536" y="1034.4692" z="111.08798" h="53"/>
+ 				<spawn npc_id="234090" handler="GUARD">
+					<spot x="948.5677" y="1226.521" z="145.1006" h="47"/>
+					<spot x="1298.897" y="1139.572" z="184.28513" h="41"/>
+					<spot x="1363.829" y="1154.566" z="184.84183" h="20"/>
+					<spot x="1360.317" y="1155.409" z="184.88763" h="20"/>
+				</spawn>
+ 				<spawn npc_id="234102" handler="GUARD">
+					<spot h="47" z="143.70866" y="1203.582" x="928.6661"/>
+					<spot x="1296.285" y="1135.989" z="184.5" h="41"/>
+					<spot x="1343.646" y="1140.068" z="184.5" h="61"/>
+					<spot x="1350.5779" y="1124.8751" z="184.75" h="38"/>
+				</spawn>
+ 				<spawn npc_id="234060" handler="GUARD">
+					<spot x="1315.644" y="1137.956" z="184.57335" h="51"/>
+					<spot x="1313.856" y="1133.398" z="184.57335" h="51"/>
+				</spawn>
+ 				<spawn npc_id="234063" handler="GUARD">
+					<spot x="1326.385" y="1118.661" z="184.75" h="34"/>
+					<spot x="1335.313" y="1145.61" z="184.75" h="67"/>
+				</spawn>
+ 				<spawn npc_id="234137" handler="GUARD_VILLAGE">
+					<spot x="1302.578" y="1210.031" z="188.125" h="90"/>
 				</spawn>
 			</simple_race>
 			<simple_race race="ASMODIANS">
-				<!-- Asmodians Flag -->
-				<spawn npc_id="802369" >
-				    <spot x="1360.5796" y="1123.341" z="185.23705" h="54"/>
+ 				<spawn npc_id="802369">
+					<spot x="1361.706" y="1123.096" z="186.4658"/>
 				</spawn>
-				<!-- Shadecaster Flag -->
-				<spawn npc_id="802375" >
-				    <spot x="932.84442" y="1228.9944" z="147.81581" h="0"/>
+ 				<spawn npc_id="802430">
+					<spot h="53" z="184.59215" y="1132.9552" x="1359.0824"/>
 				</spawn>
-				<!-- BOSS Asmodians [Boss] -->
-				<spawn npc_id="234037" handler="BOSS">
-				    <spot x="1360.5796" y="1123.341" z="185.23705" h="54"/>
+ 				<spawn npc_id="802400">
+					<spot h="60" z="184.62614" y="1131.5698" x="1368.1208"/>
 				</spawn>
-				<!-- Chieftain Asmodians [Semi-Boss] -->
-				<spawn npc_id="234043" respawn_time="295">
-				    <spot x="1348.7448" y="1141.4253" z="184.875" h="73"/>
+ 				<spawn npc_id="802404">
+					<spot h="53" z="184.62614" y="1135.1962" x="1369.6438"/>
 				</spawn>
-				<spawn npc_id="234091" respawn_time="295">
-                    <spot x="1318.6945" y="1138.7604" z="184.57639" h="56"/>
-                    <spot x="1316.9454" y="1131.8516" z="184.75" h="56"/>
-                    <spot x="1334.6675" y="1110.6403" z="184.49506" h="27"/>
-                    <spot x="1362.7496" y="1157.6515" z="184.88443" h="25"/>
-					<spot x="907.05597" y="1213.7678" z="143.77203" h="99"/>
-					<spot x="919.263" y="1195.5396" z="144.13649" h="49"/>
-                </spawn>
-                <spawn npc_id="234094" respawn_time="295">
-                    <spot x="1315.842" y="1136.2621" z="184.86176" h="55"/>
-                    <spot x="1341.332" y="1148.2637" z="184.875" h="79"/>
-                    <spot x="1345.2062" y="1158.4895" z="184.69286" h="38"/>
-                    <spot x="1324.2373" y="1118.6719" z="184.75" h="39"/>
-					<spot x="904.6236" y="1211.0267" z="144.0" h="99"/>
-					<spot x="921.3912" y="1198.1447" z="143.86597" h="39"/>
-                </spawn>
-                <spawn npc_id="234097" respawn_time="295">
-                    <spot x="1298.9265" y="1120.6259" z="184.5" h="42"/>
-                </spawn>
-                <spawn npc_id="234100" respawn_time="295">
-                    <spot x="1296.8147" y="1118.0234" z="184.5" h="52"/>
-                    <spot x="1338.2922" y="1149.4663" z="184.76826" h="90"/>
-					<spot x="922.947" y="1201.2289" z="143.54819" h="61"/>
-                </spawn>
-                <spawn npc_id="234103" respawn_time="295">
-                    <spot x="1309.2677" y="1157.2106" z="183.13214" h="70"/>
-                    <spot x="1338.2676" y="1111.0758" z="184.375" h="32"/>
-                    <spot x="1332.176" y="1155.5979" z="184.72174" h="25"/>
-					<spot x="901.8115" y="1208.2383" z="144.03845" h="101"/>
-					<spot x="1338.0823" y="1128.0096" z="184.5" h="44"/>
-                </spawn>
-				<!-- Shadecaster [Tank] -->
-				<spawn npc_id="234538" respawn_time="295">
-				    <spot x="936.39" y="1236.91" z="145.19" h="0"/>
-                    <spot x="921.6402" y="1216.7058" z="143.59645" h="96"/>
-                    <spot x="927.7258" y="1225.2026" z="143.7078" h="96"/>
-                    <spot x="934.044" y="1232.9413" z="143.7078" h="96"/>
-					<spot x="940.2303" y="1239.6564" z="143.83183" h="96"/>
-					<spot x="946.553" y="1247.4895" z="143.83183" h="97"/>
+ 				<spawn npc_id="804475">
+					<spot h="55" z="184.72882" y="1139.9451" x="1368.325"/>
 				</spawn>
-				<!-- Npc -->
-				<spawn npc_id="802396" respawn_time="295">
-				    <spot x="1344.983" y="1155.6213" z="184.69417" h="89"/>
+ 				<spawn npc_id="802398">
+					<spot h="83" z="184.69437" y="1152.9432" x="1348.0026"/>
 				</spawn>
-				<spawn npc_id="802398" respawn_time="295">
-				    <spot x="1348.7007" y="1154.3773" z="184.69394" h="76"/>
+ 				<spawn npc_id="802396">
+					<spot h="83" z="184.69467" y="1154.4572" x="1344.9497"/>
 				</spawn>
-				<spawn npc_id="802400" respawn_time="295">
-				    <spot x="1368.3418" y="1131.3605" z="184.43634" h="50"/>
+ 				<spawn npc_id="804527" handler="PORTAL">
+					<spot x="1356.4497" y="1109.9414" z="184.69438" static_id="19"/>
 				</spawn>
-				<spawn npc_id="802404" respawn_time="295">
-				    <spot x="1369.5192" y="1135.2122" z="184.65985" h="63"/>
+ 				<spawn npc_id="234043" handler="BOSS">
+					<spot x="1351.861" y="1125.893" z="184.75" h="51"/>
 				</spawn>
-				<spawn npc_id="802430" respawn_time="295">
-				    <spot x="1359.0852" y="1132.9181" z="184.68217" h="62"/>
+ 				<spawn npc_id="234109" handler="ATTACKER">
+					<spot x="1349.689" y="1126.833" z="184.75" h="110"/>
 				</spawn>
-				<spawn npc_id="804475" respawn_time="295">
-				    <spot x="1368.278" y="1139.8643" z="184.756" h="67"/>
+ 				<spawn npc_id="234070" handler="GUARD">
+					<spot x="1344.012" y="1114.293" z="184.75" h="51"/>
 				</spawn>
-				<!-- Teleporter (Object Normal lvl:3) -->
-				<spawn npc_id="804527" respawn_time="295">
-				    <spot x="1356.4497" y="1109.9414" z="184.69438" static_id="19"/>
+				<spawn npc_id="234097" handler="GUARD">
+					<spot x="912.9733" y="1229.901" z="145.3225" h="105"/>
+					<spot x="915.5917" y="1206.089" z="147.0397" h="75"/>
+					<spot x="925.1771" y="1246.84" z="146.8533" h="15"/>
+					<spot x="1307.107" y="1156.25" z="182.48997" h="51"/>
+					<spot x="1337.014" y="1134.039" z="184.5" h="57"/>
+					<spot h="87" z="184.8024" y="1150.031" x="1361.23"/>
 				</spawn>
-			</simple_race>
-			<simple_race race="NPC">
-				<!-- Balaur Flag -->
-				<spawn npc_id="802370" >
-				    <spot x="1360.5796" y="1123.341" z="185.23705" h="54"/>
+ 				<spawn npc_id="234100" handler="GUARD">
+					<spot x="907.785" y="1223.68" z="146.0986" h="105"/>
+					<spot x="1308.397" y="1152.322" z="183.31555" h="39"/>
+					<spot x="1300.633" y="1134.092" z="184.4473" h="39"/>
+					<spot x="1352.423" y="1127.954" z="184.75" h="51"/>
 				</spawn>
-				<!-- Tank Flag -->
-				<spawn npc_id="802376" >
-				    <spot x="932.84442" y="1228.9944" z="147.81581" h="0"/>
+ 				<spawn npc_id="234094" handler="GUARD">
+					<spot x="916.1495" y="1196.776" z="147.6391" h="75"/>
+					<spot x="935.2706" y="1211.848" z="145.2201" h="47"/>
+					<spot x="906.0449" y="1205.542" z="147.6391" h="75"/>
+					<spot x="1304.01" y="1152.919" z="183.64156" h="51"/>
 				</spawn>
-				<!-- BOSS Balaur [Boss] -->
-				<spawn npc_id="234035" handler="BOSS">
-				    <spot x="1360.5796" y="1123.341" z="185.23705" h="54"/>
+ 				<spawn npc_id="234091" handler="GUARD">
+					<spot x="948.5677" y="1226.521" z="145.1006" h="47"/>
+					<spot x="1298.897" y="1139.572" z="184.28513" h="41"/>
+					<spot h="87" z="184.88763" y="1155.409" x="1360.317"/>
+					<spot h="87" z="184.84183" y="1154.566" x="1363.829"/>
 				</spawn>
-				<!-- Chieftain Balaur [Semi-Boss] -->
-				<spawn npc_id="234041" respawn_time="295">
-				    <spot x="1348.7448" y="1141.4253" z="184.875" h="73"/>
+ 				<spawn npc_id="234103" handler="GUARD">
+					<spot x="928.6661" y="1203.582" z="146.0986" h="47"/>
+					<spot x="1296.285" y="1135.989" z="184.5" h="41"/>
+					<spot x="1343.646" y="1140.068" z="184.5" h="61"/>
+					<spot x="1350.5779" y="1124.8751" z="184.75" h="38"/>
 				</spawn>
-				<spawn npc_id="234089" respawn_time="295">
-                    <spot x="1318.6945" y="1138.7604" z="184.57639" h="56"/>
-                    <spot x="1316.9454" y="1131.8516" z="184.75" h="56"/>
-                    <spot x="1334.6675" y="1110.6403" z="184.49506" h="27"/>
-                    <spot x="1362.7496" y="1157.6515" z="184.88443" h="25"/>
-					<spot x="907.05597" y="1213.7678" z="143.77203" h="99"/>
-					<spot x="919.263" y="1195.5396" z="144.13649" h="49"/>
-                </spawn>
-                <spawn npc_id="234092" respawn_time="295">
-                    <spot x="1315.842" y="1136.2621" z="184.86176" h="55"/>
-                    <spot x="1341.332" y="1148.2637" z="184.875" h="79"/>
-                    <spot x="1345.2062" y="1158.4895" z="184.69286" h="38"/>
-                    <spot x="1324.2373" y="1118.6719" z="184.75" h="39"/>
-					<spot x="904.6236" y="1211.0267" z="144.0" h="99"/>
-					<spot x="921.3912" y="1198.1447" z="143.86597" h="39"/>
-                </spawn>
-                <spawn npc_id="234095" respawn_time="295">
-                    <spot x="1298.9265" y="1120.6259" z="184.5" h="42"/>
-					<spot x="1354.1046" y="1110.6676" z="184.75" h="47"/>
-                </spawn>
-                <spawn npc_id="234098" respawn_time="295">
-                    <spot x="1296.8147" y="1118.0234" z="184.5" h="52"/>
-                    <spot x="1338.2922" y="1149.4663" z="184.76826" h="90"/>
-					<spot x="1356.9746" y="1134.9983" z="184.75" h="67"/>
-					<spot x="922.947" y="1201.2289" z="143.54819" h="61"/>
-                </spawn>
-                <spawn npc_id="234101" respawn_time="295">
-                    <spot x="1309.2677" y="1157.2106" z="183.13214" h="70"/>
-                    <spot x="1338.2676" y="1111.0758" z="184.375" h="32"/>
-                    <spot x="1332.176" y="1155.5979" z="184.72174" h="25"/>
-					<spot x="901.8115" y="1208.2383" z="144.03845" h="101"/>
-					<spot x="1338.0823" y="1128.0096" z="184.5" h="44"/>
-                </spawn>
-				<!-- Tank -->
-				<spawn npc_id="234541" respawn_time="295">
-				    <spot x="936.39" y="1236.91" z="145.19" h="0"/>
-                    <spot x="921.6402" y="1216.7058" z="143.59645" h="96"/>
-                    <spot x="927.7258" y="1225.2026" z="143.7078" h="96"/>
-                    <spot x="934.044" y="1232.9413" z="143.7078" h="96"/>
-					<spot x="940.2303" y="1239.6564" z="143.83183" h="96"/>
-					<spot x="946.553" y="1247.4895" z="143.83183" h="97"/>
+ 				<spawn npc_id="234061" handler="GUARD">
+					<spot x="1315.644" y="1137.956" z="184.57335" h="51"/>
+					<spot x="1313.856" y="1133.398" z="184.57335" h="51"/>
+				</spawn>
+ 				<spawn npc_id="234064" handler="GUARD">
+					<spot x="1326.385" y="1118.661" z="184.75" h="34"/>
+					<spot x="1335.313" y="1145.61" z="184.75" h="67"/>
+				</spawn>
+ 				<spawn npc_id="234138" handler="GUARD_VILLAGE">
+					<spot x="1302.578" y="1210.031" z="188.125" h="90"/>
 				</spawn>
 			</simple_race>
 		</base_spawn>

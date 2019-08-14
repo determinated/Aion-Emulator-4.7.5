@@ -64,6 +64,9 @@ public class GSConfig {
     public static boolean ENABLE_CHAT_SERVER;
     @Property(key = "gameserver.chatserver.port", defaultValue = "10241")
     public static int CHATSERVER_PORT;
+    /* Server Language */
+    @Property(key = "gameserver.language", defaultValue = "en")
+    public static String SERVER_LANGUAGE;
     /* Server MOTD Display revision */
     @Property(key = "gameserver.revisiondisplay.enable", defaultValue = "false")
     public static boolean SERVER_MOTD_DISPLAYREV;

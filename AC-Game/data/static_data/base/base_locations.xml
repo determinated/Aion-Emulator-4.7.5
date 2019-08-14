@@ -51,10 +51,6 @@
     <base_location id="110" world="600100000" name_id="404384" name="East Picket"/>
     <base_location id="111" world="600100000" name_id="404392" name="North Picket"/>
     <base_location id="112" world="600100000" name_id="404383" name="South Picket"/>
-	<!-- Kaldor Gates -->
-	<base_location id="113" world="600090000" name_id="404396" name="Kaldor East Gate"/>
-	<base_location id="114" world="600090000" name_id="404397" name="Kaldor North Gate"/>
-	<base_location id="115" world="600090000" name_id="404398" name="Kaldor South Gate"/>
 	<!-- Agents Fight -->
 	<base_location id="116" world="600100000" name_id="404399" name="Empowered Veille"/>
 	<base_location id="117" world="600100000" name_id="404399" name="Empowered Mastarius"/>
