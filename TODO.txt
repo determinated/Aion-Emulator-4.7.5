@@ -26,6 +26,7 @@ THANKS FOR YOUR CAREFULLY READING!
 - Need to check the Glory Points everyday reduce. The GP discount aren't working.
 - Need to check trade npcs. Npc example: 207029
 - Need to check why the client crashs when you extract/tunning one item in attack mode.
+- Need to check the server start. Some troubles with the memory. Just can be seing with more players.
 
 ///////////////////////////////////////////////////////////////
 
@@ -46,6 +47,8 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 - (FIXD by GiGatR00n in No-IP x64) Need to fix ItemTuning/Enchanting bug that cuz client to be crashed if player was in Action (CombatMode, Resting)
 
 - Need to check all core side for some inconsistent data
+
+- Need to recheck all the instances and their AIs
 
 ///////////////////////////////////////////////////////////////
 
