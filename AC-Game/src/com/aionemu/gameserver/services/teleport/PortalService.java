@@ -531,9 +531,14 @@ public class PortalService {
         player.setInstanceStartPos(loc.getX(), loc.getY(), loc.getZ());
         InstanceService.registerPlayerWithInstance(instance, player);
         TeleportService2.teleportTo(player, loc.getWorldId(), instance.getInstanceId(), loc.getX(), loc.getY(), loc.getZ(), loc.getH(), TeleportAnimation.BEAM_ANIMATION);
-        long useDelay = DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, instance.getMapId());
-        if (useDelay > 0 && !reenter) {
-            player.getPortalCooldownList().addPortalCooldown(loc.getWorldId(), useDelay);
+
+        if(!reenter) {
+
+            if(player.getPortalCooldownList().getPortalCooldownItem(loc.getWorldId()) == null) {
+                player.getPortalCooldownList().addPortalCooldown(loc.getWorldId(), 1, DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, loc.getWorldId()));
+            } else {
+                player.getPortalCooldownList().addEntry(loc.getWorldId());
+            }
         }
     }
 

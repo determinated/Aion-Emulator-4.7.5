@@ -114,9 +114,11 @@ public class AutoGeneralInstance extends AutoInstance {
             return;
         }
         TeleportService2.teleportTo(player, worldId, instance.getInstanceId(), loc.getX(), loc.getY(), loc.getZ(), loc.getH());
-        long instanceCoolTime = DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, worldId);
-        if (instanceCoolTime > 0) {
-            player.getPortalCooldownList().addPortalCooldown(worldId, instanceCoolTime);
+
+        if(player.getPortalCooldownList().getPortalCooldownItem(loc.getWorldId()) != null) {
+            player.getPortalCooldownList().addPortalCooldown(loc.getWorldId(), 1, DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, worldId));
+        } else {
+            player.getPortalCooldownList().addEntry(worldId);
         }
     }
 

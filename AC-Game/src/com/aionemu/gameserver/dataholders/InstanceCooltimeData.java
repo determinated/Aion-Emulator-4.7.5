@@ -67,6 +67,10 @@ public class InstanceCooltimeData {
         instanceCooltime.clear();
     }
 
+    public FastMap<Integer, InstanceCooltime> getAllInstances() {
+        return instanceCooltimes;
+    }
+    
     /**
      * @param worldId
      * @return
@@ -90,6 +94,14 @@ public class InstanceCooltimeData {
             return 0;
         }
         return getInstanceEntranceCooltime(player, syncIdToMapId.get(syncId));
+    }
+    
+    public int getInstanceEntranceCountByWorldId(int worldId) {
+        InstanceCooltime clt = getInstanceCooltimeByWorldId(worldId);
+        if(clt != null)
+            return clt.getMaxEntriesCount();
+        else
+            return 0;
     }
 
     public long getInstanceEntranceCooltime(Player player, int worldId) {
