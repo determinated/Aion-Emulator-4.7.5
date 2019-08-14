@@ -1,6 +1,5 @@
 ~GiGa Emulator Buglist~
 ~Current Version 4.7~
-~Development Version 4.8~
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 WHAT'S CURRENTLY TODO AND WHICH PROBLEMS
@@ -10,7 +9,7 @@ HIGH: VERY IMPORTANT BUGS!
 MEDIUM: LESSER IMPORTANT BUGS, BUT STILL RELEVANT!
 LOW: THE MOST LESS BUGS, CAN BE FIXED, BUT ONLY IF MORE IMPORTANT BUGS ARE ALREADY FIXED!
 
-TANKS FOR YOUR CAREFULLY READING!
+THANKS FOR YOUR CAREFULLY READING!
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 
@@ -23,6 +22,11 @@ TANKS FOR YOUR CAREFULLY READING!
 - Need to rewrite GeoDataBuilderJ tool for compiling meshes.geo (new maps don't have collision detection vetores)
 - Need to check core side for Aethertech skill (Backlash I - ID:3742) for activate
 - Need to check why Assasin class are setting runes at level 1 (Must be checked at core side)
+- Need to check the instances and why they dont have a cooldown count. (Cooldowns aren't working)
+- Need to check the Glory Points everyday reduce. The GP discount aren't working.
+- Need to check trade npcs. Npc example: 207029
+- Need to check why the client crashs when you extract/tunning one item in attack mode.
+
 ///////////////////////////////////////////////////////////////
 
 --------------------------------------------------------------------------------------------------
@@ -33,9 +37,9 @@ TANKS FOR YOUR CAREFULLY READING!
 - Need to implement the pangea siege. something there is other cuz the normal siege packet dont change
 the state of these fortresses (95% Done by GiGatR00n - left some testing)
 
-- Need to added 4.7 instances (Ahserion’s Flight, Shugo Emperor's Vault)
+- Need to check this instances (Ahserion’s Flight, Shugo Emperor's Vault)
 
-- Need to check 4.6 instances (IronWall Warfront, Engulfed Ophidan Bridge)
+- Need to check 4.5 + instances (IronWall Warfront, Engulfed Ophidan Bridge)
 
 - Need to Add Drops for Beritra Invasion Raid (100% Done by GiGatR00n)
 
@@ -50,6 +54,6 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 >LOW<
 ///////////////////////////////////////////////////////////////
 
-n/a
+- Need to check the spawns and npcs status from all the 4.0 ++ NPCS.
 
 ///////////////////////////////////////////////////////////////
