@@ -1552,7 +1552,7 @@
         </spawn>
         <!-- Vidar -->
 		<spawn npc_id="204052" respawn_time="295">
-			<spot x="1275.37" y="1168.61" z="215.215" h="30"/>
+			<spot x="1275.6481" y="1168.32" z="215.21492" h="86"/>
 		</spawn>
         <!-- Vidarini -->
         <spawn npc_id="204084" respawn_time="295">
