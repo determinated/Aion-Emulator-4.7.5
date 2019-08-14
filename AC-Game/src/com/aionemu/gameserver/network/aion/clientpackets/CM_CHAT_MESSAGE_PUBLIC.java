@@ -45,6 +45,9 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.audit.AuditLogger;
 import com.aionemu.gameserver.utils.chathandlers.ChatProcessor;
 import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
+import com.aionemu.gameserver.world.World;
+import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.world.knownlist.Visitor;
 
 /**
  * Packet that reads normal chat messages.<br>
@@ -152,15 +155,34 @@ public class CM_CHAT_MESSAGE_PUBLIC extends AionClientPacket {
         }
     }
 
-    private void broadcastFromCommander(final Player player) {
-        final int senderRace = player.getRace().getRaceId();
-        PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, message, type), true, new ObjectFilter<Player>() {
-            @Override
-            public boolean acceptObject(Player object) {
-                return (senderRace == object.getRace().getRaceId() || object.isGM());
-            }
-        });
-    }
+    private void broadcastFromCommander(final Player _actor) {    
+		if (_actor.getRace() == Race.ELYOS) {            
+		World.getInstance().doOnAllPlayers(new Visitor<Player>() {                
+		@Override               
+		public void visit(final Player _actore) {               
+		if (_actore.getRace() == Race.ELYOS || _actore.isGM()) {  
+		if (_actore.getWorldId() == _actor.getWorldId() && _actore.getRace() == _actor.getRace()) { 
+		Player _sendere =  (Player) _actor;  
+		PacketSendUtility.broadcastPacket(_actore, new SM_MESSAGE(_sendere, message, type), true);            
+		}      
+		}                    
+		}            
+		});        
+		}    
+		if (_actor.getRace() == Race.ASMODIANS) {            
+		World.getInstance().doOnAllPlayers(new Visitor<Player>() {                
+		@Override                
+		public void visit(final Player _actora) {                
+		if (_actora.getRace() == Race.ASMODIANS || _actora.isGM()) {           
+		if (_actora.getWorldId() == _actor.getWorldId() && _actora.getRace() == _actor.getRace()) {      
+		Player _sendera = (Player) _actor;
+		PacketSendUtility.broadcastPacket(_actora, new SM_MESSAGE(_sendera, message, type), true);        
+		}            
+		}                
+		}            
+		});        
+		}    
+		}
 
     /**
      * Sends message to all players from admin
