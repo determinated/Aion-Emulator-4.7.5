@@ -1551,9 +1551,9 @@
             <spot h="63" x="1068.7272" y="1113.286" z="201.5208"/>
         </spawn>
         <!-- Vidar -->
-        <spawn npc_id="204052" respawn_time="295">
-            <spot h="30" x="1275.3704" y="1168.6113" z="215.21492"/>
-        </spawn>
+		<spawn npc_id="204052" respawn_time="295">
+			<spot x="1275.37" y="1168.61" z="215.215" h="30"/>
+		</spawn>
         <!-- Vidarini -->
         <spawn npc_id="204084" respawn_time="295">
             <spot h="30" x="1476.0576" y="1413.911" z="177.5331"/>
