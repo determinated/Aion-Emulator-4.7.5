@@ -62,6 +62,7 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 
 - Arcade Token system need to be check.
 
+- Kisks are not working properly.
 ///////////////////////////////////////////////////////////////
 
 --------------------------------------------------------------------------------------------------
