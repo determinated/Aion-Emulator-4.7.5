@@ -24,7 +24,6 @@ THANKS FOR YOUR CAREFULLY READING!
 - Need to check why Assasin class are setting runes at level 1 (Must be checked at core side)
 - Need to check the instances and why they dont have a cooldown count. (Cooldowns aren't working)
 - Need to check the Glory Points everyday reduce. The GP discount aren't working.
-- Need to check trade npcs. Npc example: 207029  / 804503 (the npc give you the new item and you keep the old one)
 - Need to check why the client crashs when you extract/tunning one item in attack mode or sitting mode.
 - Need to check the server start. Some troubles with the memory. Just can be seing with more players.
 

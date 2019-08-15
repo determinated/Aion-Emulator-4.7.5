@@ -15,6 +15,17 @@
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  *
+ *
+ * Credits goes to all Open Source Core Developer Groups listed below
+ * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
+ * Everybody knows that this Emulator Core was developed by Aion Lightning 
+ * @-Aion-Unique-
+ * @-Aion-Lightning
+ * @Aion-Engine
+ * @Aion-Extreme
+ * @Aion-NextGen
+ * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.model.templates.item;
 
@@ -22,7 +33,6 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -30,30 +40,15 @@ import javax.xml.bind.annotation.XmlType;
  * @author MrPoke
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TradeinList", propOrder = { "tradeinItem" })
+@XmlType(name = "TradeinList", propOrder = {
+        "tradeinItem"
+})
 public class TradeinList {
 
-	@XmlAttribute
-	protected int ap;
-	@XmlAttribute
-	protected int price;
+    @XmlElement(name = "tradein_item")
+    protected List<TradeinItem> tradeinItem;
 
-	@XmlElement(name = "tradein_item")
-	protected List<TradeinItem> tradeinItem;
-
-	public List<TradeinItem> getTradeinItem() {
-		return this.tradeinItem;
-	}
-
-	public TradeinItem getFirstTradeInItem() {
-		return this.tradeinItem.get(0);
-	}
-
-	public int getAp() {
-		return ap;
-	}
-
-	public int getPrice() {
-		return price;
-	}
+    public List<TradeinItem> getTradeinItem() {
+        return this.tradeinItem;
+    }
 }
