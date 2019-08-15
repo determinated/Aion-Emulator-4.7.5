@@ -137,6 +137,22 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
     public static SM_SYSTEM_MESSAGE STR_SKILL_SUMMON_STAY_MODE(String value0) {
         return new SM_SYSTEM_MESSAGE(1200007, value0);
     }
+    
+    /**
+	 * Remove Soulbind
+	 */
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_CANNOT = new SM_SYSTEM_MESSAGE(1403324);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_WRONG_COMPOSITION = new SM_SYSTEM_MESSAGE(1403325);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_WRONG_EQUIPED = new SM_SYSTEM_MESSAGE(1403326);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_WRONG_SEAL = new SM_SYSTEM_MESSAGE(1403327);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_WRONG_NOT_SOULBIND = new SM_SYSTEM_MESSAGE(1403328);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_INVALID_STANCE = new SM_SYSTEM_MESSAGE(1403329);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_NO_TARGET_ITEM = new SM_SYSTEM_MESSAGE(1403330);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_NEED_IDENTIFY = new SM_SYSTEM_MESSAGE(1403331);
+
+	public static final SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_SUCCEED(final int nameId) {
+		return new SM_SYSTEM_MESSAGE(1403332, new Object[] { new DescriptionId(nameId) });
+	}
 
     /**
      * %0 starts to attack the enemy.
@@ -4706,6 +4722,13 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
     public static SM_SYSTEM_MESSAGE STR_SKILL_SUCC_Spin_A_TO_B(String skilltarget, String skillcaster, String skillname) {
         return new SM_SYSTEM_MESSAGE(1200897, skilltarget, skillcaster, skillname);
     }
+    
+    /**
+	 * Unbinding Item 5.0
+	 */
+	public static SM_SYSTEM_MESSAGE STR_MSG_REMOVE_SOULBIND_SUCCEED(DescriptionId descriptionId) {
+		return new SM_SYSTEM_MESSAGE(1403332, descriptionId);
+	}
 
     /**
      * [%SkillTarget] was knocked back from shock because [%SkillCaster] used
