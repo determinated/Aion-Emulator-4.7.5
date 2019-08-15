@@ -109,6 +109,13 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
     public static SM_SYSTEM_MESSAGE STR_MSG_COMBAT_MY_SUMMONED_ENEMY_CRITICAL(String value0, int num2, String value1) {
         return new SM_SYSTEM_MESSAGE(1200005, value0, num2, value1);
     }
+    
+    /**
+    * anoha
+    */    
+   public static final SM_SYSTEM_MESSAGE STR_MSG_Anoha_Spawn = new SM_SYSTEM_MESSAGE(1402503);
+   public static final SM_SYSTEM_MESSAGE STR_MSG_Anoha_Die = new SM_SYSTEM_MESSAGE(1402504);    
+   public static final SM_SYSTEM_MESSAGE STR_MSG_Anoha_DeSpawn = new SM_SYSTEM_MESSAGE(1402505);
 
     /**
      * %0 has been dismissed.

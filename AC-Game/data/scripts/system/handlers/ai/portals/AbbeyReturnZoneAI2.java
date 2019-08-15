@@ -55,9 +55,9 @@ public class AbbeyReturnZoneAI2 extends NpcAI2 {
 	
 	public static void TeleportAbbey(Player player) {
 		if (player.getRace() == Race.ELYOS) {
-			TeleportService2.teleportTo(player, 130090000, 247.07394f, 224.17471f, 129.3827f, (byte)30, TeleportAnimation.BEAM_AIMATION);
+			TeleportService2.teleportTo(player, 130090000, 247.07394f, 224.17471f, 129.3827f, (byte)30, TeleportAnimation.BEAM_ANIMATION);
 		} else {
-			TeleportService2.teleportTo(player, 140010000, 285.88828f, 266.15005f, 96.48745f, (byte)60, TeleportAnimation.BEAM_AIMATION);
+			TeleportService2.teleportTo(player, 140010000, 285.88828f, 266.15005f, 96.48745f, (byte)60, TeleportAnimation.BEAM_ANIMATION);
 		}
 	}
 }
