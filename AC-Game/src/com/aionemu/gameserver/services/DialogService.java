@@ -124,10 +124,6 @@ public class DialogService {
                             * tradeModifier / 100));
                     break;
                 }
-                case SELL: {
-                    PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, PricesService.getVendorSellModifier(player.getRace())));
-                    break;
-                }
                 case OPEN_STIGMA_WINDOW: { // stigma
                     PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 1));
                     break;
@@ -445,11 +441,12 @@ public class DialogService {
                     PacketSendUtility.sendPacket(player, new SM_TRADE_IN_LIST(npc, tradeListTemplate, 100));
                     break;
                 }
-                case TRADE_SELL_LIST: {
-                    TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getPurchaseTemplate(npc.getNpcId());
-                    PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, tradeListTemplate, 100));
-                    break;
-                }
+                case SELL:
+				case TRADE_SELL_LIST: {
+					TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getPurchaseTemplate(npc.getNpcId());
+					PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, tradeListTemplate, 100));
+					break;
+				}
                 case GIVEUP_CRAFT_EXPERT: { // relinquish Expert Status
                     RelinquishCraftStatus.relinquishExpertStatus(player, npc);
                     break;

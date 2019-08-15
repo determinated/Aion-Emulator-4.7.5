@@ -1124,16 +1124,9 @@ public class SiegeService {
                 return 6011; // Silona Fortress
             case 101:
                 return 6021; // Pradeth Fortress
-            case 102:
-				return 7011; // Anoha Fortress
-			case 103:
-				return 10111; // Belus Fortress
-			case 104:
-				return 10211; // Aspida Fortress
-			case 105:
-				return 10311; // Atanaos Fortress
-			case 106:
-				return 10411; // Disillon Fortress    
+            case 322:
+			case 323:
+				return 7011; //Kaldor
         }
         return 0;
     }
@@ -1156,65 +1149,11 @@ public class SiegeService {
     }
 
     public void fortressBuffApply(Player player) {
-		if (player.isInSiegeWorld()) {
-			SiegeLocation location5011 = getSiegeLocation(5011);
+        if (player.getWorldId() == 600050000 || player.getWorldId() == 600060000) {
+            SiegeLocation location5011 = getSiegeLocation(5011);
             SiegeLocation location6011 = getSiegeLocation(6011);
             SiegeLocation location6021 = getSiegeLocation(6021);
-			SiegeLocation location7011 = getSiegeLocation(7011);
-			SiegeLocation location10111 = getSiegeLocation(10111);
-			SiegeLocation location10211 = getSiegeLocation(10211);
-			SiegeLocation location10311 = getSiegeLocation(10311);
-			SiegeLocation location10411 = getSiegeLocation(10411);
-			if (player.getWorldId() == 400020000) {
-				if (location10111.getRace() == SiegeRace.getByRace(player.getRace())) {
-					// Gab01's Commendation
-					SkillEngine.getInstance().applyEffectDirectly(12160, player, player, 0);
-				}
-				else if (location10111.getRace() != SiegeRace.getByRace(player.getRace()) && location10111.getRace() != SiegeRace.BALAUR) {
-					// Gab01's Encouragement
-					SkillEngine.getInstance().applyEffectDirectly(12161, player, player, 0);
-				}
-			}
-			else if (player.getWorldId() == 400040000) {
-				if (location10211.getRace() == SiegeRace.getByRace(player.getRace())) {
-					// Gab02's Commendation
-					SkillEngine.getInstance().applyEffectDirectly(12162, player, player, 0);
-				}
-				else if (location10211.getRace() != SiegeRace.getByRace(player.getRace()) && location10211.getRace() != SiegeRace.BALAUR) {
-					// Gab02's Encouragement
-					SkillEngine.getInstance().applyEffectDirectly(12163, player, player, 0);
-				}
-			}
-			else if (player.getWorldId() == 400050000) {
-				if (location10311.getRace() == SiegeRace.getByRace(player.getRace())) {
-					// Gab03's Commendation
-					SkillEngine.getInstance().applyEffectDirectly(12164, player, player, 0);
-				}
-				else if (location10311.getRace() != SiegeRace.getByRace(player.getRace()) && location10311.getRace() != SiegeRace.BALAUR) {
-					// Gab03's Encouragement
-					SkillEngine.getInstance().applyEffectDirectly(12165, player, player, 0);
-				}
-			}
-			else if (player.getWorldId() == 400060000) {
-				if (location10411.getRace() == SiegeRace.getByRace(player.getRace())) {
-					// Gab04's Commendation
-					SkillEngine.getInstance().applyEffectDirectly(12166, player, player, 0);
-				}
-				else if (location10411.getRace() != SiegeRace.getByRace(player.getRace()) && location10411.getRace() != SiegeRace.BALAUR) {
-					// Gab04's Encouragement
-					SkillEngine.getInstance().applyEffectDirectly(12167, player, player, 0);
-				}
-			}
-			else if (player.getWorldId() == 600090000) {
-				if (location7011.getRace() == SiegeRace.getByRace(player.getRace())) {
-					// Kaldor's Commendation
-					SkillEngine.getInstance().applyEffectDirectly(12168, player, player, 0);
-				}
-				else if (location7011.getRace() != SiegeRace.getByRace(player.getRace()) && location7011.getRace() != SiegeRace.BALAUR) {
-					// Kaldor's Encouragement
-					SkillEngine.getInstance().applyEffectDirectly(12169, player, player, 0);
-				}
-			}  else if(player.getWorldId() == 600050000) {
+            if (player.getWorldId() == 600050000) {
                 if (location5011.getRace() == SiegeRace.getByRace(player.getRace())) {
                     //Sillus' Commendation
                     SkillEngine.getInstance().applyEffectDirectly(12135, player, player, 0);
@@ -1237,72 +1176,39 @@ public class SiegeService {
                 } else if (location6021.getRace() != SiegeRace.getByRace(player.getRace()) && location6021.getRace() != SiegeRace.BALAUR) {
                     //Pradeth's Encouragement
                     SkillEngine.getInstance().applyEffectDirectly(12140, player, player, 0);
-                }	
-				
-			}
-		}
-	}
+                }
+            }
+        }
+    }
 
-	public void fortressBuffRemove(Player player) {
-		if (player.getEffectController().hasAbnormalEffect(12161)) {
-			player.getEffectController().removeEffect(12161);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12162)) {
-			player.getEffectController().removeEffect(12163);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12163)) {
-			player.getEffectController().removeEffect(12163);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12164)) {
-			player.getEffectController().removeEffect(12164);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12165)) {
-			player.getEffectController().removeEffect(12165);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12166)) {
-			player.getEffectController().removeEffect(12166);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12167)) {
-			player.getEffectController().removeEffect(12167);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12168)) {
-			player.getEffectController().removeEffect(12168);
-		}
-		else if (player.getEffectController().hasAbnormalEffect(12169)) {
-			player.getEffectController().removeEffect(12169);
-		}		
-		else if (player.getEffectController().hasAbnormalEffect(12135)) {
+    public void fortressBuffRemove(Player player) {
+        if (player.getEffectController().hasAbnormalEffect(12135)) {
             player.getEffectController().removeEffect(12135);
-		}   
-        else if (player.getEffectController().hasAbnormalEffect(12136)) {
+        } else if (player.getEffectController().hasAbnormalEffect(12136)) {
             player.getEffectController().removeEffect(12136);
-        }   
-        else if (player.getEffectController().hasAbnormalEffect(12137)) {
+        } else if (player.getEffectController().hasAbnormalEffect(12137)) {
             player.getEffectController().removeEffect(12137);
             player.getEffectController().removeEffect(12138);
             player.getEffectController().removeEffect(12139);
             player.getEffectController().removeEffect(12140);
-        }    
-        else if (player.getEffectController().hasAbnormalEffect(12138)) {
+        } else if (player.getEffectController().hasAbnormalEffect(12138)) {
             player.getEffectController().removeEffect(12137);
             player.getEffectController().removeEffect(12138);
             player.getEffectController().removeEffect(12139);
             player.getEffectController().removeEffect(12140);
-        }    
-        else if (player.getEffectController().hasAbnormalEffect(12139)) {
+        } else if (player.getEffectController().hasAbnormalEffect(12139)) {
             player.getEffectController().removeEffect(12137);
             player.getEffectController().removeEffect(12138);
             player.getEffectController().removeEffect(12139);
             player.getEffectController().removeEffect(12140);
-        }    
-        else if (player.getEffectController().hasAbnormalEffect(12140)) {
+        } else if (player.getEffectController().hasAbnormalEffect(12140)) {
             player.getEffectController().removeEffect(12137);
             player.getEffectController().removeEffect(12138);
             player.getEffectController().removeEffect(12139);
             player.getEffectController().removeEffect(12140);
         }
-	}
-
+    }    
+    
     public void onPlayerLogin(final Player player) {
         // not on login
         //PacketSendUtility.sendPacket(player, new SM_ABYSS_ARTIFACT_INFO(getSiegeLocations().values()));

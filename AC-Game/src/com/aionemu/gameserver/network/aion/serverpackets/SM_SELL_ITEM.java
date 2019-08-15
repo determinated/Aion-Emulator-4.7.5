@@ -1,83 +1,93 @@
-/**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+/*
+ * Copyright (c) 2015, TypeZero Engine (game.developpers.com)
+ * All rights reserved.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  *
+ * Neither the name of TypeZero Engine nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
  *
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
  */
+
 package com.aionemu.gameserver.network.aion.serverpackets;
 
+import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.templates.tradelist.TradeListTemplate;
-import com.aionemu.gameserver.model.templates.tradelist.TradeNpcType;
-import com.aionemu.gameserver.network.PacketLoggerService;
+import com.aionemu.gameserver.model.templates.tradelist.TradeListTemplate.TradeTab;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
+import com.aionemu.gameserver.services.TradeService;
+import com.aionemu.gameserver.services.trade.PricesService;
+import com.aionemu.gameserver.world.World;
 
 /**
  * @author orz, Sarynth, modified by Artur
  */
 public class SM_SELL_ITEM extends AionServerPacket {
 
-    private int targetObjectId;
-    private TradeListTemplate plist;
-    private int sellPercentage;
-    private byte action = 0x01;
+	private int targetObjectId;
+	private TradeListTemplate plist;
+	private int sellPercentage;
 
-    public SM_SELL_ITEM(int targetObjectId, int sellPercentage) {
-        this.sellPercentage = sellPercentage;
-        this.targetObjectId = targetObjectId;
-    }
+	public SM_SELL_ITEM(int targetObjectId, TradeListTemplate plist, int sellPercentage) {
 
-    public SM_SELL_ITEM(int targetObjectId, TradeListTemplate plist, int sellPercentage) {
+		this.targetObjectId = targetObjectId;
+		this.plist = plist;
+		this.sellPercentage = sellPercentage;
 
-        this.targetObjectId = targetObjectId;
-        this.plist = plist;
-        this.sellPercentage = sellPercentage;
-        if (plist.getTradeNpcType() == TradeNpcType.ABYSS) {
-            this.action = 0x02;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void writeImpl(AionConnection con) {
+	if ((plist != null) && (plist.getNpcId() != 0) && (plist.getCount() != 0)) {
+		writeD(targetObjectId);
+		writeC(plist.getTradeNpcType().index());
+        int modifier = 0;
+        int taxmodifer = 0;
+        if(con.getActivePlayer().getTarget() instanceof Npc)
+            modifier = TradeService.getPriceModifier((Npc) con.getActivePlayer().getTarget());
+            taxmodifer = PricesService.getTaxModiferForService(con.getActivePlayer().getRace());
+        if(modifier != 0){
+            sellPercentage /= modifier;
         }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected void writeImpl(AionConnection con) {
-    	PacketLoggerService.getInstance().logPacketSM(this.getPacketName());
-        if ((this.plist != null) && (this.plist.getNpcId() != 0) && (this.plist.getCount() != 0)) {
-            writeD(this.targetObjectId);
-            writeC(this.plist.getTradeNpcType().index());
-            writeD(this.sellPercentage);
-            writeH(256);
-            writeH(this.plist.getCount());
-            for (TradeListTemplate.TradeTab tradeTabl : this.plist.getTradeTablist())
-                writeD(tradeTabl.getId());
-        } else {
-            writeD(this.targetObjectId);
-            writeD(5121);
-            writeD(65792);
-            writeC(0);
-        }
-    }
+        writeD(sellPercentage + (taxmodifer > 0 ? taxmodifer : 0));//Buy Price * (sellPercentage / 100) = Display price.
+		writeH(256);
+		writeH(plist.getCount());
+		for (TradeTab tradeTabl : plist.getTradeTablist()) {
+			writeD(tradeTabl.getId());
+		}
+	}
+	else
+        {
+        int taxmodifer = PricesService.getTaxModiferForService(con.getActivePlayer().getRace());
+		writeD(targetObjectId);
+		writeC(1);
+		writeD(sellPercentage + taxmodifer > 0 ? sellPercentage + taxmodifer : 0); // Buy Price * (sellPercentage / 100) = Display price.
+		writeH(256);
+		writeH(0);
+		}
+	}
 }

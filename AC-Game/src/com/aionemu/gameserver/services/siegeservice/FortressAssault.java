@@ -158,18 +158,14 @@ public class FortressAssault extends Assault<FortressSiege> {
         }
 
         siegeLocation.doOnAllPlayers(new Visitor<Player>() {
+            @Override
+            public void visit(Player player) {
+                PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_ABYSS_CARRIER_DROP_DRAGON);
+            }
+        });
 
-			@Override
-			public void visit(Player player) {
-				// The Dredgion has disgorged a horde of Balaur troopers
-				PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_ABYSS_CARRIER_DROP_DRAGON, 0);
-				// The Balaur Teleport Raiders appeared
-				PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_ABYSS_WARP_DRAGON, 120000);
-			}
-		});
-
-		idList.clear();
-	}
+        idList.clear();
+    }
 
     private void spawnRegularBalaurs() {
         spawnLocations = new ArrayList<float[]>();
@@ -197,50 +193,32 @@ public class FortressAssault extends Assault<FortressSiege> {
 
     private int getSpawnIdByFortressId() {
         switch (locationId) {
-        	case 5011:
-        		return 10;
-        	case 6011:
-        		return 10;
-        	case 6021:
-        		return 10;
-        	case 2011:
-                return 10;
+            case 2011:
+                return 5;
             case 2021:
-                return 10;
+                return 6;
             case 3021:
                 return 10;
             case 3011:
-                return 10;
+                return 11;
             case 1141:
-                return 10;
+                return 12;
             case 1221:
-                return 10;
+                return 13;
             case 1131:
-                return 10;
+                return 15;
             case 1132:
-                return 10;
+                return 14;
             case 1241:
-                return 10;
+                return 16;
             case 1231:
-                return 10;
+                return 17;
             case 1211:
-                return 10;
+                return 18;
             case 1251:
-                return 10;
+                return 19;
             case 1011:
-                return 10;
-             // KALDOR
-            case 7011: // Wealhtheow's Keep
-            	return 10;
-            // PANESTERRA
-            case 10111: // Arcadian Fortress
-             	return 10;
-            case 10211: // Umbral Fortress
-             	return 10;
-            case 10311: // Eternum Fortress
-             	return 10;
-            case 10411: // Skyclash Fortress
-             	return 10;                
+                return 20;
             default:
                 return 1;
         }
@@ -432,27 +410,8 @@ public class FortressAssault extends Assault<FortressSiege> {
                 Spawns.add(272304);
                 Spawns.add(272305);
                 return Spawns;
-            case 7011: // Wealhtheow's Keep
-				Spawns.add(252000);
-				Spawns.add(252010);
-				Spawns.add(252020);
-				Spawns.add(252025);
-				Spawns.add(252030);
-				Spawns.add(252035);
-				return Spawns;
-			case 10111: // Arcadian Fortress
-			case 10211: // Umbral Fortress
-			case 10311: // Eternum Fortress
-			case 10411: // Skyclash Fortress
-				Spawns.add(880813);
-				Spawns.add(880814);
-				Spawns.add(880817);
-				Spawns.add(880818);
-				Spawns.add(880819);
-				Spawns.add(880820);
-				return Spawns;
-			default:
-				return Spawns;
+            default:
+                return Spawns;
         }
     }
 

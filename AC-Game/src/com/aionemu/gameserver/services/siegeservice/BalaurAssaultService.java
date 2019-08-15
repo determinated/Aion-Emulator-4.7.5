@@ -56,7 +56,6 @@ import com.aionemu.gameserver.services.SiegeService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.idfactory.IDFactory;
 import com.aionemu.gameserver.world.World;
-import com.aionemu.gameserver.world.knownlist.Visitor;
 
 /**
  * @author synchro2
@@ -75,36 +74,22 @@ public class BalaurAssaultService {
     }
 
     public void onSiegeStart(final Siege<?> siege) {
-		if (siege instanceof FortressSiege) {
-			if (!calculateFortressAssault(((FortressSiege) siege).getSiegeLocation())) {
-				return;
-			}
-			World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-
-				@Override
-				public void visit(Player player) {
-					// The Balaur have destroyed the Castle Gate
-					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_DOOR_BROKEN, 600000);
-					// The Balaur have destroyed the Gate Guardian Stone
-					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_REPAIR_BROKEN, 1500000);
-					// The Balaur have destroyed the Aetheric Field Activation Stone
-					PacketSendUtility.playerSendPacketTime(player, SM_SYSTEM_MESSAGE.STR_FIELDABYSS_DRAGON_SHIELD_BROKEN, 2100000);
-				}
-			});
-		}
-		else if (siege instanceof ArtifactSiege) {
-			if (!calculateArtifactAssault(((ArtifactSiege) siege).getSiegeLocation())) {
-				return;
-			}
-		}
-		else {
-			return;
-		}
-		newAssault(siege, Rnd.get(1, 600));
-		if (LoggingConfig.LOG_SIEGE) {
-			log.info("[SIEGE] Balaur Assault scheduled on Siege ID: " + siege.getSiegeLocationId() + "!");
-		}
-	}
+        if (siege instanceof FortressSiege) {
+            if (!calculateFortressAssault(((FortressSiege) siege).getSiegeLocation())) {
+                return;
+            }
+        } else if (siege instanceof ArtifactSiege) {
+            if (!calculateArtifactAssault(((ArtifactSiege) siege).getSiegeLocation())) {
+                return;
+            }
+        } else {
+            return;
+        }
+        newAssault(siege, Rnd.get(1, 600));
+        if (LoggingConfig.LOG_SIEGE) {
+            log.info("[SIEGE] Balaur Assault scheduled on Siege ID: " + siege.getSiegeLocationId() + "!");
+        }
+    }
 
     public void onSiegeFinish(Siege<?> siege) {
         int locId = siege.getSiegeLocationId();

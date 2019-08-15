@@ -66,21 +66,6 @@ public class Influence {
     private float danaria_e = 0;
     private float danaria_a = 0;
     private float danaria_b = 0;
-    private float kaldor_e = 0;
-	private float kaldor_a = 0;
-	private float kaldor_b = 0;
-	private float belus_e = 0;
-	private float belus_a = 0;
-	private float belus_b = 0;
-	private float aspida_e = 0;
-	private float aspida_a = 0;
-	private float aspida_b = 0;
-	private float atanatos_e = 0;
-	private float atanatos_a = 0;
-	private float atanatos_b = 0;
-	private float disillon_e = 0;
-	private float disillon_a = 0;
-	private float disillon_b = 0;
     private float global_e = 0;
     private float global_a = 0;
     private float global_b = 0;
@@ -118,10 +103,6 @@ public class Influence {
         float a_abyss = 0;
         float b_abyss = 0;
         float t_abyss = 0;
-        float e_kaldor = 0;
-		float a_kaldor = 0;
-		float b_kaldor = 0;
-		float t_kaldor = 0;
 
         for (SiegeLocation sLoc : SiegeService.getInstance().getSiegeLocations().values()) {
             switch (sLoc.getWorldId()) {
@@ -171,23 +152,8 @@ public class Influence {
                             break;
                     }
                     break;
-                case 600200000:
-					if (sLoc instanceof FortressLocation) {
-						t_kaldor += sLoc.getInfluenceValue();
-						switch (sLoc.getRace()) {
-							case ELYOS:
-								e_kaldor += sLoc.getInfluenceValue();
-								break;
-							case ASMODIANS:
-								a_kaldor += sLoc.getInfluenceValue();
-								break;
-							case BALAUR:
-								b_kaldor += sLoc.getInfluenceValue();
-						}
-					}
-					break;
-			}
-		}
+            }
+        }
 
         inggison_e = e_inggison / t_inggison;
         inggison_a = a_inggison / t_inggison;
@@ -200,14 +166,10 @@ public class Influence {
         abyss_e = e_abyss / t_abyss;
         abyss_a = a_abyss / t_abyss;
         abyss_b = b_abyss / t_abyss;
-        
-        kaldor_e = (e_kaldor / t_kaldor);
-		kaldor_a = (a_kaldor / t_kaldor);
-		kaldor_b = (b_kaldor / t_kaldor);
 
-        global_e = (kaldor_e * inggison_e * balaurea + gelkmaros_e * balaurea + abyss_e * abyss) * 100f;
-        global_a = (kaldor_a * inggison_a * balaurea + gelkmaros_a * balaurea + abyss_a * abyss) * 100f;
-        global_b = (kaldor_b * inggison_b * balaurea + gelkmaros_b * balaurea + abyss_b * abyss) * 100f;
+        global_e = (inggison_e * balaurea + gelkmaros_e * balaurea + abyss_e * abyss) * 100f;
+        global_a = (inggison_a * balaurea + gelkmaros_a * balaurea + abyss_a * abyss) * 100f;
+        global_b = (inggison_b * balaurea + gelkmaros_b * balaurea + abyss_b * abyss) * 100f;
     }
 
     /**
@@ -309,111 +271,6 @@ public class Influence {
     public float getAbyssBalaursInfluence() {
         return this.abyss_b;
     }
-    
-    /**
-	 * @return elyos control
-	 */
-	public float getKaldorElyosInfluence() {
-		return this.kaldor_e;
-	}
-
-	/**
-	 * @return asmos control
-	 */
-	public float getKaldorAsmodiansInfluence() {
-		return this.kaldor_a;
-	}
-
-	/**
-	 * @return balaur control
-	 */
-	public float getKaldorBalaursInfluence() {
-		return this.kaldor_b;
-	}
-	
-	/**
-	 * @return elyos control
-	 */
-	public float getBelusElyosInfluence() {
-		return this.belus_e;
-	}
-
-	/**
-	 * @return asmos control
-	 */
-	public float getBelusAsmodiansInfluence() {
-		return this.belus_a;
-	}
-
-	/**
-	 * @return balaur control
-	 */
-	public float getBelusBalaursInfluence() {
-		return this.belus_b;
-	}
-
-	/**
-	 * @return elyos control
-	 */
-	public float getAspidaElyosInfluence() {
-		return this.aspida_e;
-	}
-
-	/**
-	 * @return asmos control
-	 */
-	public float getAspidaAsmodiansInfluence() {
-		return this.aspida_a;
-	}
-
-	/**
-	 * @return balaur control
-	 */
-	public float getAspidaBalaursInfluence() {
-		return this.aspida_b;
-	}
-
-	/**
-	 * @return elyos control
-	 */
-	public float getAtanatosElyosInfluence() {
-		return this.atanatos_e;
-	}
-
-	/**
-	 * @return asmos control
-	 */
-	public float getAtanatosAsmodiansInfluence() {
-		return this.atanatos_a;
-	}
-
-	/**
-	 * @return balaur control
-	 */
-	public float getAtanatosBalaursInfluence() {
-		return this.atanatos_b;
-	}
-
-	/**
-	 * @return elyos control
-	 */
-	public float getDisillonElyosInfluence() {
-		return this.disillon_e;
-	}
-
-	/**
-	 * @return asmos control
-	 */
-	public float getDisillonAsmodiansInfluence() {
-		return this.disillon_a;
-	}
-
-	/**
-	 * @return balaur control
-	 */
-	public float getDisillonBalaursInfluence() {
-		return this.disillon_b;
-	}
 
     /**
      * @return elyos control
