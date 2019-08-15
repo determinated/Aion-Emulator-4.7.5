@@ -486,43 +486,7 @@ public class TradeService {
 		if (itemTemplate.getMaxStackCount() < count) {
 			return false;
 		}
-		/*** Start Implementing Anti-Cheat System ***/
-		/*
-		 * It has two means: 1. ItemTemplates has not updated yet 2. Client Packet Hack
-		 */
-		if (!(itemTemplate.getTradeinList().getTradeinItem().size() == TradeinListCount)) {
-			AuditLogger.info(player, "Possible Hack. The Tradein list count(" + TradeinListCount + ") is difference of Server ItemTemplates.");
-			return false;
-		}
-
-		Item item1, item2, item3;
-		item1 = player.getInventory().getItemByObjId(TradeinItemObjectId1);
-		item2 = player.getInventory().getItemByObjId(TradeinItemObjectId2);
-		item3 = player.getInventory().getItemByObjId(TradeinItemObjectId3);
-
-		for (TradeinItem treadInList : itemTemplate.getTradeinList().getTradeinItem()) {
-			switch (TradeinListCount) {
-				case 1:
-					if (item1.getItemId() != treadInList.getId()) {
-						AuditLogger.info(player, "Packet Hack. The Tradein items which sent by client are not same as Server.");
-						return false;
-					}
-					break;
-				case 2:
-					if (item1.getItemId() != treadInList.getId() && item2.getItemId() != treadInList.getId()) {
-						AuditLogger.info(player, "Packet Hack. The Tradein items which sent by client are not same as Server.");
-						return false;
-					}
-					break;
-				case 3:
-					if (item1.getItemId() != treadInList.getId() && item2.getItemId() != treadInList.getId() && item3.getItemId() != treadInList.getId()) {
-						AuditLogger.info(player, "Packet Hack. The Tradein items which sent by client are not same as Server.");
-						return false;
-					}
-					break;
-			}
-		}
-		/*** End Implementing Anti-Cheat System ***/
+		
 		try { // here
 			for (TradeinItem treadInList : itemTemplate.getTradeinList().getTradeinItem()) {
 				if (player.getInventory().getItemCountByItemId(treadInList.getId()) < SafeMath.multSafe(treadInList.getCount(), count)) {
