@@ -10,30 +10,17 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
- *
- *
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.model.gameobjects.player;
-
-import javolution.util.FastMap;
 
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INSTANCE_INFO;
 import com.aionemu.gameserver.utils.PacketSendUtility;
+
+import javolution.util.FastMap;
 
 /**
  * @author ATracer
@@ -41,116 +28,152 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 public class PortalCooldownList {
 
 	private Player owner;
-    private FastMap<Integer, PortalCooldownItem> portalCooldowns;
+	private FastMap<Integer, PortalCooldownItem> portalCooldowns;
 
-    /**
-     * @param owner
-     */
-    PortalCooldownList(Player owner) {
-        this.owner = owner;
-    }
+	/**
+	 * @param owner
+	 */
+	PortalCooldownList(Player owner) {
+		this.owner = owner;
+	}
 
-    /**
-     * @param worldId * @return
-     */
-    public boolean isPortalUseDisabled(int worldId) {
-        if (portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
-            return false;
-        }
+	/**
+	 * @param worldId
+	 * @return
+	 */
+	public boolean isPortalUseDisabled(int worldId) {
+		if (portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
+			return false;
+		}
 
-        PortalCooldownItem coolDown = portalCooldowns.get(worldId);
-        if (coolDown == null) {
-            return false;
-        }
+		PortalCooldownItem coolDown = portalCooldowns.get(worldId);
+		if (coolDown == null) {
+			return false;
+		}
 
-        if(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId) == 0 || coolDown.getEntryCount() < DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId)) {
-            return false;
-        }
+		if (DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId) == 0 || coolDown.getEntryCount() < DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId)) {
+			return false;
+		}
 
-        if(coolDown.getCooldown() < System.currentTimeMillis()) {
-            portalCooldowns.remove(worldId);
-            return false;
-        }
+		if (coolDown.getCooldown() < System.currentTimeMillis()) {
+			portalCooldowns.remove(worldId);
+			return false;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    /**
-     * @param worldId
-     * @return
-     */
-    public long getPortalCooldown(int worldId) {
-        if (portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
-            return 0;
-        }
+	/**
+	 * @param worldId
+	 * @return
+	 */
+	public long getPortalCooldown(int worldId) {
+		if (portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
+			return 0;
+		}
 
-        return portalCooldowns.get(worldId).getCooldown();
-    }
+		return portalCooldowns.get(worldId).getCooldown();
+	}
 
-    public PortalCooldownItem getPortalCooldownItem(int worldId) {
-        if(portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
-            return null;
-        }
-        return portalCooldowns.get(worldId);
-    }
+	public long getEntryCount(int worldId) {
+		if (portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
+			return 0;
+		}
 
-    public FastMap<Integer, PortalCooldownItem> getPortalCoolDowns() {
-        return portalCooldowns;
-    }
+		return portalCooldowns.get(worldId).getEntryCount();
+	}
 
-    public void setPortalCoolDowns(FastMap<Integer, PortalCooldownItem> portalCoolDowns) {
-        this.portalCooldowns = portalCoolDowns;
-    }
+	public PortalCooldownItem getPortalCooldownItem(int worldId) {
+		if (portalCooldowns == null || !portalCooldowns.containsKey(worldId)) {
+			return null;
+		}
+		return portalCooldowns.get(worldId);
+	}
 
-    /**
-     * @param worldId
-     * @param time
-     */
-    public void addPortalCooldown(int worldId, int entryCount, long useDelay) {
-        if (portalCooldowns == null) {
-            portalCooldowns = new FastMap<Integer, PortalCooldownItem>();
-        }
-        portalCooldowns.put(worldId, new PortalCooldownItem(worldId, entryCount, useDelay));
+	public FastMap<Integer, PortalCooldownItem> getPortalCoolDowns() {
+		return portalCooldowns;
+	}
 
-        if (owner.isInTeam()) {
-            owner.getCurrentTeam().sendPacket(new SM_INSTANCE_INFO(owner, worldId));
-        } else {
-            PacketSendUtility.sendPacket(owner, new SM_INSTANCE_INFO(owner, worldId));
-        }
-    }
+	public void setPortalCoolDowns(FastMap<Integer, PortalCooldownItem> portalCoolDowns) {
+		this.portalCooldowns = portalCoolDowns;
+	}
 
-    /**
-     * @param worldId
-     */
-    public void removePortalCoolDown(int worldId) {
-        if (portalCooldowns != null) {
-            portalCooldowns.remove(worldId);
-        }
-    }
+	/**
+	 * @param worldId
+	 * @param useDelay
+	 */
+	public void addPortalCooldown(int worldId, int entryCount, long useDelay) {
+		if (portalCooldowns == null) {
+			portalCooldowns = new FastMap<Integer, PortalCooldownItem>();
+		}
+		portalCooldowns.put(worldId, new PortalCooldownItem(worldId, entryCount, useDelay));
 
-    public void addEntry(int worldId) {
-        if(portalCooldowns != null && portalCooldowns.containsKey(worldId)) {
-            portalCooldowns.get(worldId).setEntryCount(portalCooldowns.get(worldId).getEntryCount() +1);
-        }
+		if (owner.isInTeam()) {
+			owner.getCurrentTeam().sendPacket(new SM_INSTANCE_INFO(owner, worldId));
+		}
+		else {
+			PacketSendUtility.sendPacket(owner, new SM_INSTANCE_INFO(owner, worldId));
+		}
+	}
 
-        if (owner.isInTeam()) {
-            owner.getCurrentTeam().sendPacket(new SM_INSTANCE_INFO(owner, worldId));
-        } else {
-            PacketSendUtility.sendPacket(owner, new SM_INSTANCE_INFO(owner, worldId));
-        }
-    }
-    
-    /**
-     * @return
-     */
-    public boolean hasCooldowns() {
-        return portalCooldowns != null && portalCooldowns.size() > 0;
-    }
+	/**
+	 * @param worldId
+	 */
+	public void removePortalCoolDown(int worldId) {
+		if (portalCooldowns != null) {
+			portalCooldowns.remove(worldId);
+		}
 
-    /**
-     * @return
-     */
-    public int size() {
-        return portalCooldowns != null ? portalCooldowns.size() : 0;
-    }
+		if (owner.isInTeam()) {
+			owner.getCurrentTeam().sendPacket(new SM_INSTANCE_INFO(owner, worldId));
+		}
+		else {
+			PacketSendUtility.sendPacket(owner, new SM_INSTANCE_INFO(owner, worldId));
+		}
+	}
+
+	public void addEntry(int worldId) {
+		if (portalCooldowns != null && portalCooldowns.containsKey(worldId)) {
+			portalCooldowns.get(worldId).setEntryCount(portalCooldowns.get(worldId).getEntryCount() + 1);
+		}
+
+		if (owner.isInTeam()) {
+			owner.getCurrentTeam().sendPacket(new SM_INSTANCE_INFO(owner, worldId));
+		}
+		else {
+			PacketSendUtility.sendPacket(owner, new SM_INSTANCE_INFO(owner, worldId));
+		}
+	}
+
+	public void reduceEntry(int worldId) {
+		if (portalCooldowns != null && portalCooldowns.containsKey(worldId)) {
+			portalCooldowns.get(worldId).setEntryCount(portalCooldowns.get(worldId).getEntryCount() - 1);
+		}
+
+		if (portalCooldowns.get(worldId).getEntryCount() == 0) {
+			removePortalCoolDown(worldId);
+			return;
+		}
+
+		if (owner.isInTeam()) {
+			owner.getCurrentTeam().sendPacket(new SM_INSTANCE_INFO(owner, worldId));
+		}
+		else {
+			PacketSendUtility.sendPacket(owner, new SM_INSTANCE_INFO(owner, worldId));
+		}
+	}
+
+	/**
+	 * @return
+	 */
+	public boolean hasCooldowns() {
+		return portalCooldowns != null && portalCooldowns.size() > 0;
+	}
+
+	/**
+	 * @return
+	 */
+	public int size() {
+		return portalCooldowns != null ? portalCooldowns.size() : 0;
+	}
 }

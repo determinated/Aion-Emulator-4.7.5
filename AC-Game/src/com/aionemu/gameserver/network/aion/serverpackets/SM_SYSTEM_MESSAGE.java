@@ -81,6 +81,13 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
     }
 
     /**
+	 * The returned results have been applied to %0.
+	 */
+	public static SM_SYSTEM_MESSAGE STR_MSG_ITEM_REIDENTIFY_APPLY_YES(String value0) {
+		return new SM_SYSTEM_MESSAGE(1401910, value0);
+	}
+
+    /**
      * %0 inflicted %num2 damage on %1.
      */
     public static SM_SYSTEM_MESSAGE STR_MSG_COMBAT_MY_SUMMONED_ATTACK(String value0, int num2, String value1) {
