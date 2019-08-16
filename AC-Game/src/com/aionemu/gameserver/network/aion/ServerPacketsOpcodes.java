@@ -160,6 +160,7 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(SM_KISK_UPDATE.class, 0x90, idSet);
         addPacketOpcode(SM_PRIVATE_STORE_NAME.class, 0x91, idSet);
         addPacketOpcode(SM_BROKER_SERVICE.class, 0x92, idSet);
+        addPacketOpcode(SM_FLAG_INFO.class, 0x152, idSet); 
         addPacketOpcode(SM_MOTION.class, 0x94, idSet);
         addPacketOpcode(SM_TRADE_IN_LIST.class, 0x97, idSet);
         // addPacketOpcode(SM_BROKER_REGISTRATION_SERVICE.class, 0x93, idSet);

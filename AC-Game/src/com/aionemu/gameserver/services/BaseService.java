@@ -28,6 +28,7 @@ import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.base.BaseLocation;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_FLAG_INFO;
 import com.aionemu.gameserver.services.base.Base;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
@@ -132,6 +133,7 @@ public class BaseService {
 			}
 		}
 		if (flags != null) {
+			PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(flags));
 			player.getController().updateNearbyQuests();
 		}
 	}
@@ -148,6 +150,7 @@ public class BaseService {
 					}
 				}
 				if (flags != null) {
+					PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(flags));
 					player.getController().updateNearbyQuests();
 				}
 			}
