@@ -43,11 +43,17 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_INVENTORY_UPDATE_ITEM;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_TUNE_RESULT;																		
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
+import com.aionemu.commons.utils.Rnd;
+
+import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
+
 /**
  * @author Rolandas
+ * @rework yayaya
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TuningAction")
@@ -58,6 +64,10 @@ public class TuningAction extends AbstractItemAction {
 
     @Override
     public boolean canAct(Player player, Item parentItem, Item targetItem) {
+		
+
+        if (player.isInState(CreatureState.RESTING)) { return false; }		
+		
         if (target.equals(UseTarget.WEAPON) && !targetItem.getItemTemplate().isWeapon()) {
             return false;
         }
@@ -89,20 +99,22 @@ public class TuningAction extends AbstractItemAction {
             public void run() {
                 player.getObserveController().removeObserver(observer);
                 PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), parentObjectId, parentItemId, 0, 1, 1), true);
-                if (!player.getInventory().decreaseByObjectId(parentObjectId, 1)) {
+                if (!player.getInventory().decreaseByObjectId(parentObjectId, 1)) {	
                     return;
                 }
                 int rndCount = targetItem.getRandomCount();
-                if (rndCount >= targetItem.getItemTemplate().getRandomBonusCount() || targetItem.isEquipped()) {
-                    return;
-                }
+                if (rndCount >= targetItem.getItemTemplate().getRandomBonusCount() || targetItem.isEquipped()) {					
+					return;
+				}
                 targetItem.setRandomStats(null);
                 targetItem.setBonusNumber(0);
                 targetItem.setRandomCount(++rndCount);
-                targetItem.setOptionalSocket(-1);
+                targetItem.setOptionalSocket(Rnd.get(0, targetItem.getItemTemplate().getOptionSlotBonus()));
                 targetItem.setRndBonus();
                 targetItem.setPersistentState(PersistentState.UPDATE_REQUIRED);
-                PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
+                PacketSendUtility.sendPacket(player, new SM_TUNE_RESULT(player, targetItem.getObjectId(), parentItemId, targetItem.getItemId()));
+				PacketSendUtility.sendPacket(player, new SM_INVENTORY_UPDATE_ITEM(player, targetItem));
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1401639, new DescriptionId(parentNameId)));
             }
         }, 5000));
     }
