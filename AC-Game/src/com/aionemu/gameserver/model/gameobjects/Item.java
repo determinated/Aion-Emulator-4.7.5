@@ -536,6 +536,17 @@ public class Item extends AionObject implements IExpirable, StatOwner {
     public void setGodStone(GodStone godStone) {
         this.godStone = godStone;
     }
+    
+    /**
+	 * @return the echantLevel or authorizeLevel
+	 */
+	public int getEnchantOrAuthorizeLevel() {
+		if (this.getItemTemplate().getMaxAuthorize() > 0) {
+			return authorize;
+		} else {
+			return enchantLevel;
+		}
+	}
 
     /**
      * @return the echantLevel

@@ -595,6 +595,10 @@ public class ItemTemplate extends VisibleObjectTemplate {
     public boolean isAccessory() {
         return category == ItemCategory.EARRINGS || category == ItemCategory.RINGS || category == ItemCategory.NECKLACE || category == ItemCategory.PLUME || category == ItemCategory.HELMET || category == ItemCategory.BELT;
     }
+    
+    public int getMaxAuthorize() {
+		return max_authorize;
+	}
 
     public int getAuthorize() {
         return max_authorize;
