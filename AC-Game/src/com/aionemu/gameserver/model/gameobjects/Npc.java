@@ -10,24 +10,15 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
- *
- *
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.model.gameobjects;
+
+import java.util.Iterator;
+
+import org.apache.commons.lang.StringUtils;
 
 import com.aionemu.gameserver.ai2.AI2Engine;
 import com.aionemu.gameserver.ai2.AITemplate;
@@ -45,6 +36,8 @@ import com.aionemu.gameserver.model.skill.NpcSkillList;
 import com.aionemu.gameserver.model.stats.container.NpcGameStats;
 import com.aionemu.gameserver.model.stats.container.NpcLifeStats;
 import com.aionemu.gameserver.model.templates.item.ItemAttackType;
+import com.aionemu.gameserver.model.templates.npc.AbyssNpcType;
+import com.aionemu.gameserver.model.templates.npc.NpcRank;
 import com.aionemu.gameserver.model.templates.npc.NpcRating;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplateType;
@@ -64,383 +57,400 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldPosition;
 import com.aionemu.gameserver.world.WorldType;
 import com.google.common.base.Preconditions;
-import org.apache.commons.lang.StringUtils;
-
-import java.util.Iterator;
 
 /**
- * This class is a base class for all in-game NPCs, what includes: monsters and
- * npcs that player can talk to (aka Citizens)
+ * This class is a base class for all in-game NPCs, what includes: monsters and npcs that player can talk to (aka Citizens)
  *
  * @author Luno
  */
 public class Npc extends Creature {
 
-    private WalkerGroup walkerGroup;
-    private boolean isQuestBusy = false;
-    private NpcSkillList skillList;
-    private WalkerGroupShift walkerGroupShift;
-    private long lastShoutedSeconds;
-    private String masterName = StringUtils.EMPTY;
-    private int creatorId = 0;
-    private int townId;
-    private byte oldHeading = 0;
-    private ItemAttackType attacktype = ItemAttackType.PHYSICAL;
-    private int aRange = getObjectTemplate().getAggroRange();
+	private WalkerGroup walkerGroup;
+	private boolean isQuestBusy = false;
+	private NpcSkillList skillList;
+	private WalkerGroupShift walkerGroupShift;
+	private long lastShoutedSeconds;
+	private String masterName = StringUtils.EMPTY;
+	private int creatorId = 0;
+	private int townId;
+	private byte oldHeading = 0;
+	private ItemAttackType attacktype = ItemAttackType.PHYSICAL;
+	private int aRange = getObjectTemplate().getAggroRange();
 
-    public Npc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate) {
-        this(objId, controller, spawnTemplate, objectTemplate, objectTemplate.getLevel());
-    }
+	public Npc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate) {
+		this(objId, controller, spawnTemplate, objectTemplate, objectTemplate.getLevel());
+	}
 
-    public Npc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate, byte level) {
-        super(objId, controller, spawnTemplate, objectTemplate, new WorldPosition(spawnTemplate.getWorldId()));
-        Preconditions.checkNotNull(objectTemplate, "Npcs should be based on template");
-        controller.setOwner(this);
-        moveController = new NpcMoveController(this);
-        skillList = new NpcSkillList(this);
-        setupStatContainers(level);
+	public Npc(int objId, NpcController controller, SpawnTemplate spawnTemplate, NpcTemplate objectTemplate, byte level) {
+		super(objId, controller, spawnTemplate, objectTemplate, new WorldPosition(spawnTemplate.getWorldId()));
+		Preconditions.checkNotNull(objectTemplate, "Npcs should be based on template");
+		controller.setOwner(this);
+		moveController = new NpcMoveController(this);
+		skillList = new NpcSkillList(this);
+		setupStatContainers(level);
 
-        boolean aiOverride = false;
-        if (spawnTemplate.getModel() != null) {
-            if (spawnTemplate.getModel().getAi() != null) {
-                aiOverride = true;
-                AI2Engine.getInstance().setupAI(spawnTemplate.getModel().getAi(), this);
-            }
-        }
+		boolean aiOverride = false;
+		if (spawnTemplate.getModel() != null) {
+			if (spawnTemplate.getModel().getAi() != null) {
+				aiOverride = true;
+				AI2Engine.getInstance().setupAI(spawnTemplate.getModel().getAi(), this);
+			}
+		}
 
-        if (!aiOverride) {
-            AI2Engine.getInstance().setupAI(objectTemplate.getAi(), this);
-        }
+		if (!aiOverride) {
+			AI2Engine.getInstance().setupAI(objectTemplate.getAi(), this);
+		}
 
-        lastShoutedSeconds = System.currentTimeMillis() / 1000;
-    }
+		lastShoutedSeconds = System.currentTimeMillis() / 1000;
+	}
 
-    @Override
-    public NpcMoveController getMoveController() {
-        return (NpcMoveController) super.getMoveController();
-    }
+	@Override
+	public NpcMoveController getMoveController() {
+		return (NpcMoveController) super.getMoveController();
+	}
 
-    /**
-     * @param level
-     */
-    protected void setupStatContainers(byte level) {
-        setGameStats(new NpcGameStats(this));
-        setLifeStats(new NpcLifeStats(this));
-    }
+	/**
+	 * @param level
+	 */
+	protected void setupStatContainers(byte level) {
+		setGameStats(new NpcGameStats(this));
+		setLifeStats(new NpcLifeStats(this));
+	}
 
-    @Override
-    public NpcTemplate getObjectTemplate() {
-        return (NpcTemplate) objectTemplate;
-    }
+	@Override
+	public NpcTemplate getObjectTemplate() {
+		return (NpcTemplate) objectTemplate;
+	}
 
-    @Override
-    public String getName() {
-        return getObjectTemplate().getName();
-    }
+	@Override
+	public String getName() {
+		return getObjectTemplate().getName();
+	}
 
-    public int getNpcId() {
-        return getObjectTemplate().getTemplateId();
-    }
+	public int getNpcId() {
+		return getObjectTemplate().getTemplateId();
+	}
 
-    @Override
-    public byte getLevel() {
-        return getObjectTemplate().getLevel();
-    }
+	@Override
+	public byte getLevel() {
+		return getObjectTemplate().getLevel();
+	}
 
-    @Override
-    public NpcLifeStats getLifeStats() {
-        return (NpcLifeStats) super.getLifeStats();
-    }
+	@Override
+	public NpcLifeStats getLifeStats() {
+		return (NpcLifeStats) super.getLifeStats();
+	}
 
-    @Override
-    public NpcGameStats getGameStats() {
-        return (NpcGameStats) super.getGameStats();
-    }
+	@Override
+	public NpcGameStats getGameStats() {
+		return (NpcGameStats) super.getGameStats();
+	}
 
-    @Override
-    public NpcController getController() {
-        return (NpcController) super.getController();
-    }
+	@Override
+	public NpcController getController() {
+		return (NpcController) super.getController();
+	}
 
-    @Override
-    public ItemAttackType getAttackType() {
-        return ai2.modifyAttackType(attacktype);
-    }
+	@Override
+	public ItemAttackType getAttackType() {
+		return ai2.modifyAttackType(attacktype);
+	}
 
-    public NpcSkillList getSkillList() {
-        return this.skillList;
-    }
+	public NpcSkillList getSkillList() {
+		return this.skillList;
+	}
 
-    public boolean hasWalkRoutes() {
-        return getSpawn().getWalkerId() != null || (getSpawn().hasRandomWalk() && AIConfig.ACTIVE_NPC_MOVEMENT);
-    }
+	public boolean hasWalkRoutes() {
+		return getSpawn().getWalkerId() != null || (getSpawn().hasRandomWalk() && AIConfig.ACTIVE_NPC_MOVEMENT);
+	}
 
-    @Override
-    public TribeClass getTribe() {
-        TribeClass transformTribe = getTransformModel().getTribe();
-        if (transformTribe != null) {
-            return transformTribe;
-        }
-        return this.getObjectTemplate().getTribe();
-    }
+	@Override
+	public TribeClass getTribe() {
+		TribeClass transformTribe = getTransformModel().getTribe();
+		if (transformTribe != null) {
+			return transformTribe;
+		}
+		return this.getObjectTemplate().getTribe();
+	}
 
-    @Override
-    public TribeClass getBaseTribe() {
-        return DataManager.TRIBE_RELATIONS_DATA.getBaseTribe(getTribe());
-    }
+	@Override
+	public TribeClass getBaseTribe() {
+		return DataManager.TRIBE_RELATIONS_DATA.getBaseTribe(getTribe());
+	}
 
-    public int getAggroRange() {
-        return ai2.modifyARange(aRange);
-    }
+	public int getAggroRange() {
+		return ai2.modifyARange(aRange);
+	}
 
-    /**
-     * Check whether npc located near initial spawn location
-     *
-     * @return true or false
-     */
-    public boolean isAtSpawnLocation() {
-        return getDistanceToSpawnLocation() < 3;
-    }
+	public NpcRating getRating() {
+		return getObjectTemplate().getRating();
+	}
 
-    @Override
-    public boolean isEnemy(Creature creature) {
-        return creature.isEnemyFrom(this) || this.isEnemyFrom(creature);
-    }
+	public NpcRank getRank() {
+		return getObjectTemplate().getRank();
+	}
 
-    @Override
-    public boolean isEnemyFrom(Creature creature) {
-        return TribeRelationService.isAggressive(creature, this) || TribeRelationService.isHostile(creature, this);
-    }
+	public AbyssNpcType getAbyssNpcType() {
+		return getObjectTemplate().getAbyssNpcType();
+	}
 
-    @Override
-    public boolean isEnemyFrom(Npc npc) {
-        return TribeRelationService.isAggressive(this, npc) || TribeRelationService.isHostile(this, npc);
-    }
+	public int getHpGauge() {
+		return getObjectTemplate().getHpGauge();
+	}
 
-    @Override
-    public boolean isEnemyFrom(Player player) {
-        return player.isEnemyFrom(this);
-    }
+	/**
+	 * Check whether npc located near initial spawn location
+	 *
+	 * @return true or false
+	 */
+	public boolean isAtSpawnLocation() {
+		return getDistanceToSpawnLocation() < 3;
+	}
 
-    @Override
-    public int getType(Creature creature) {
-        int typeForPlayer = -1;
-        if (TribeRelationService.isInvulnerable(this, creature)) {
-        	typeForPlayer = CreatureType.INVULNERABLE.getId();
-        } else if (TribeRelationService.isNone(this, creature)) {
-            typeForPlayer = CreatureType.PEACE.getId();
-        } else if (TribeRelationService.isAggressive(this, creature)) {
-            typeForPlayer = CreatureType.AGGRESSIVE.getId();
-        } else if (TribeRelationService.isHostile(this, creature)) {
-            typeForPlayer = CreatureType.ATTACKABLE.getId();
-        } else if (TribeRelationService.isFriend(this, creature) || TribeRelationService.isNeutral(this, creature)) {
-            typeForPlayer = CreatureType.FRIEND.getId();
-        } else if (TribeRelationService.isSupport(this, creature)) {
-            typeForPlayer = CreatureType.SUPPORT.getId();
-        }
-        if (typeForPlayer == CreatureType.PEACE.getId() || typeForPlayer == CreatureType.SUPPORT.getId()) {
-            if (getObjectTemplate().isDialogNpc()) {
-                typeForPlayer = CreatureType.FRIEND.getId();
-            }
-        }
-        return typeForPlayer;
-    }
+	@Override
+	public boolean isEnemy(Creature creature) {
+		return creature.isEnemyFrom(this) || this.isEnemyFrom(creature);
+	}
 
-    /**
-     * @return distance to spawn location
-     */
-    public double getDistanceToSpawnLocation() {
-        return MathUtil.getDistance(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), getX(), getY(), getZ());
-    }
+	@Override
+	public boolean isEnemyFrom(Creature creature) {
+		return TribeRelationService.isAggressive(creature, this) || TribeRelationService.isHostile(creature, this);
+	}
 
-    @Override
-    public int getSeeState() {
-        int skillSeeState = super.getSeeState();
-        int congenitalSeeState = getObjectTemplate().getRating().getCongenitalSeeState().getId();
-        return Math.max(skillSeeState, congenitalSeeState);
-    }
+	@Override
+	public boolean isEnemyFrom(Npc npc) {
+		return TribeRelationService.isAggressive(this, npc) || TribeRelationService.isHostile(this, npc);
+	}
 
-    public boolean getIsQuestBusy() {
-        return isQuestBusy;
-    }
+	@Override
+	public boolean isEnemyFrom(Player player) {
+		return player.isEnemyFrom(this);
+	}
 
-    public void setIsQuestBusy(boolean busy) {
-        isQuestBusy = busy;
-    }
+	@Override
+	public int getType(Creature creature) {
+		int typeForPlayer = -1;
+		if (TribeRelationService.isInvulnerable(this, creature)) {
+			typeForPlayer = CreatureType.INVULNERABLE.getId();
+		}
+		else if (TribeRelationService.isNone(this, creature)) {
+			typeForPlayer = CreatureType.PEACE.getId();
+		}
+		else if (TribeRelationService.isAggressive(this, creature)) {
+			typeForPlayer = CreatureType.AGGRESSIVE.getId();
+		}
+		else if (TribeRelationService.isHostile(this, creature)) {
+			typeForPlayer = CreatureType.ATTACKABLE.getId();
+		}
+		else if (TribeRelationService.isFriend(this, creature) || TribeRelationService.isNeutral(this, creature)) {
+			typeForPlayer = CreatureType.FRIEND.getId();
+		}
+		else if (TribeRelationService.isSupport(this, creature)) {
+			typeForPlayer = CreatureType.SUPPORT.getId();
+		}
+		if (typeForPlayer == CreatureType.PEACE.getId() || typeForPlayer == CreatureType.SUPPORT.getId()) {
+			if (getObjectTemplate().isDialogNpc()) {
+				typeForPlayer = CreatureType.FRIEND.getId();
+			}
+		}
+		return typeForPlayer;
+	}
 
-    /**
-     * @return Name of the Master
-     */
-    public String getMasterName() {
-        return masterName;
-    }
+	/**
+	 * @return distance to spawn location
+	 */
+	public double getDistanceToSpawnLocation() {
+		return MathUtil.getDistance(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), getX(), getY(), getZ());
+	}
 
-    public void setMasterName(String masterName) {
-        this.masterName = masterName;
-    }
+	@Override
+	public int getSeeState() {
+		int skillSeeState = super.getSeeState();
+		int congenitalSeeState = getObjectTemplate().getRating().getCongenitalSeeState().getId();
+		return Math.max(skillSeeState, congenitalSeeState);
+	}
 
-    /**
-     * @return UniqueId of the VisibleObject which created this Npc (could be
-     * player or house)
-     */
-    public int getCreatorId() {
-        return creatorId;
-    }
+	public boolean getIsQuestBusy() {
+		return isQuestBusy;
+	}
 
-    public void setCreatorId(int creatorId) {
-        this.creatorId = creatorId;
-    }
+	public void setIsQuestBusy(boolean busy) {
+		isQuestBusy = busy;
+	}
 
-    public int getTownId() {
-        return townId;
-    }
+	/**
+	 * @return Name of the Master
+	 */
+	public String getMasterName() {
+		return masterName;
+	}
 
-    public void setTownId(int townId) {
-        this.townId = townId;
-    }
+	public void setMasterName(String masterName) {
+		this.masterName = masterName;
+	}
 
-    public VisibleObject getCreator() {
-        return null;
-    }
+	/**
+	 * @return UniqueId of the VisibleObject which created this Npc (could be player or house)
+	 */
+	public int getCreatorId() {
+		return creatorId;
+	}
 
-    @Override
-    public void setTarget(VisibleObject creature) {
-        if (getTarget() != creature) {
-            super.setTarget(creature);
-            super.clearAttackedCount();
-            getGameStats().renewLastChangeTargetTime();
-            if (!getLifeStats().isAlreadyDead()) {
-                PacketSendUtility.broadcastPacket(this, new SM_LOOKATOBJECT(this));
-            }
-        }
-    }
+	public void setCreatorId(int creatorId) {
+		this.creatorId = creatorId;
+	}
 
-    public void setWalkerGroup(WalkerGroup wg) {
-        this.walkerGroup = wg;
-    }
+	public int getTownId() {
+		return townId;
+	}
 
-    public WalkerGroup getWalkerGroup() {
-        return walkerGroup;
-    }
+	public void setTownId(int townId) {
+		this.townId = townId;
+	}
 
-    public void setWalkerGroupShift(WalkerGroupShift shift) {
-        this.walkerGroupShift = shift;
-    }
+	public VisibleObject getCreator() {
+		return null;
+	}
 
-    public WalkerGroupShift getWalkerGroupShift() {
-        return walkerGroupShift;
-    }
+	@Override
+	public void setTarget(VisibleObject creature) {
+		if (getTarget() != creature) {
+			super.setTarget(creature);
+			super.clearAttackedCount();
+			getGameStats().renewLastChangeTargetTime();
+			if (!getLifeStats().isAlreadyDead()) {
+				PacketSendUtility.broadcastPacket(this, new SM_LOOKATOBJECT(this));
+			}
+		}
+	}
 
-    @Override
-    public boolean isFlag() {
-        return getObjectTemplate().getNpcTemplateType().equals(NpcTemplateType.FLAG);
-    }
+	public void setWalkerGroup(WalkerGroup wg) {
+		this.walkerGroup = wg;
+	}
 
-    @Override
-    public boolean isRaidMonster() {
-        return getObjectTemplate().getNpcTemplateType().equals(NpcTemplateType.RAID_MONSTER);
-    }
+	public WalkerGroup getWalkerGroup() {
+		return walkerGroup;
+	}
 
-    public boolean isBoss() {
-        return getObjectTemplate().getRating() == NpcRating.HERO || getObjectTemplate().getRating() == NpcRating.LEGENDARY;
-    }
+	public void setWalkerGroupShift(WalkerGroupShift shift) {
+		this.walkerGroupShift = shift;
+	}
 
-    public boolean hasStatic() {
-        return getSpawn().getStaticId() != 0;
-    }
+	public WalkerGroupShift getWalkerGroupShift() {
+		return walkerGroupShift;
+	}
 
-    @Override
-    public Race getRace() {
-        return this.getObjectTemplate().getRace();
-    }
+	@Override
+	public boolean isFlag() {
+		return getObjectTemplate().getNpcTemplateType().equals(NpcTemplateType.FLAG);
+	}
 
-    public NpcUiType getUiType() {
-        return this.getObjectTemplate().getNpcUiType();
-    }
+	@Override
+	public boolean isRaidMonster() {
+		return getObjectTemplate().getNpcTemplateType().equals(NpcTemplateType.RAID_MONSTER);
+	}
 
-    public NpcDrop getNpcDrop() {
-        return getObjectTemplate().getNpcDrop();
-    }
+	public boolean isBoss() {
+		return getObjectTemplate().getRating() == NpcRating.HERO || getObjectTemplate().getRating() == NpcRating.LEGENDARY;
+	}
 
-    public void setNpcType(int newType) {
-        type = newType;
-    }
+	public boolean hasStatic() {
+		return getSpawn().getStaticId() != 0;
+	}
 
-    public boolean isRewardAP() {
-        if (this instanceof SiegeNpc) {
-            return true;
-        } else if (this.getWorldType() == WorldType.ABYSS) {
-            return true;
-        } else if (this.getAi2().ask(AIQuestion.SHOULD_REWARD_AP).isPositive()) {
-            return true;
-        } else if (this.getWorldType() == WorldType.BALAUREA) {
-            return getRace() == Race.DRAKAN || getRace() == Race.LIZARDMAN;
-        }
+	@Override
+	public Race getRace() {
+		return this.getObjectTemplate().getRace();
+	}
 
-        return false;
-    }
+	public NpcUiType getUiType() {
+		return this.getObjectTemplate().getNpcUiType();
+	}
 
-    public boolean mayShout(int delaySeconds) {
-        if (!DataManager.NPC_SHOUT_DATA.hasAnyShout(getPosition().getMapId(), getNpcId())) {
-            return false;
-        }
-        return (System.currentTimeMillis() - lastShoutedSeconds) / 1000 >= delaySeconds;
-    }
+	public NpcDrop getNpcDrop() {
+		return getObjectTemplate().getNpcDrop();
+	}
 
-    public void shout(final NpcShout shout, final Creature target, final Object param, int delaySeconds) {
-        if (shout.getWhen() != ShoutEventType.DIED && shout.getWhen() != ShoutEventType.BEFORE_DESPAWN
-                && getLifeStats().isAlreadyDead() || !mayShout(delaySeconds)) {
-            return;
-        }
+	public void setNpcType(int newType) {
+		type = newType;
+	}
 
-        if (shout.getPattern() != null
-                && !((AITemplate) getAi2()).onPatternShout(shout.getWhen(), shout.getPattern(), shout.getSkillNo())) {
-            return;
-        }
+	public boolean isRewardAP() {
+		if (this instanceof SiegeNpc) {
+			return true;
+		}
+		else if (this.getWorldType() == WorldType.ABYSS) {
+			return true;
+		}
+		else if (this.getAi2().ask(AIQuestion.SHOULD_REWARD_AP).isPositive()) {
+			return true;
+		}
+		else if (this.getWorldType() == WorldType.BALAUREA) {
+			return getRace() == Race.DRAKAN || getRace() == Race.LIZARDMAN;
+		}
 
-        final int shoutRange = getObjectTemplate().getMinimumShoutRange();
-        if (shout.getShoutType() == ShoutType.SAY && !(target instanceof Player) || target != null
-                && !MathUtil.isIn3dRange(target, this, shoutRange)) {
-            return;
-        }
+		return false;
+	}
 
-        final Npc thisNpc = this;
-        final SM_SYSTEM_MESSAGE message = new SM_SYSTEM_MESSAGE(true, shout.getStringId(), getObjectId(), 1, param);
-        lastShoutedSeconds = System.currentTimeMillis() / 1000;
+	public boolean mayShout(int delaySeconds) {
+		if (!DataManager.NPC_SHOUT_DATA.hasAnyShout(getPosition().getMapId(), getNpcId())) {
+			return false;
+		}
+		return (System.currentTimeMillis() - lastShoutedSeconds) / 1000 >= delaySeconds;
+	}
 
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-                if (thisNpc.getLifeStats().isAlreadyDead() && shout.getWhen() != ShoutEventType.DIED
-                        && shout.getWhen() != ShoutEventType.BEFORE_DESPAWN) {
-                    return;
-                }
+	public void shout(final NpcShout shout, final Creature target, final Object param, int delaySeconds) {
+		if (shout.getWhen() != ShoutEventType.DIED && shout.getWhen() != ShoutEventType.BEFORE_DESPAWN && getLifeStats().isAlreadyDead() || !mayShout(delaySeconds)) {
+			return;
+		}
 
-                // message for the specific player (when IDLE we are already broadcasting!!!)
-                if (shout.getShoutType() == ShoutType.SAY || shout.getWhen() == ShoutEventType.IDLE) {
-                    // [RR] Should we have lastShoutedSeconds separated from broadcasts (??)
-                    PacketSendUtility.sendPacket((Player) target, message);
-                } else {
-                    Iterator<Player> iter = thisNpc.getKnownList().getKnownPlayers().values().iterator();
-                    while (iter.hasNext()) {
-                        Player kObj = iter.next();
-                        if (kObj.getLifeStats().isAlreadyDead() || !kObj.isOnline()) {
-                            continue;
-                        }
-                        if (MathUtil.isIn3dRange(kObj, thisNpc, shoutRange)) {
-                            PacketSendUtility.sendPacket(kObj, message);
-                        }
-                    }
-                }
-            }
-        }, delaySeconds * 1000);
-    }
+		if (shout.getPattern() != null && !((AITemplate) getAi2()).onPatternShout(shout.getWhen(), shout.getPattern(), shout.getSkillNo())) {
+			return;
+		}
 
-    public byte getOldHeading() {
-        return oldHeading;
-    }
+		final int shoutRange = getObjectTemplate().getMinimumShoutRange();
+		if (shout.getShoutType() == ShoutType.SAY && !(target instanceof Player) || target != null && !MathUtil.isIn3dRange(target, this, shoutRange)) {
+			return;
+		}
 
-    public void setOldHeading(byte oldHeading) {
-        this.oldHeading = oldHeading;
-    }
+		final Npc thisNpc = this;
+		final SM_SYSTEM_MESSAGE message = new SM_SYSTEM_MESSAGE(true, shout.getStringId(), getObjectId(), 1, param);
+		lastShoutedSeconds = System.currentTimeMillis() / 1000;
+
+		ThreadPoolManager.getInstance().schedule(new Runnable() {
+
+			@Override
+			public void run() {
+				if (thisNpc.getLifeStats().isAlreadyDead() && shout.getWhen() != ShoutEventType.DIED && shout.getWhen() != ShoutEventType.BEFORE_DESPAWN) {
+					return;
+				}
+
+				// message for the specific player (when IDLE we are already broadcasting!!!)
+				if (shout.getShoutType() == ShoutType.SAY || shout.getWhen() == ShoutEventType.IDLE) {
+					// [RR] Should we have lastShoutedSeconds separated from broadcasts (??)
+					PacketSendUtility.sendPacket((Player) target, message);
+				}
+				else {
+					Iterator<Player> iter = thisNpc.getKnownList().getKnownPlayers().values().iterator();
+					while (iter.hasNext()) {
+						Player kObj = iter.next();
+						if (kObj.getLifeStats().isAlreadyDead() || !kObj.isOnline()) {
+							continue;
+						}
+						if (MathUtil.isIn3dRange(kObj, thisNpc, shoutRange)) {
+							PacketSendUtility.sendPacket(kObj, message);
+						}
+					}
+				}
+			}
+		}, delaySeconds * 1000);
+	}
+
+	public byte getOldHeading() {
+		return oldHeading;
+	}
+
+	public void setOldHeading(byte oldHeading) {
+		this.oldHeading = oldHeading;
+	}
 }
