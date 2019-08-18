@@ -63,10 +63,6 @@ public class BaseLocation {
         this.race = race;
     }
 
-    public int getNameId() {
-        return template.getNameId();
-    }
-
     public String getName() {
         return template.getName();
     }

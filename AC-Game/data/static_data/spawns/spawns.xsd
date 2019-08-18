@@ -116,6 +116,7 @@
         <xs:attribute name="y" type="xs:float"/>
         <xs:attribute name="z" type="xs:float"/>
         <xs:attribute name="h" type="HeadingType" use="optional" default="0"/>
+		<xs:attribute name="entity_id" type="xs:int" use="optional" default="0"/>
         <xs:attribute name="static_id" type="xs:int" use="optional" default="0"/>
         <xs:attribute name="random_walk" type="xs:int" use="optional" default="0"/>
         <xs:attribute name="walker_id" type="xs:string"/>

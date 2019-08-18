@@ -2,7 +2,7 @@
 <spawns>
 	<spawn_map map_id="400020000">
 		<!-- [BELANI FORT] -->
-		<base_spawn id="118">
+		<base_spawn id="11">
 			<simple_race race="ELYOS">
 				<!-- Elyos Flag -->
 				<spawn npc_id="802677">
@@ -21,7 +21,7 @@
 				    <spot x="572.8287" y="572.7892" z="1545.3778" h="14"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="277579" handler="CHIEF">
+				<spawn npc_id="277579" handler="BOSS">
 				    <spot x="164.18071" y="195.96909" z="1491.0844" h="4"/>
 				</spawn>
 				<spawn npc_id="277579" handler="ATTACKER">
@@ -90,7 +90,7 @@
 				    <spot x="572.8287" y="572.7892" z="1545.3778" h="14"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="277576" handler="CHIEF">
+				<spawn npc_id="277576" handler="BOSS">
 				    <spot x="164.18071" y="195.96909" z="1491.0844" h="4"/>
 				</spawn>
 				<spawn npc_id="277576" handler="ATTACKER">
@@ -159,7 +159,7 @@
 				    <spot x="572.8287" y="572.7892" z="1545.3778" h="14"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="277580" handler="CHIEF">
+				<spawn npc_id="277580" handler="BOSS">
 				    <spot x="164.18071" y="195.96909" z="1491.0844" h="4"/>
 				</spawn>
 				<spawn npc_id="277580" handler="ATTACKER">
@@ -192,7 +192,7 @@
 			</simple_race>
 		</base_spawn>
 		<!-- [BELFARTH FORT] -->
-		<base_spawn id="119">
+		<base_spawn id="12">
 			<simple_race race="ELYOS">
 				<!-- Elyos Flag Flag -->
 				<spawn npc_id="802699">
@@ -211,7 +211,7 @@
 				    <spot x="571.0" y="1476.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880135" handler="CHIEF">
+				<spawn npc_id="880135" handler="BOSS">
 				    <spot x="198.2275" y="1884.1561" z="1491.0851" h="95"/>
 				</spawn>
 				<spawn npc_id="880135" handler="ATTACKER">
@@ -278,7 +278,7 @@
 				    <spot x="571.0" y="1476.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880132" handler="CHIEF">
+				<spawn npc_id="880132" handler="BOSS">
 				    <spot x="198.2275" y="1884.1561" z="1491.0851" h="95"/>
 				</spawn>
 				<spawn npc_id="880132" handler="ATTACKER">
@@ -345,7 +345,7 @@
 				    <spot x="571.0" y="1476.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880136" handler="CHIEF">
+				<spawn npc_id="880136" handler="BOSS">
 				    <spot x="198.2275" y="1884.1561" z="1491.0851" h="95"/>
 				</spawn>
 				<spawn npc_id="880136" handler="ATTACKER">
@@ -376,7 +376,7 @@
 			</simple_race>
 		</base_spawn>
 		<!-- [BELING FORT] -->
-		<base_spawn id="120">
+		<base_spawn id="13">
 			<simple_race race="ELYOS">
 				<!-- Elyos Flag Flag -->
 				<spawn npc_id="802721">
@@ -395,7 +395,7 @@
 				    <spot x="1475.0" y="1475.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880155" handler="CHIEF">
+				<spawn npc_id="880155" handler="BOSS">
 				    <spot x="1889.7548" y="1847.154" z="1491.0796" h="64"/>
 				</spawn>
 				<spawn npc_id="880155" handler="ATTACKER">
@@ -440,7 +440,7 @@
 				    <spot x="1475.0" y="1475.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880152" handler="CHIEF">
+				<spawn npc_id="880152" handler="BOSS">
 				    <spot x="1889.7548" y="1847.154" z="1491.0796" h="64"/>
 				</spawn>
 				<spawn npc_id="880152" handler="ATTACKER">
@@ -485,7 +485,7 @@
 				    <spot x="1475.0" y="1475.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880156" handler="CHIEF">
+				<spawn npc_id="880156" handler="BOSS">
 				    <spot x="1889.7548" y="1847.154" z="1491.0796" h="64"/>
 				</spawn>
 				<spawn npc_id="880156" handler="ATTACKER">
@@ -494,7 +494,7 @@
 			</simple_race>
 		</base_spawn>
 		<!-- [BELSAL FORT] -->
-		<base_spawn id="121">
+		<base_spawn id="14">
 			<simple_race race="ELYOS">
 				<!-- Elyos Flag Flag -->
 				<spawn npc_id="802743">
@@ -513,7 +513,7 @@
 				    <spot x="1475.0" y="571.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880175" handler="CHIEF">
+				<spawn npc_id="880175" handler="BOSS">
 				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
 				</spawn>
 				<spawn npc_id="880175" handler="ATTACKER">
@@ -558,7 +558,7 @@
 				    <spot x="1475.0" y="571.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880172" handler="CHIEF">
+				<spawn npc_id="880172" handler="BOSS">
 				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
 				</spawn>
 				<spawn npc_id="880172" handler="ATTACKER">
@@ -603,11 +603,644 @@
 				    <spot x="1475.0" y="571.0" z="1545.3778" h="115"/>
 				</spawn>
 				<!-- Boss -->
-				<spawn npc_id="880176" handler="CHIEF">
+				<spawn npc_id="880176" handler="BOSS">
 				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
 				</spawn>
 				<spawn npc_id="880176" handler="ATTACKER">
 				    <spot x="1854.2219" y="159.1715" z="1491.0875" h="33"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [ARTIFACT PANESTERRA] -->
+		<!-- [MIRAGE DANCE 1] -->
+		<base_spawn id="1001">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="720.0" y="900.0" z="1536.6903" h="26"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231687" handler="BOSS">
+				    <spot x="723.4253" y="897.04083" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="720.4498" y="906.62646" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="727.0267" y="899.9424" z="1534.3214" h="0"/>
+					<spot x="714.0552" y="900.2098" z="1534.3214" h="61"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="720.1739" y="893.6669" z="1534.3214" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730981">
+				    <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="18"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+			    <spawn npc_id="731029">
+			       <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="148"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="720.0" y="900.0" z="1536.6903" h="26"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231722" handler="BOSS">
+				    <spot x="723.4253" y="897.04083" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="720.4498" y="906.62646" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="727.0267" y="899.9424" z="1534.3214" h="0"/>
+					<spot x="714.0552" y="900.2098" z="1534.3214" h="61"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="720.1739" y="893.6669" z="1534.3214" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730981">
+				    <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="18"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+			    <spawn npc_id="731029">
+			       <spot x="720.32947" y="900.03815" z="1534.3059" entity_id="148"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802780">
+				    <spot x="720.0" y="900.0" z="1536.6903" h="26"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231757" handler="BOSS">
+				    <spot x="723.4253" y="897.04083" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="720.4498" y="906.62646" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="727.0267" y="899.9424" z="1534.3214" h="0"/>
+					<spot x="714.0552" y="900.2098" z="1534.3214" h="61"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="720.1739" y="893.6669" z="1534.3214" h="90"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 1] -->
+		<base_spawn id="1002">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="626.3518" y="811.00525" z="1496.9423" h="27"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231688" handler="BOSS">
+				    <spot x="624.2006" y="808.83984" z="1494.4459" h="76"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="619.8881" y="811.1058" z="1494.3813" h="61"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="626.43665" y="804.52386" z="1494.3813" h="90"/>
+					<spot x="626.54974" y="817.5496" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="632.9712" y="810.86414" z="1494.3813" h="119"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730982">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="21"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731030">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="145"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="626.3518" y="811.00525" z="1496.9423" h="27"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231723" handler="BOSS">
+				    <spot x="624.2006" y="808.83984" z="1494.4459" h="76"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="619.8881" y="811.1058" z="1494.3813" h="61"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="626.43665" y="804.52386" z="1494.3813" h="90"/>
+					<spot x="626.54974" y="817.5496" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="632.9712" y="810.86414" z="1494.3813" h="119"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730982">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="21"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731030">
+				    <spot x="626.45789" y="811.02307" z="1494.3342" entity_id="145"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802802">
+				    <spot x="626.3518" y="811.00525" z="1496.9423" h="27"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231758" handler="BOSS">
+				    <spot x="624.2006" y="808.83984" z="1494.4459" h="76"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="619.8881" y="811.1058" z="1494.3813" h="61"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="626.43665" y="804.52386" z="1494.3813" h="90"/>
+					<spot x="626.54974" y="817.5496" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="632.9712" y="810.86414" z="1494.3813" h="119"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [MIRAGE DANCE 2] -->
+		<base_spawn id="1003">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="900.0" y="1327.0" z="1536.2924" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231689" handler="BOSS">
+				    <spot x="903.0564" y="1324.5441" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="906.25903" y="1327.6511" z="1534.3214" h="119"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="899.81323" y="1321.2631" z="1534.3214" h="90"/>
+					<spot x="900.0808" y="1334.2085" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="893.4338" y="1327.6826" z="1534.3214" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730983">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="20"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731031">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="83"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="900.0" y="1327.0" z="1536.2924" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231724" handler="BOSS">
+				    <spot x="903.0564" y="1324.5441" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="906.25903" y="1327.6511" z="1534.3214" h="119"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="899.81323" y="1321.2631" z="1534.3214" h="90"/>
+					<spot x="900.0808" y="1334.2085" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="893.4338" y="1327.6826" z="1534.3214" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730983">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="20"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731031">
+				    <spot x="899.93542" y="1327.7159" z="1534.2380" entity_id="83"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802824">
+				    <spot x="900.0" y="1327.0" z="1536.2924" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231759" handler="BOSS">
+				    <spot x="903.0564" y="1324.5441" z="1534.2211" h="105"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="906.25903" y="1327.6511" z="1534.3214" h="119"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="899.81323" y="1321.2631" z="1534.3214" h="90"/>
+					<spot x="900.0808" y="1334.2085" z="1534.3214" h="30"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="893.4338" y="1327.6826" z="1534.3214" h="60"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 2] -->
+		<base_spawn id="1004">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="810.7581" y="1421.6667" z="1496.8818" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231690" handler="BOSS">
+				    <spot x="813.7088" y="1418.7449" z="1494.2988" h="105"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="817.4623" y="1421.4708" z="1494.3813" h="1"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="810.8208" y="1415.1836" z="1494.3813" h="90"/>
+					<spot x="811.0537" y="1428.0686" z="1494.3813" h="29"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="804.3281" y="1421.7443" z="1494.3813" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730984">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="24"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731032">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="107"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="810.7581" y="1421.6667" z="1496.8818" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231725" handler="BOSS">
+				    <spot x="813.7088" y="1418.7449" z="1494.2988" h="105"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="817.4623" y="1421.4708" z="1494.3813" h="1"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="810.8208" y="1415.1836" z="1494.3813" h="90"/>
+					<spot x="811.0537" y="1428.0686" z="1494.3813" h="29"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="804.3281" y="1421.7443" z="1494.3813" h="60"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730984">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="24"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731032">
+				    <spot x="810.91504" y="1421.6427" z="1494.3374" entity_id="107"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802846">
+				    <spot x="810.7581" y="1421.6667" z="1496.8818" h="48"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231760" handler="BOSS">
+				    <spot x="813.7088" y="1418.7449" z="1494.2988" h="105"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="817.4623" y="1421.4708" z="1494.3813" h="1"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="810.8208" y="1415.1836" z="1494.3813" h="90"/>
+					<spot x="811.0537" y="1428.0686" z="1494.3813" h="29"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="804.3281" y="1421.7443" z="1494.3813" h="60"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [MIRAGE DANCE 3] -->
+		<base_spawn id="1005">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="1327.912" y="1147.9362" z="1536.709" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231691" handler="BOSS">
+				    <spot x="1325.4058" y="1145.9232" z="1534.385" h="75"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="1321.2067" y="1148.1732" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="1327.7427" y="1141.6853" z="1534.3214" h="90"/>
+					<spot x="1327.7677" y="1154.5577" z="1534.3214" h="31"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="1334.283" y="1148.0591" z="1534.3214" h="0"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730985">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="16"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731033">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="13"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="1327.912" y="1147.9362" z="1536.709" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231726" handler="BOSS">
+				    <spot x="1325.4058" y="1145.9232" z="1534.385" h="75"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="1321.2067" y="1148.1732" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="1327.7427" y="1141.6853" z="1534.3214" h="90"/>
+					<spot x="1327.7677" y="1154.5577" z="1534.3214" h="31"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="1334.283" y="1148.0591" z="1534.3214" h="0"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730985">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="16"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731033">
+				    <spot x="1327.7090" y="1148.0685" z="1534.2960" entity_id="13"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802868">
+				    <spot x="1327.912" y="1147.9362" z="1536.709" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231761" handler="BOSS">
+				    <spot x="1325.4058" y="1145.9232" z="1534.385" h="75"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="1321.2067" y="1148.1732" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="1327.7427" y="1141.6853" z="1534.3214" h="90"/>
+					<spot x="1327.7677" y="1154.5577" z="1534.3214" h="31"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="1334.283" y="1148.0591" z="1534.3214" h="0"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 3] -->
+		<base_spawn id="1006">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="1421.4105" y="1236.0215" z="1496.3591" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231692" handler="BOSS">
+				    <spot x="1419.0533" y="1239.2249" z="1494.4298" h="46"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="1421.3939" y="1243.2358" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="1414.9099" y="1236.7533" z="1494.3813" h="60"/>
+					<spot x="1427.8448" y="1236.739" z="1494.3813" h="0"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="1421.3351" y="1230.1788" z="1494.3813" h="91"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730986">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="15"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731034">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="73"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="1421.4105" y="1236.0215" z="1496.3591" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231727" handler="BOSS">
+				    <spot x="1419.0533" y="1239.2249" z="1494.4298" h="46"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="1421.3939" y="1243.2358" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="1414.9099" y="1236.7533" z="1494.3813" h="60"/>
+					<spot x="1427.8448" y="1236.739" z="1494.3813" h="0"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="1421.3351" y="1230.1788" z="1494.3813" h="91"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730986">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="15"/>
+				</spawn>
+		        <!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731034">
+				    <spot x="1421.3873" y="1236.7760" z="1494.3125" entity_id="73"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802890">
+				    <spot x="1421.4105" y="1236.0215" z="1496.3591" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231762" handler="BOSS">
+				    <spot x="1419.0533" y="1239.2249" z="1494.4298" h="46"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="1421.3939" y="1243.2358" z="1494.3813" h="30"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="1414.9099" y="1236.7533" z="1494.3813" h="60"/>
+					<spot x="1427.8448" y="1236.739" z="1494.3813" h="0"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="1421.3351" y="1230.1788" z="1494.3813" h="91"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [MIRAGE DANCE 4] -->
+		<base_spawn id="1007">
+			<simple_race race="ELYOS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802850">
+				    <spot x="1147.7817" y="720.041" z="1536.5757" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231693" handler="BOSS">
+				    <spot x="1149.8599" y="718.2065" z="1534.3934" h="107"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="1147.6941" y="713.85175" z="1534.3214" h="91"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="1154.2517" y="720.3186" z="1534.3214" h="1"/>
+					<spot x="1141.4475" y="720.5961" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="1147.9321" y="726.8844" z="1534.3214" h="29"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730987">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="22"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731035">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="125"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802855">
+				    <spot x="1147.7817" y="720.041" z="1536.5757" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231728" handler="BOSS">
+				    <spot x="1149.8599" y="718.2065" z="1534.3934" h="107"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="1147.6941" y="713.85175" z="1534.3214" h="91"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="1154.2517" y="720.3186" z="1534.3214" h="1"/>
+					<spot x="1141.4475" y="720.5961" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="1147.9321" y="726.8844" z="1534.3214" h="29"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730987">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="22"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731035">
+				    <spot x="1147.8297" y="720.44104" z="1534.2417" entity_id="125"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Mirage Dance Flag -->
+				<spawn npc_id="802912">
+				    <spot x="1147.7817" y="720.041" z="1536.5757" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231763" handler="BOSS">
+				    <spot x="1149.8599" y="718.2065" z="1534.3934" h="107"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="1147.6941" y="713.85175" z="1534.3214" h="91"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="1154.2517" y="720.3186" z="1534.3214" h="1"/>
+					<spot x="1141.4475" y="720.5961" z="1534.3214" h="60"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="1147.9321" y="726.8844" z="1534.3214" h="29"/>
+				</spawn>
+			</simple_race>
+		</base_spawn>
+		<!-- [CHAOS WIND 4] -->
+		<base_spawn id="1008">
+			<simple_race race="ELYOS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802784">
+				    <spot x="1237.0" y="626.0" z="1496.5538" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231694" handler="BOSS">
+				    <spot x="1239.2587" y="628.69147" z="1494.4447" h="16"/>
+				</spawn>
+				<spawn npc_id="277789">
+				    <spot x="1237.0182" y="632.99854" z="1494.3818" h="30"/>
+				</spawn>
+				<spawn npc_id="277794">
+				    <spot x="1243.3743" y="626.3215" z="1494.3818" h="0"/>
+					<spot x="1230.2618" y="626.41785" z="1494.3818" h="59"/>
+				</spawn>
+				<spawn npc_id="277799">
+				    <spot x="1236.805" y="619.9137" z="1494.3818" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730988">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="17"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731036">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="127"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="ASMODIANS">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802783">
+				    <spot x="1237.0" y="626.0" z="1496.5538" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231729" handler="BOSS">
+				    <spot x="1239.2587" y="628.69147" z="1494.4447" h="16"/>
+				</spawn>
+				<spawn npc_id="277790">
+				    <spot x="1237.0182" y="632.99854" z="1494.3818" h="30"/>
+				</spawn>
+				<spawn npc_id="277795">
+				    <spot x="1243.3743" y="626.3215" z="1494.3818" h="0"/>
+					<spot x="1230.2618" y="626.41785" z="1494.3818" h="59"/>
+				</spawn>
+				<spawn npc_id="277800">
+				    <spot x="1236.805" y="619.9137" z="1494.3818" h="90"/>
+				</spawn>
+				<!-- Artifact Rune (Object Normal lvl:3) -->
+				<spawn npc_id="730988">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="17"/>
+				</spawn>
+				<!-- Artifact Rune Core (Object Normal lvl:3) -->
+				<spawn npc_id="731036">
+				    <spot x="1236.9609" y="626.51794" z="1494.3477" entity_id="127"/>
+				</spawn>
+			</simple_race>
+			<simple_race race="NPC">
+				<!-- Chaos Wind Flag -->
+				<spawn npc_id="802934">
+				    <spot x="1237.0" y="626.0" z="1496.5538" h="31"/>
+				</spawn>
+				<!-- Boss -->
+				<spawn npc_id="231764" handler="BOSS">
+				    <spot x="1239.2587" y="628.69147" z="1494.4447" h="16"/>
+				</spawn>
+				<spawn npc_id="277810">
+				    <spot x="1237.0182" y="632.99854" z="1494.3818" h="30"/>
+				</spawn>
+				<spawn npc_id="277811">
+				    <spot x="1243.3743" y="626.3215" z="1494.3818" h="0"/>
+					<spot x="1230.2618" y="626.41785" z="1494.3818" h="59"/>
+				</spawn>
+				<spawn npc_id="277812">
+				    <spot x="1236.805" y="619.9137" z="1494.3818" h="90"/>
 				</spawn>
 			</simple_race>
 		</base_spawn>
