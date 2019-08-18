@@ -66,6 +66,8 @@ public class SpawnSpotTemplate {
     private TemporarySpawn temporaySpawn;
     @XmlElement(name = "model")
     private SpawnModel model;
+    @XmlAttribute(name = "entity_id")
+	private Integer entityId = 0;
 
     public SpawnSpotTemplate() {
     }
@@ -147,6 +149,14 @@ public class SpawnSpotTemplate {
     public String getWalkerId() {
         return walkerId;
     }
+    
+    public int getEntityId() {
+		return entityId;
+	}
+	
+	public void setEntityId(int entityId) {
+		this.entityId = entityId;
+	}
 
     public void setWalkerId(String walkerId) {
         this.walkerId = walkerId;

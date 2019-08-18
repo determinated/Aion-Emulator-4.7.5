@@ -37,5 +37,7 @@ public enum SpawnHandlerType {
     ATTACKER,
     BOSS,
     RIFT,
-    STATIC
+    VOLATILE_RIFT,
+	STATIC,
+	FLAG,
 }
