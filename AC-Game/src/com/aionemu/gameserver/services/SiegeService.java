@@ -1124,9 +1124,17 @@ public class SiegeService {
                 return 6011; // Silona Fortress
             case 101:
                 return 6021; // Pradeth Fortress
-            case 322:
-			case 323:
-				return 7011; //Kaldor
+              //4.7
+			case 102:
+				return 7011;
+			case 103:
+				return 10111;
+			case 104:
+				return 10211;	
+			case 105:
+				return 10311;
+			case 106:
+				return 10411;
         }
         return 0;
     }
