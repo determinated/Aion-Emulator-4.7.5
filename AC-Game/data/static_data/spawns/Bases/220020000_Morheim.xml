@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spawns>
     <spawn_map map_id="220020000">
-        <base_spawn id="21"> <!-- Musphel Outpost -->
+        <base_spawn id="1"> <!-- Musphel Outpost -->
             <simple_race race="ELYOS">
                 <!-- Elyos Territory -->
                 <spawn npc_id="701799">
@@ -98,7 +98,7 @@
                 </spawn>
             </simple_race>
         </base_spawn>
-        <base_spawn id="22"> <!-- Mist Mane Defense Post -->
+        <base_spawn id="2"> <!-- Mist Mane Defense Post -->
             <simple_race race="ELYOS">
                 <!-- Elyos Territory -->
                 <spawn npc_id="701799">

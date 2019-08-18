@@ -11,7 +11,6 @@
     <xs:complexType name="Base">
         <xs:attribute name="id" type="xs:int" use="required"/>
         <xs:attribute name="world" type="xs:int"/>
-        <xs:attribute name="name_id" type="xs:int" use="required"/>
         <xs:attribute name="name" type="xs:string" use="required"/>
     </xs:complexType>
 </xs:schema>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spawns>
     <spawn_map map_id="220040000">
-        <base_spawn id="31"> <!-- Malek Pass Outpost -->
+        <base_spawn id="3"> <!-- Malek Pass Outpost -->
             <simple_race race="ELYOS">
                 <!-- Elyos Territory -->
                 <spawn npc_id="701799">
@@ -98,7 +98,7 @@
                 </spawn>
             </simple_race>
         </base_spawn>
-        <base_spawn id="32"> <!-- Hoarfrost Watchpost -->
+        <base_spawn id="4"> <!-- Hoarfrost Watchpost -->
             <simple_race race="ELYOS">
                 <!-- Elyos Territory -->
                 <spawn npc_id="701799">

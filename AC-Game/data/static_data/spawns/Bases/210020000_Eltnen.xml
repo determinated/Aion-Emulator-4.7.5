@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spawns>
     <spawn_map map_id="210020000">
-        <base_spawn id="42"> <!-- Kaidan Watchpost -->
+        <base_spawn id="5"> <!-- Kaidan Watchpost -->
             <simple_race race="ASMODIANS">
                 <!-- Asmodian Territory -->
                 <spawn npc_id="701800">
@@ -98,7 +98,7 @@
                 </spawn>
             </simple_race>
         </base_spawn>
-        <base_spawn id="41"> <!-- Eracus Outpost -->
+        <base_spawn id="6"> <!-- Eracus Outpost -->
             <simple_race race="ASMODIANS">
                 <!-- Asmodian Territory -->
                 <spawn npc_id="701800">
