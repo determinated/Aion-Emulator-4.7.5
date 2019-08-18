@@ -45,6 +45,7 @@ import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.base.BaseLocation;
 import com.aionemu.gameserver.model.gameobjects.Npc;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplate;
 import com.aionemu.gameserver.model.templates.npc.NpcTemplateType;
 import com.aionemu.gameserver.model.templates.spawns.SpawnGroup2;
@@ -53,9 +54,12 @@ import com.aionemu.gameserver.model.templates.spawns.basespawns.BaseSpawnTemplat
 import com.aionemu.gameserver.services.BaseService;
 import com.aionemu.gameserver.spawnengine.SpawnEngine;
 import com.aionemu.gameserver.spawnengine.SpawnHandlerType;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.MapRegion;
 import com.aionemu.gameserver.world.World;
+import com.aionemu.gameserver.world.knownlist.Visitor;
 
 /**
  * @author Source
@@ -141,8 +145,120 @@ public class Base<BL extends BaseLocation> {
             @Override
             public void run() {
                 chooseAttackersRace();
+                sendLDF4AdvanceMsgKiller(getId());
             }
         }, Rnd.get(15, 20) * 60000); // Randomly every 15 - 20 min start assault
+    }
+    
+    public boolean sendLDF4AdvanceMsgKiller(int id) {
+        switch (id) {
+            case 100:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v13);
+					}
+				});
+			    return true;
+            case 101:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v04);
+					}
+				});
+			    return true;
+            case 102:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v12);
+					}
+				});
+			    return true;
+			case 103:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v03);
+					}
+				});
+			    return true;
+			case 104:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v06);
+					}
+				});
+			    return true;
+			case 105:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v05);
+					}
+				});
+			    return true;
+			case 106:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v01);
+					}
+				});
+			    return true;
+			case 107:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v09);
+					}
+				});
+			    return true;
+			case 108:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v11);
+					}
+				});
+			    return true;
+			case 109:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v10);
+					}
+				});
+			    return true;
+			case 110:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v07);
+					}
+				});
+			    return true;
+			case 111:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v02);
+					}
+				});
+			    return true;
+			case 112:
+                World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+					@Override
+					public void visit(Player player) {
+						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF4_Advance_killer_v08);
+					}
+				});
+			    return true;
+            default:
+                return false;
+        }
     }
 
     private void delayedSpawn(final Race race) {
@@ -332,10 +448,6 @@ public class Base<BL extends BaseLocation> {
 
     public int getId() {
         return baseLocation.getId();
-    }
-
-    public int getNameId() {
-        return baseLocation.getNameId();
     }
 
     public Race getRace() {
