@@ -55,6 +55,20 @@ CREATE TABLE `announcements` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Table structure for `base_location`
+-- ----------------------------
+DROP TABLE IF EXISTS `base_location`;
+CREATE TABLE `base_location` (
+  `id` int(11) NOT NULL,
+  `race` enum('ELYOS','ASMODIANS','NPC') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of base_location
+-- ----------------------------
+
 DROP TABLE IF EXISTS `blocks`;
 CREATE TABLE `blocks` (
   `player` int(11) NOT NULL,
