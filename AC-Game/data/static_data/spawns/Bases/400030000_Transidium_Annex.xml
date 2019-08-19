@@ -20,6 +20,7 @@
 					<spot x="284.33505" y="286.93774" z="679.6373" h="16"/>
 				</spawn>
 			</simple_race>
+		</base_spawn>	
 		<!-- [ASPIDA STARTING AREA] -->
 		<base_spawn id="7">
 			<simple_race race="ELYOS">
@@ -34,6 +35,7 @@
 					<spot x="284.2117" y="735.9313" z="679.61664" h="105"/>
 				</spawn>
 			</simple_race>
+		</base_spawn>	
 		<!-- [ATANATOS STARTING AREA] -->
 		<base_spawn id="8">
 			<simple_race race="ELYOS">
@@ -48,6 +50,7 @@
 					<spot x="729.99634" y="737.3712" z="679.90875" h="75"/>
 				</spawn>
 			</simple_race>
+        </base_spawn>
 		<!-- [DISILLON STARTING AREA] -->
 		<base_spawn id="9">
 			<simple_race race="ELYOS">
