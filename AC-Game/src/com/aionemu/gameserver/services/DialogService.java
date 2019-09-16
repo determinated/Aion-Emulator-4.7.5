@@ -442,6 +442,27 @@ public class DialogService {
                     break;
                 }
                 case SELL:
+                    // Sell Item's
+                    switch (npc.getNpcId()) {
+                        case 206331: // Rigdamis
+                        case 206332: // Gladria
+                            if (level < 25) {
+                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 27));
+                                return;
+                            }
+                            break;
+                        case 798509: // Papinius
+                        case 798510: // Ecocia
+                        case 799224: // Camila
+                        case 802209: // Temista
+                            if (level < 45) {
+                                PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 27));
+                                return;
+                            }
+                            break;
+                    }
+                    PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, PricesService.getVendorSellModifier(player.getRace())));
+                    break;
 				case TRADE_SELL_LIST: {
 					TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getPurchaseTemplate(npc.getNpcId());
 					PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, tradeListTemplate, 100));
