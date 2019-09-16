@@ -63,7 +63,7 @@ public class _2022CrushingtheConspiracy extends QuestHandler {
 		for (int npc : npcs) {
 			qe.registerQuestNpc(npc).addOnTalkEvent(questId);
 		}
-		qe.registerQuestNpc(214103).addOnKillEvent(questId);
+		qe.registerQuestNpc(210753).addOnKillEvent(questId);
 		qe.registerOnMovieEndQuest(154, questId);
 	}
 
@@ -95,7 +95,7 @@ public class _2022CrushingtheConspiracy extends QuestHandler {
 				case 700140: { // Abyss Gate Guardian Stone // TODO: add a check if Kuninasha is spawned already, to avoid multiple spawns.
 					if (var == 2) {
 						if (env.getDialog() == DialogAction.USE_OBJECT) {
-							QuestService.addNewSpawn(320030000, player.getInstanceId(), 214103, (float) 258.96942, (float) 239.16132, (float) 217.90526, (byte) 94);
+							QuestService.addNewSpawn(320030000, player.getInstanceId(), 210753, (float) 258.96942, (float) 239.16132, (float) 217.90526, (byte) 94);
 							return useQuestObject(env, 2, 3, false, false);
 						}
 					}
@@ -141,7 +141,7 @@ public class _2022CrushingtheConspiracy extends QuestHandler {
 
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
-		return defaultOnKillEvent(env, 214103, 3, 4);
+		return defaultOnKillEvent(env, 210753, 3, 4);
 	}
 
 	@Override
