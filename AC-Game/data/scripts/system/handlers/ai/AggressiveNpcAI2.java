@@ -81,6 +81,9 @@ public class AggressiveNpcAI2 extends GeneralNpcAI2 {
      */
     protected void callForHelp(int distance) {
         Creature firstTarget = getAggroList().getMostHated();
+        if (firstTarget == null) {
+            return;
+        }
         for (VisibleObject object : getKnownList().getKnownObjects().values()) {
             if (object instanceof Npc && isInRange(object, distance)) {
                 Npc npc = (Npc) object;
