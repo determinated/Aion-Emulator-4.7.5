@@ -53,41 +53,47 @@ public class SM_INSTANCE_INFO extends AionServerPacket {
     }
 
     @Override
-    protected void writeImpl(AionConnection con) {
-        boolean hasTeam = playerTeam != null;
-        writeC(!isAnswer ? 0x2 : hasTeam ? 0x1 : 0x0);
-        writeD(0x0);
-        writeC(cooldownId);
-        writeH(0x01);
-        if(cooldownId == 0) {
-            writeD(player.getObjectId());
-            writeH(DataManager.INSTANCE_COOLTIME_DATA.size());
-            PortalCooldownList cooldownList = player.getPortalCooldownList();
-            for (FastMap.Entry<Integer, InstanceCooltime> e = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().head(), end = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().tail(); (e = e.getNext()) != end; ) {
-                writeD(e.getValue().getId());
-                writeD(0x0);
-                if (cooldownList.getPortalCooldown(e.getValue().getWorldId()) == 0)
-                    writeD(0x0);
-                else
-                    writeD((int) (cooldownList.getPortalCooldown(e.getValue().getWorldId()) - System.currentTimeMillis()) / 1000);
-                writeD(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(e.getKey()));
-                writeD(cooldownList.getPortalCooldownItem(e.getValue().getWorldId()) != null ? cooldownList.getPortalCooldownItem(e.getValue().getWorldId()).getEntryCount() * -1 : 0);
-				writeD(0x00); // 4.9
-                writeC(0x01); //activated
-            }
-            writeS(player.getName());
-        } else {
-            writeD(player.getObjectId());
-            writeH(1);
-            writeD(cooldownId);
-            writeD(0x0);
-            long time = player.getPortalCooldownList().getPortalCooldown(worldId);
-            writeD((time == 0 ? 0 : ((int) (time - System.currentTimeMillis()) / 1000)));
-            writeD(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId));
-            writeD(player.getPortalCooldownList().getPortalCooldownItem(worldId).getEntryCount() * -1);
-			writeD(0x00); // 4.9
-            writeC(0x01); //activated
-            writeS(player.getName());
+	protected void writeImpl(AionConnection con) {
+		boolean hasTeam = playerTeam != null;
+		writeC(!isAnswer ? 2 : hasTeam ? 1 : 0); // unk
+		writeD(0); // unk (unused?)
+		writeC(cooldownId); // unk
+		writeH(1); // countOfEntries
+        writeD(player.getObjectId()); // playerObjId
+        // When you enter the game for example (to notify the client all the instance cooldowns)
+		if (cooldownId == 0) {
+			writeH(DataManager.INSTANCE_COOLTIME_DATA.size()); // countOfSomething
+			PortalCooldownList cooldownList = player.getPortalCooldownList(); // The cooldown of all instances of the current player
+			for (FastMap.Entry<Integer, InstanceCooltime> e = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().head(), end = DataManager.INSTANCE_COOLTIME_DATA.getAllInstances().tail(); (e = e.getNext()) != end;) {
+				writeD(e.getValue().getId()); // unk (id of the cooldown instance)
+				writeD(0x0); // unk
+				// Time to wait of the given instance
+				if (cooldownList.getPortalCooldown(e.getValue().getWorldId()) == 0) {
+					writeD(0x0); // No time to wait so send 0
+				}
+				else {
+					// Send the time to wait
+					writeD((int) (cooldownList.getPortalCooldown(e.getValue().getWorldId()) - System.currentTimeMillis()) / 1000);
+				}
+				writeD(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(e.getKey())); // Max entries
+				// Used Entry's (negative -)
+				writeD(cooldownList.getPortalCooldownItem(e.getValue().getWorldId()) != null ? cooldownList.getPortalCooldownItem(e.getValue().getWorldId()).getEntryCount() * -1 : 0);
+				writeC(1); // activated (to get the instance visible in the cooldown status)
+			}
         }
-    }
+        // When you try to get into an instance portal
+		else {
+			writeH(player.getPortalCooldownList().size());
+			for (int i = 0; i < player.getPortalCooldownList().size(); i++) {
+				writeD(cooldownId); // InstanceID
+				writeD(0); // unk
+				writeD(0); // unk
+				writeD(DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCountByWorldId(worldId)); // Max entries
+				// Used Entry's (negative -)
+				writeD(player.getPortalCooldownList().getPortalCooldownItem(worldId) != null ? player.getPortalCooldownList().getPortalCooldownItem(worldId).getEntryCount() * -1 : 0);
+				writeC(1); // activated ((to get the instance visible in the cooldown status))
+			}
+		}
+		writeS(player.getName()); // playerName
+	}
 }
