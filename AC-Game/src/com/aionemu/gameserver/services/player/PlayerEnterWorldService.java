@@ -772,69 +772,18 @@ public final class PlayerEnterWorldService {
 
             PlayerTransferService.getInstance().onEnterWorld(player);
             player.setPartnerId(DAOManager.getDAO(WeddingDAO.class).loadPartnerId(player));
+
+            gloryPointLoseMsg(player);
         } else {
             log.info("[DEBUG] enter world" + objectId + ", Player: " + player);
         }
     }
-    //GloryPointLoseMsg(player);
-    /**
-	 * [Glory Point Lose Msg]
-	 */
-	public static final void GloryPointLoseMsg(Player player) {
-		if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.STAR1_OFFICER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 14));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.STAR2_OFFICER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 27));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.STAR3_OFFICER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 55));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.STAR4_OFFICER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 98));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.STAR5_OFFICER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 213));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.GENERAL.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 237));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.GREAT_GENERAL.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 244));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.COMMANDER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 254));
-		}
-		else if (player.getAbyssRank().getRank().getId() == AbyssRankEnum.SUPREME_COMMANDER.getId()) {
-			// A set amount of Glory Points are deducted every day based on your Abyss Rank.
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082));
-			// The Glory Points to be deducted for %0 are %1[%gchar:glory_point].
-			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, 294));
-		}
+    
+	public static final void gloryPointLoseMsg(Player player) {
+		if (AbyssRankEnum.STAR3_OFFICER.getId() >= AbyssRankEnum.STAR1_OFFICER.getId()) {
+            PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082, new Object[0]));
+            PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, player.getName(), player.getAbyssRank().getRank().getDailyReduceGp()));
+        }
 	}
 
 

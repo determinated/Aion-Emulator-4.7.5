@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<goodslists xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="goodslists.xsd">
 <goodslists>
     <list id="1">
         <item id="169500001"/>

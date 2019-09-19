@@ -17,7 +17,7 @@ IF "%NUMAENABLE%" == "true" (
 SET JAVA_OPTS=-XX:+UseNUMA %JAVA_OPTS%
 )
 ECHO Starting Aion-Core GameServer in %MODE% mode.
-C:\Java\jdk1.7.0_79\bin\java.exe %JAVA_OPTS% -ea -javaagent:./libs/ac-commons-1.3.jar -cp ./libs/*;AC-Game.jar com.aionemu.gameserver.GameServer
+C:\Java\bin\java.exe %JAVA_OPTS% -ea -javaagent:./libs/ac-commons-1.3.jar -cp ./libs/*;AC-Game.jar com.aionemu.gameserver.GameServer
 SET CLASSPATH=%OLDCLASSPATH%
 IF ERRORLEVEL 2 GOTO START
 IF ERRORLEVEL 1 GOTO ERROR

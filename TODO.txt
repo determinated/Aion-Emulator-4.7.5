@@ -41,15 +41,13 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 
 - Need to Add Drops for Beritra Invasion Raid (100% Done by GiGatR00n)
 
-- (FIXD by GiGatR00n in No-IP x64) Need to fix ItemTuning/Enchanting bug that cuz client to be crashed if player was in Action (CombatMode, Resting)
-
 - Need to check all core side for some inconsistent data
 
 - Need to recheck all the instances and their AIs
 
 - Need to check all the Instances Scrolls Reset
 
-- Need to check all the instances cooldtime inside static_data
+- Need to check all the instances cooldowntime inside static_data
 
 (All the instances files need to be checked.)
 

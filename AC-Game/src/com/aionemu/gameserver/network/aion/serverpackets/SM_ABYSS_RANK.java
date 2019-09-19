@@ -55,7 +55,7 @@ public class SM_ABYSS_RANK extends AionServerPacket {
         writeQ(rank.getAp()); // curAP
         writeD(rank.getGp()); // curGP
         writeD(currentRankId); // curRank
-        writeD(rank.getTopRanking()); // curRating
+        writeD(rank.getRankPosition()); // curRanking
 
         if (currentRankId <= 9) {
             int nextRankId = currentRankId < AbyssRankEnum.values().length ? currentRankId + 1 : currentRankId;
@@ -79,5 +79,7 @@ public class SM_ABYSS_RANK extends AionServerPacket {
         writeD(rank.getLastKill()); // laterKill
         writeQ(rank.getLastAP()); // laterAP
         writeD(rank.getLastGP()); // laterGP
+
+        writeC(0); // unk 4.7.5.x
     }
 }

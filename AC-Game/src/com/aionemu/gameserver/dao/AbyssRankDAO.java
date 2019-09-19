@@ -38,6 +38,7 @@ import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.List;
 
 /**
  * @author ATracer
@@ -48,6 +49,10 @@ public abstract class AbyssRankDAO implements DAO {
     public final String getClassName() {
         return AbyssRankDAO.class.getName();
     }
+
+    public abstract List<Integer> rankPlayers(final int rank); // DailyReduceGp
+
+	public abstract void updateGloryPoints(final int playerId, final int gp); // DailyReduceGp
 
     public abstract void loadAbyssRank(Player player);
 
