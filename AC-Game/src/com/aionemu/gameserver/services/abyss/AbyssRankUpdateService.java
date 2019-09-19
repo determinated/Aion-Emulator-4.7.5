@@ -69,7 +69,8 @@ public class AbyssRankUpdateService {
     }
 
     public void gpUpdate() {
-        loadGpRank();
+        // Uncomment this line to reduce the GP rank each time you run the game server
+        //loadGpRank();
 
         log.info("Starting GP ranking update task based on cron expression: " + RankingConfig.TOP_RANKING_UPDATE_RULE);
 		CronService.getInstance().schedule(new Runnable() {
