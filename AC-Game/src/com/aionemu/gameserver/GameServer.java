@@ -340,6 +340,7 @@ public class GameServer {
         PacketBroadcaster.getInstance();
         PeriodicSaveService.getInstance();
         AbyssRankUpdateService.getInstance().scheduleUpdate();
+        AbyssRankUpdateService.getInstance().gpUpdate();
         TaskFromDBManager.getInstance();
         Util.printSection("===========================");
         Util.printSection("==========SERVICES=========");

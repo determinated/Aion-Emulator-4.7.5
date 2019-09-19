@@ -46,6 +46,7 @@ public final class AbyssRank {
     private int weeklyGP;
     private int currentAp;
     private int currentGp;
+    private int rankPosition;
     private AbyssRankEnum rank;
     private int topRanking;
     private PersistentState persistentState;
@@ -71,7 +72,7 @@ public final class AbyssRank {
      * @param lastAP
      * @param lastUpdate
      */
-    public AbyssRank(int dailyAP, int dailyGP, int weeklyAP, int weeklyGP, int ap, int gp, int rank, int topRanking, int dailyKill, int weeklyKill,
+    public AbyssRank(int dailyAP, int dailyGP, int weeklyAP, int weeklyGP, int ap, int gp, int rank, int rankPosition, int topRanking, int dailyKill, int weeklyKill,
                      int allKill, int maxRank, int lastKill, int lastAP, int lastGP, long lastUpdate) {
         this.dailyAP = dailyAP;
         this.dailyGP = dailyGP;
@@ -80,6 +81,7 @@ public final class AbyssRank {
         this.currentAp = ap;
         this.currentGp = gp;
         this.rank = AbyssRankEnum.getRankById(rank);
+        this.rankPosition = rankPosition;
         this.topRanking = topRanking;
         this.dailyKill = dailyKill;
         this.weeklyKill = weeklyKill;
@@ -227,6 +229,13 @@ public final class AbyssRank {
      */
     public AbyssRankEnum getRank() {
         return rank;
+    }
+
+    /**
+     * @return the int rank pos
+     */
+    public int getRankPosition() {
+        return rankPosition;
     }
 
     /**

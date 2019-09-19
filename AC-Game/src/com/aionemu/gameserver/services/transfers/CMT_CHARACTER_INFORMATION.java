@@ -472,7 +472,7 @@ public class CMT_CHARACTER_INFORMATION extends AionClientPacket {
         int uilen = readD(), shortlen = readD();
         byte[] ui = readB(uilen), sc = readB(shortlen);
         player.setPlayerSettings(new PlayerSettings(uilen > 0 ? ui : null, shortlen > 0 ? sc : null, null, readD(), readD()));
-        player.setAbyssRank(new AbyssRank(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0));
+        player.setAbyssRank(new AbyssRank(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0));
         cnt = readD();
         textLog.info("QuestStateList:" + cnt);
         player.setQuestStateList(new QuestStateList());
