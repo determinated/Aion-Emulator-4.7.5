@@ -780,7 +780,7 @@ public final class PlayerEnterWorldService {
     }
     
 	public static final void gloryPointLoseMsg(Player player) {
-		if (AbyssRankEnum.STAR3_OFFICER.getId() >= AbyssRankEnum.STAR1_OFFICER.getId()) {
+		if (player.getAbyssRank().getRank().getId() >= AbyssRankEnum.STAR1_OFFICER.getId()) {
             PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402082, new Object[0]));
             PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1402209, player.getName(), player.getAbyssRank().getRank().getDailyReduceGp()));
         }
