@@ -83,6 +83,50 @@ public class MySQL5AbyssRankDAO extends AbyssRankDAO {
     public static final String UPDATE_LEGION_RANK_LIST = "UPDATE legions SET legions.old_rank_pos = legions.rank_pos, legions.rank_pos = @a:=@a+1 where id in (SELECT legion_id FROM legion_members, players where rank = 'BRIGADE_GENERAL' AND players.id = legion_members.player_id and players.race = ?) order by legions.contribution_points DESC" + (RankingConfig.TOP_RANKING_SMALL_CACHE ? " limit 75" : ""); //only 50 positions are relevant later, so we update them + some extra positions that can get into the toprankings
 
     @Override
+	public List<Integer> rankPlayers(final int rank) {
+		List<Integer> players = new ArrayList<Integer>();
+		Connection con = null;
+		PreparedStatement stmt = null;
+		try {
+			con = DatabaseFactory.getConnection();
+			stmt = con.prepareStatement(SELECT_ALL_GPRANK);
+			stmt.setInt(1, rank);
+			ResultSet resultSet = stmt.executeQuery();
+			while (resultSet.next()) {
+				int playerId = resultSet.getInt("player_id");
+				if (!players.contains(playerId))
+					players.add(playerId);
+			}
+		}
+		catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		finally {
+			DatabaseFactory.close(stmt, con);
+		}
+		return players;
+	}
+
+	@Override
+	public void updateGloryPoints(final int playerId, final int gp) {
+		Connection con = null;
+		try {
+			con = DatabaseFactory.getConnection();
+			PreparedStatement stmt = con.prepareStatement(UPDATE_GLORY_POINTS);
+			stmt.setInt(1, gp);
+			stmt.setInt(2, playerId);
+			stmt.execute();
+			stmt.close();
+		}
+		catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		finally {
+			DatabaseFactory.close(con);
+		}
+	}
+
+    @Override
     public AbyssRank loadAbyssRank(int playerId) {
         AbyssRank abyssRank = null;
         Connection con = null;
