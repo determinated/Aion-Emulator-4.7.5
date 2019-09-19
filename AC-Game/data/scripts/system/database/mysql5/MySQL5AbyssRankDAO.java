@@ -83,6 +83,9 @@ public class MySQL5AbyssRankDAO extends AbyssRankDAO {
     public static final String UPDATE_PLAYER_RANK_LIST_ACTIVE_ONLY = "UPDATE abyss_rank SET abyss_rank.old_rank_pos = abyss_rank.rank_pos, abyss_rank.rank_pos = @a:=@a+1 where player_id in (SELECT id FROM players where race = ? AND UNIX_TIMESTAMP(CURDATE())-UNIX_TIMESTAMP(players.last_online) <= ? * 24 * 60 * 60) order by gp desc" + (RankingConfig.TOP_RANKING_SMALL_CACHE ? " limit 500" : "");  //only 300 positions are relevant later, so we update them + some extra positions that can get into the toprankings
     public static final String UPDATE_LEGION_RANK_LIST = "UPDATE legions SET legions.old_rank_pos = legions.rank_pos, legions.rank_pos = @a:=@a+1 where id in (SELECT legion_id FROM legion_members, players where rank = 'BRIGADE_GENERAL' AND players.id = legion_members.player_id and players.race = ?) order by legions.contribution_points DESC" + (RankingConfig.TOP_RANKING_SMALL_CACHE ? " limit 75" : ""); //only 50 positions are relevant later, so we update them + some extra positions that can get into the toprankings
 
+    public static final String SELECT_ALL_GPRANK = "SELECT player_id FROM abyss_rank WHERE rank > ?";
+    public static final String UPDATE_GLORY_POINTS = "UPDATE `abyss_rank` SET `gp` = ? WHERE `player_id` = ?";
+
     @Override
 	public List<Integer> rankPlayers(final int rank) {
 		List<Integer> players = new ArrayList<Integer>();
