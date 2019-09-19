@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -36,6 +36,7 @@ import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.autogroup.AutoGroupType;
+import com.aionemu.gameserver.model.actions.PlayerMode;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -77,9 +78,12 @@ import com.aionemu.gameserver.skillengine.model.SkillTargetSlot;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.stats.AbyssRankEnum;
 
+import java.util.Arrays;
+
 /**
  * @author VladimirZ
  * @author GiGatR00n v4.7.5.x
+ * @fix swasun
  */
 public class DialogService {
 
@@ -105,6 +109,7 @@ public class DialogService {
         env.setExtendedRewardIndex(extendedRewardIndex);
         int targetObjectId = npc.getObjectId();
         int titleId = npc.getObjectTemplate().getTitleId();
+        int level = player.getLevel();
 
         if (player.getAccessLevel() >= 1 && CustomConfig.ENABLE_SHOW_DIALOGID) {
             PacketSendUtility.sendMessage(player, "dialogId: " + dialogId);
@@ -241,7 +246,6 @@ public class DialogService {
                 }
                 case AIRLINE_SERVICE: { // flight and teleport (2.5)
                     if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
-                        int level = player.getLevel();
                         if (level < 9) {
                             PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(targetObjectId, 27));
                         } else {
@@ -435,7 +439,8 @@ public class DialogService {
                 case TRADE_IN: {
                     TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeInListTemplate(npc.getNpcId());
                     if (tradeListTemplate == null) {
-                        PacketSendUtility.sendMessage(player, "Buy list is missing!!");
+                        // TODO: log this error
+                        PacketSendUtility.sendMessage(player, "[ERROR] Buy list is missing for NPC " + npc.getNpcId());
                         break;
                     }
                     PacketSendUtility.sendPacket(player, new SM_TRADE_IN_LIST(npc, tradeListTemplate, 100));
@@ -463,11 +468,23 @@ public class DialogService {
                     }
                     PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, PricesService.getVendorSellModifier(player.getRace())));
                     break;
-				case TRADE_SELL_LIST: {
-					TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getPurchaseTemplate(npc.getNpcId());
-					PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, tradeListTemplate, 100));
-					break;
-				}
+                case TRADE_SELL_LIST: {
+                    TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getPurchaseTemplate(npc.getNpcId());
+                    if (tradeListTemplate == null) {
+                        // TODO: log this error
+                        PacketSendUtility.sendMessage(player, "[ERROR] Sell list is missing for NPC " + npc.getNpcId());
+                        if (DataManager.TRADE_LIST_DATA == null) {
+                            // TODO: log this error instead of sending it to the player
+                            PacketSendUtility.sendMessage(player, "[ERROR] The whole trade list data is null but it shoudn't");
+                        } else {
+                            // TODO: log these messages instead of sending them to the player
+                            PacketSendUtility.sendMessage(player, "Number of trade lists: " + DataManager.TRADE_LIST_DATA.size());
+                        }
+                        break;
+                    }
+                    PacketSendUtility.sendPacket(player, new SM_SELL_ITEM(targetObjectId, tradeListTemplate, 100));
+                    break;
+                }
                 case GIVEUP_CRAFT_EXPERT: { // relinquish Expert Status
                     RelinquishCraftStatus.relinquishExpertStatus(player, npc);
                     break;

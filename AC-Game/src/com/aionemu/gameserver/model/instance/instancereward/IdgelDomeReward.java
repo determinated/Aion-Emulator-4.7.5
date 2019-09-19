@@ -112,8 +112,8 @@ public class IdgelDomeReward extends InstanceReward<IdgelDomePlayerReward> {
      */
     public int CalcBonusGloryReward(boolean isWin, boolean isBossKilled) {
     	int BossKilled = 50;
-    	int Win = 150;
-    	int Loss = 75;
+    	int Win = 0;
+    	int Loss = 10;
     	
     	if (isBossKilled) {
     		return isWin ? (Win + BossKilled) : (Loss + BossKilled);
