@@ -73,7 +73,7 @@ public class BossDeathListener extends OnDieEventCallback {
 
         base.setRace(race);
         BaseService.getInstance().capture(base.getId(), base.getRace());
-        log.info("Legat kill ! BOSS: " + boss + " in BaseId: " + base.getBaseLocation().getId() + " killed by RACE: " + race);
+        log.info("Legal kill ! BOSS: " + boss + " in BaseId: " + base.getBaseLocation().getId() + " killed by RACE: " + race);
     }
 
     @Override

@@ -949,7 +949,8 @@
     </instance_cooltime>
     <!-- Eternal Bastion -->
     <instance_cooltime race="PC_ALL" worldId="300540000" id="83">
-        <type>DAILY</type>
+        <type>WEEKLY</type>
+		<typevalue>Sat,Sun,Tue,Thu</typevalue>
         <ent_cool_time>900</ent_cool_time>
         <indun_type>NORMAL</indun_type>
         <max_member_light>24</max_member_light>
