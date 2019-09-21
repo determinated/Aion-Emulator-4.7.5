@@ -167,4 +167,8 @@ public class FindGroup {
         lastUpdate = (int) (System.currentTimeMillis() / 1000);
         this.message = message;
     }
+	
+	public void setGroupType(int groupType) {
+		this.groupType = groupType;
+	}
 }

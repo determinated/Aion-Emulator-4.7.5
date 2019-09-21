@@ -10,22 +10,9 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
- *
- *
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
@@ -33,7 +20,6 @@ import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.alliance.PlayerAllianceService;
 import com.aionemu.gameserver.model.team2.common.events.TeamCommand;
 import com.aionemu.gameserver.model.team2.common.service.PlayerTeamCommandService;
-import com.aionemu.gameserver.network.PacketLoggerService;
 import com.aionemu.gameserver.network.aion.AionClientPacket;
 import com.aionemu.gameserver.network.aion.AionConnection.State;
 
@@ -44,38 +30,38 @@ import com.aionemu.gameserver.network.aion.AionConnection.State;
  */
 public class CM_PLAYER_STATUS_INFO extends AionClientPacket {
 
-    private int commandCode;
-    private int playerObjId;
-    private int allianceGroupId;
-    private int secondObjectId;
+	private int commandCode;
+	private int playerObjId;
+	private int allianceGroupId;
+	private int secondObjectId;
 
-    public CM_PLAYER_STATUS_INFO(int opcode, State state, State... restStates) {
-        super(opcode, state, restStates);
-    }
+	public CM_PLAYER_STATUS_INFO(int opcode, State state, State... restStates) {
+		super(opcode, state, restStates);
+	}
 
-    @Override
-    protected void readImpl() {
-        PacketLoggerService.getInstance().logPacketCM(this.getPacketName());
-        commandCode = readC();
-        playerObjId = readD();
-        allianceGroupId = readD();
-        secondObjectId = readD();
+	@Override
+	protected void readImpl() {
+		commandCode = readC();
+		playerObjId = readD();
+		allianceGroupId = readD();
+		secondObjectId = readD();
 
-    }
+	}
 
-    @Override
-    protected void runImpl() {
-        Player activePlayer = getConnection().getActivePlayer();
-        TeamCommand command = TeamCommand.getCommand(commandCode);
-        switch (command) {
-            case GROUP_SET_LFG:
-                activePlayer.setLookingForGroup(playerObjId == 2);
-                break;
-            case ALLIANCE_CHANGE_GROUP:
-                PlayerAllianceService.changeMemberGroup(activePlayer, playerObjId, secondObjectId, allianceGroupId);
-                break;
-            default:
-                PlayerTeamCommandService.executeCommand(activePlayer, command, playerObjId);
-        }
-    }
+	@Override
+	protected void runImpl() {
+		Player activePlayer = getConnection().getActivePlayer();
+		TeamCommand command = TeamCommand.getCommand(commandCode);
+		switch (command) {
+			case GROUP_SET_LFG:
+				activePlayer.setLookingForGroup(playerObjId == 2);
+				break;
+			case ALLIANCE_CHANGE_GROUP:
+				PlayerAllianceService.changeMemberGroup(activePlayer, playerObjId, secondObjectId, allianceGroupId);
+				break;
+			default:
+				PlayerTeamCommandService.executeCommand(activePlayer, command, playerObjId);
+				break;
+		}
+	}
 }
