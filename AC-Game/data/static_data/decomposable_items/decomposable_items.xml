@@ -25946,4 +25946,264 @@
 		<random_item type="IDIAN_GOLDEN_EPIC" rnd_min="1" rnd_max="1" player_class="ALL"/>
 	</items>
     </decomposable>	
+	<decomposable item_id="188052806">
+		<items>
+			<item id="167000230"/>
+		</items>
+		<items>
+			<item id="167000294"/>
+		</items>
+		<items>
+			<item id="167000263"/>
+		</items>
+		<items>
+			<item id="101500837"/>
+		</items>
+		<items>
+			<item id="100900811"/>
+		</items>
+		<items>
+			<item id="100001071"/>
+		</items>
+		<items>
+			<item id="100100811"/>
+		</items>
+		<items>
+			<item id="162000043" count="5"/>
+		</items>
+		<items>
+			<item id="167000423" count="2"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052807">
+		<items>
+			<item id="167000230"/>
+		</items>
+		<items>
+			<item id="167000294"/>
+		</items>
+		<items>
+			<item id="167000263"/>
+		</items>
+		<items>
+			<item id="162000043" count="5"/>
+		</items>
+		<items>
+			<item id="167000423" count="2"/>
+		</items>
+		<items>
+			<item id="100900143"/>
+		</items>
+		<items>
+			<item id="102100249"/>
+		</items>
+		<items>
+			<item id="100000223"/>
+		</items>
+		<items>
+			<item id="101300139"/>
+		</items>
+		<items>
+			<item id="100100137"/>
+		</items>
+		<items>
+			<item id="101900266"/>
+		</items>
+		<items>
+			<item id="101700158"/>
+		</items>
+		<items>
+			<item id="100600162"/>
+		</items>
+		<items>
+			<item id="100200239"/>
+		</items>
+		<items>
+			<item id="101800265"/>
+		</items>
+		<items>
+			<item id="101500148"/>
+		</items>
+		<items>
+			<item id="100500146"/>
+		</items>
+		<items>
+			<item id="102000278"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052808">
+		<items>
+			<item id="167000519"/>
+		</items>
+		<items>
+			<item id="167000518"/>
+		</items>
+		<items>
+			<item id="167000358"/>
+		</items>
+		<items>
+			<item id="167000359"/>
+		</items>
+		<items>
+			<item id="186000231" rnd_min="1" rnd_max="15"/>
+		</items>
+		<items>
+			<item id="162000045" rnd_min="1" rnd_max="5"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052809">
+		<items>
+			<item id="167000230"/>
+		</items>
+		<items>
+			<item id="167000294"/>
+		</items>
+		<items>
+			<item id="167000263"/>
+		</items>
+		<items>
+			<item id="101500837"/>
+		</items>
+		<items>
+			<item id="100900811"/>
+		</items>
+		<items>
+			<item id="100001071"/>
+		</items>
+		<items>
+			<item id="100100811"/>
+		</items>
+		<items>
+			<item id="162000043" count="5"/>
+		</items>
+		<items>
+			<item id="167000423" count="2"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052810">
+		<items>
+			<item id="167000230"/>
+		</items>
+		<items>
+			<item id="167000294"/>
+		</items>
+		<items>
+			<item id="167000263"/>
+		</items>
+		<items>
+			<item id="162000043" count="5"/>
+		</items>
+		<items>
+			<item id="167000423" count="2"/>
+		</items>
+		<items>
+			<item id="100900189"/>
+		</items>
+		<items>
+			<item id="100100182"/>
+		</items>
+		<items>
+			<item id="100000267"/>
+		</items>
+		<items>
+			<item id="100200288"/>
+		</items>
+		<items>
+			<item id="101800279"/>
+		</items>
+		<items>
+			<item id="102000292"/>
+		</items>
+		<items>
+			<item id="100600210"/>
+		</items>
+		<items>
+			<item id="100500196"/>
+		</items>
+		<items>
+			<item id="101500196"/>
+		</items>
+		<items>
+			<item id="101700208"/>
+		</items>
+		<items>
+			<item id="101900282"/>
+		</items>
+		<items>
+			<item id="101300187"/>
+		</items>
+		<items>
+			<item id="102100263"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052811">
+		<items>
+			<item id="167000519"/>
+		</items>
+		<items>
+			<item id="167000518"/>
+		</items>
+		<items>
+			<item id="167000358"/>
+		</items>
+		<items>
+			<item id="167000359"/>
+		</items>
+		<items>
+			<item id="186000231" rnd_min="1" rnd_max="15"/>
+		</items>
+		<items>
+			<item id="162000045" rnd_min="1" rnd_max="5"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052812">
+		<items>
+			<item id="186000002" rnd_min="3" rnd_max="5"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052813">
+		<items>
+			<item id="186000003" rnd_min="3" rnd_max="10"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052814">
+		<items>
+			<item id="186000004" rnd_min="3" rnd_max="15"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052815">
+		<items>
+			<item id="186000005" rnd_min="3" rnd_max="20"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052816">
+		<items>
+			<item id="186000018" rnd_min="3" rnd_max="25"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052817">
+		<items>
+			<item id="186000007" rnd_min="3" rnd_max="5"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052818">
+		<items>
+			<item id="186000008" rnd_min="3" rnd_max="10"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052819">
+		<items>
+			<item id="186000009" rnd_min="3" rnd_max="15"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052820">
+		<items>
+			<item id="186000010" rnd_min="3" rnd_max="20"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188052821">
+		<items>
+			<item id="186000019" rnd_min="3" rnd_max="25"/>
+		</items>
+	</decomposable>
 </decomposable_items>
