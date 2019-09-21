@@ -205,6 +205,5 @@ public class CM_USE_ITEM extends AionClientPacket {
                 itemAction.act(player, item, targetItem);
             }
         }
-        PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_USE_ITEM(new DescriptionId(item.getItemTemplate().getNameId())));
     }
 }
