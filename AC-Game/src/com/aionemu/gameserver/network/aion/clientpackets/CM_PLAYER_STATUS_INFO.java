@@ -16,6 +16,7 @@
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
+import com.aionemu.gameserver.network.PacketLoggerService;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.team2.alliance.PlayerAllianceService;
 import com.aionemu.gameserver.model.team2.common.events.TeamCommand;
@@ -41,6 +42,7 @@ public class CM_PLAYER_STATUS_INFO extends AionClientPacket {
 
 	@Override
 	protected void readImpl() {
+		PacketLoggerService.getInstance().logPacketCM(this.getPacketName());
 		commandCode = readC();
 		playerObjId = readD();
 		allianceGroupId = readD();

@@ -18,6 +18,7 @@ package com.aionemu.gameserver.network.aion.serverpackets;
 
 import java.util.Collection;
 
+import com.aionemu.gameserver.network.PacketLoggerService;
 import com.aionemu.gameserver.configs.network.NetworkConfig;
 import com.aionemu.gameserver.model.gameobjects.FindGroup;
 import com.aionemu.gameserver.network.aion.AionConnection;
@@ -53,6 +54,7 @@ public class SM_FIND_GROUP extends AionServerPacket {
 
 	@Override
 	protected void writeImpl(AionConnection con) {
+		PacketLoggerService.getInstance().logPacketCM(this.getPacketName());
 		writeC(action);
 		switch (action) {
 			case 0x00:
