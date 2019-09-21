@@ -63,6 +63,7 @@ public class SM_FIND_GROUP extends AionServerPacket {
 
     public SM_FIND_GROUP(int action, int instanceId) {
         this.action = action;
+		this.lastUpdate = lastUpdate;
         this.instanceId = instanceId;
     }
 
@@ -90,11 +91,13 @@ public class SM_FIND_GROUP extends AionServerPacket {
                 break;
             case 0x01:
             case 0x03:
+				writeC(0x01); // type 1:Recruit delete
                 writeD(lastUpdate); // player object id
                 writeD(unk); // unk (0 or 65557)
                 break;
             case 0x04:
             case 0x06:
+				writeC(action); // type 4:Apply for Group
                 writeH(groupSize); // groupSize
                 writeH(groupSize); // groupSize
                 writeD(lastUpdate); // objId?
@@ -109,6 +112,7 @@ public class SM_FIND_GROUP extends AionServerPacket {
                 }
                 break;
             case 0x05:
+				writeC(0x05); // type 5:Apply delete
                 writeD(lastUpdate); // player object id
                 break;
             ////////////// 4.0 Instance GroupSystem //////////////
