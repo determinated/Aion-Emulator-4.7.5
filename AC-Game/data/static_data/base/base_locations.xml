@@ -65,9 +65,9 @@
 	<base_location id="1006" world="400020000" name="Chaos Wind [Autroenn Quarter]"/>
 	<base_location id="1007" world="400020000" name="Mirage Dance [Fontanus Quarter]"/>
 	<base_location id="1008" world="400020000" name="Chaos Wind [Fontanus Quarter]"/>
-	<!-- [TRANSIDIUM ANNEX 4.7] -->
+	<!-- [TRANSIDIUM ANNEX 4.7] 
 	<base_location id="10" world="400030000" name="Belus Staging Area"/>
 	<base_location id="7" world="400030000" name="Aspida Staging Area"/>
 	<base_location id="8" world="400030000" name="Atanatos Staging Area"/>
-	<base_location id="9" world="400030000" name="Disillon Staging Area"/>
+	<base_location id="9" world="400030000" name="Disillon Staging Area"/> -->
 </base_locations>

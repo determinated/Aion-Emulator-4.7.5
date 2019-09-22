@@ -135,7 +135,7 @@ public class Base<BL extends BaseLocation> {
 			public void run() {
 				chooseAttackersRace();
 			}
-		}, Rnd.get(15, 20) * 60000); // Randomly every 15 - 20 min start assault
+		}, Rnd.get(5, 10) * 60000); // Randomly every 15 - 20 min start assault
 	}
 
 	private void delayedSpawn(final Race race) {
@@ -147,7 +147,7 @@ public class Base<BL extends BaseLocation> {
 					spawnBoss();
 				}
 			}
-		}, Rnd.get(30, 50) * 60000); // Boss spawn between 30 min and 50 min delay
+		}, Rnd.get(5, 10) * 60000); // Boss spawn between 30 min and 50 min delay
 	}
 
 	protected void spawnBoss() {
