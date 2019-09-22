@@ -587,7 +587,7 @@
 				    <spot x="1401.2625" y="852.767" z="259.54037" h="118"/>
 				</spawn>
 				<!-- South Relay Garrison Warrior -->
-				<spawn npc_id="234796" handler="ATTACKER">
+				<spawn npc_id="235195" handler="ATTACKER">
 				    <spot x="1397.7935" y="846.96533" z="259.54037" h="28"/>
 					<spot x="1395.4861" y="855.51196" z="259.54037" h="111"/>
 					<spot x="1402.381" y="857.71277" z="259.54376" h="86"/>
@@ -1181,7 +1181,7 @@
 				    <spot x="551.8127" y="1555.7888" z="234.5" h="38"/>
 				</spawn>
 				<!-- East Relay Garrison Warrior -->
-				<spawn npc_id="234838" handler="ATTACKER">
+				<spawn npc_id="235195" handler="ATTACKER">
 				    <spot x="554.0687" y="1561.1334" z="234.5" h="84"/>
 					<spot x="545.93604" y="1558.3225" z="234.5" h="109"/>
 					<spot x="558.307" y="1549.2356" z="234.625" h="50"/>
@@ -2045,7 +2045,7 @@
 				    <spot x="1247.6869" y="1433.3695" z="275.0" h="5"/>
 				</spawn>
 				<!-- East Picket Garrison Warrior -->
-				<spawn npc_id="234898" handler="ATTACKER">
+				<spawn npc_id="235195" handler="ATTACKER">
 					<spot x="1249.5637" y="1441.4781" z="275.34238" h="79"/>
 					<spot x="1252.0021" y="1428.0577" z="275.125" h="42"/>
 					<spot x="1254.28" y="1434.8811" z="275.10748" h="60"/>
@@ -2362,7 +2362,7 @@
 				    <spot x="1627.9203" y="1560.592" z="247.912" h="82"/>
 				</spawn>
 				<!-- South Picket Garrison Warrior -->
-				<spawn npc_id="234956" handler="ATTACKER">
+				<spawn npc_id="235195" handler="ATTACKER">
 					<spot x="1626.3022" y="1556.8304" z="247.6958" h="22"/>
 					<spot x="1634.5406" y="1559.4705" z="247.8419" h="45"/>
 					<spot x="1622.1333" y="1566.746" z="247.88333" h="1"/>
@@ -2423,7 +2423,7 @@
 				    <spot x="1627.9203" y="1560.592" z="247.912" h="82"/>
 				</spawn>
 				<!-- South Picket Squad Aggressor -->
-				<spawn npc_id="234957" handler="ATTACKER">
+				<spawn npc_id="235207" handler="ATTACKER">
 					<spot x="1626.3022" y="1556.8304" z="247.6958" h="22"/>
 					<spot x="1634.5406" y="1559.4705" z="247.8419" h="45"/>
 					<spot x="1622.1333" y="1566.746" z="247.88333" h="1"/>

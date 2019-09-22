@@ -56,7 +56,7 @@
 	<base_location id="12" world="400020000" name="Belfarth Fort"/>
 	<base_location id="13" world="400020000" name="Beling Fort"/>
 	<base_location id="14" world="400020000" name="Belsal Fort"/>
-	<!-- [PANESTERRA ARTIFACT 4.7] -->
+	<!-- [PANESTERRA ARTIFACT 4.7] 
 	<base_location id="1001" world="400020000" name="Mirage Dance [Dawn Quarter]"/>
 	<base_location id="1002" world="400020000" name="Chaos Wind [Dawn Quarter]"/>
 	<base_location id="1003" world="400020000" name="Mirage Dance [Verdant Quarter]"/>
@@ -64,7 +64,7 @@
 	<base_location id="1005" world="400020000" name="Mirage Dance [Autroenn Quarter]"/>
 	<base_location id="1006" world="400020000" name="Chaos Wind [Autroenn Quarter]"/>
 	<base_location id="1007" world="400020000" name="Mirage Dance [Fontanus Quarter]"/>
-	<base_location id="1008" world="400020000" name="Chaos Wind [Fontanus Quarter]"/>
+	<base_location id="1008" world="400020000" name="Chaos Wind [Fontanus Quarter]"/> -->
 	<!-- [TRANSIDIUM ANNEX 4.7] 
 	<base_location id="10" world="400030000" name="Belus Staging Area"/>
 	<base_location id="7" world="400030000" name="Aspida Staging Area"/>

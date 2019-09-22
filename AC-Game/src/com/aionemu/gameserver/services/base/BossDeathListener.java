@@ -26,70 +26,58 @@ import com.aionemu.gameserver.model.gameobjects.AionObject;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.team2.TemporaryPlayerTeam;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
+import com.aionemu.gameserver.model.team2.alliance.PlayerAlliance;
+import com.aionemu.gameserver.model.team2.alliance.PlayerAllianceGroup;
+import com.aionemu.gameserver.model.team2.group.PlayerGroup;
+import com.aionemu.gameserver.model.team2.league.League;
 import com.aionemu.gameserver.services.BaseService;
-import com.aionemu.gameserver.services.HTMLService;
-import com.aionemu.gameserver.skillengine.SkillEngine;
-import com.aionemu.gameserver.utils.PacketSendUtility;
-import com.aionemu.gameserver.world.World;
-import com.aionemu.gameserver.world.knownlist.Visitor;
 
 /**
+ *
  * @author Source
  */
 @SuppressWarnings("rawtypes")
 public class BossDeathListener extends OnDieEventCallback {
 
-	private static final Logger log = LoggerFactory.getLogger(BossDeathListener.class);
+    private static final Logger log = LoggerFactory.getLogger(BossDeathListener.class);
 
-	private final Base<?> base;
+    private final Base<?> base;
 
-	public BossDeathListener(Base base) {
-		this.base = base;
-	}
+    public BossDeathListener(Base base) {
+        this.base = base;
+    }
 
-	@Override
-	public void onBeforeDie(AbstractAI obj) {
-		AionObject winner = base.getBoss().getAggroList().getMostDamage();
-		Npc boss = base.getBoss();
-		Race race = null;
+    @Override
+    public void onBeforeDie(AbstractAI obj) {
+        AionObject killer = base.getBoss().getAggroList().getMostDamage();
+        Npc boss = base.getBoss();
+        Race race = null;
 
-		if (winner instanceof Creature) {
-			final Creature kill = (Creature) winner;
-            if (kill.getRace().isPlayerRace()) {
-                base.setRace(kill.getRace());
-                race = kill.getRace();
+        if (killer instanceof PlayerGroup) {
+            race = ((PlayerGroup) killer).getRace();
+        } else if (killer instanceof PlayerAlliance) {
+            race = ((PlayerAlliance) killer).getRace();
+        } else if (killer instanceof PlayerAllianceGroup) {
+            race = ((PlayerAllianceGroup) killer).getRace();
+        } else if (killer instanceof League) {
+            race = ((League) killer).getRace();
+        } else if (killer instanceof Player) {
+            race = ((Player) killer).getRace();
+        } else if (killer instanceof Creature) {
+			if (((Creature) killer).getRace() !=  Race.DRAKAN || ((Creature) killer).getRace() !=  Race.ELYOS || ((Creature) killer).getRace() !=  Race.ASMODIANS) { //TEMP Fix because some NPC's have no Race in Template
+				race = Race.NPC;
+			} else {
+				race = ((Creature) killer).getRace();
 			}
-			announceCapture(null, kill);
-		}
-		else {
-			base.setRace(Race.NPC);
-		}
-		BaseService.getInstance().capture(base.getId(), base.getRace());
-		log.info("Legat kill ! BOSS: " + boss + " in BaseId: " + base.getBaseLocation().getId() + " killed by RACE: " + race);
-	}
+        }
 
-	public void announceCapture(final TemporaryPlayerTeam team, final Creature kill) {
-		final String baseName = base.getBaseLocation().getName();
-		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+        base.setRace(race);
+        BaseService.getInstance().capture(base.getId(), base.getRace());
+        log.info("Legat kill ! BOSS: " + boss + " in BaseId: " + base.getBaseLocation().getId() + " killed by RACE: " + race);
+    }
 
-			@Override
-			public void visit(Player player) {
-				if (team != null && kill == null) {
-					// %0 succeeded in conquering %1
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1301039, team.getRace().getRaceDescriptionId(), baseName));
-				}
-				else {
-					// %0 succeeded in conquering %1
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(1301039, kill.getRace().getRaceDescriptionId(), baseName));
-				}
-			}
-		});
-	}
-
-	@Override
-	public void onAfterDie(AbstractAI obj) {
-	}
+    @Override
+    public void onAfterDie(AbstractAI obj) {
+    }
 
 }
