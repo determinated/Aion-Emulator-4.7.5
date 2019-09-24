@@ -221,8 +221,8 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(SM_LEGION_SEND_EMBLEM.class, 0xD5, idSet);
         addPacketOpcode(SM_LEGION_SEND_EMBLEM_DATA.class, 0xD6, idSet);
         addPacketOpcode(SM_LEGION_UPDATE_EMBLEM.class, 0xD7, idSet);
-        //addPacketOpcode(SM_REGION_INFO.class, 0xD8, idSet); // 4.7 ?
-        //addPacketOpcode(SM_PLAYER_REGION.class, 0xD9, idSet); // 4.7 ?
+        addPacketOpcode(SM_REGION_INFO.class, 0xD8, idSet); // 4.7 ?
+        addPacketOpcode(SM_PLAYER_REGION.class, 0xD9, idSet); // 4.7 ?
         addPacketOpcode(SM_SHIELD_EFFECT.class, 0xDA, idSet);
         addPacketOpcode(SM_ABYSS_ARTIFACT_INFO.class, 0x60, idSet);
         //TODO! 0xD9 format: ccc time milis: d time milis: d
@@ -258,7 +258,7 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(SM_INSTANCE_STAGE_INFO.class, 0x8C, idSet);
         addPacketOpcode(SM_HOUSE_BIDS.class, 0x100, idSet);
         addPacketOpcode(SM_RECEIVE_BIDS.class, 0x103, idSet);
-	addPacketOpcode(SM_HOUSE_PAY_RENT.class, 0x106, idSet); // 4.7 ?
+		addPacketOpcode(SM_HOUSE_PAY_RENT.class, 0x106, idSet); // 4.7 ?
         addPacketOpcode(SM_HOUSE_OWNER_INFO.class, 0x107, idSet);
         addPacketOpcode(SM_OBJECT_USE_UPDATE.class, 0x108, idSet);
         addPacketOpcode(SM_PACKAGE_INFO_NOTIFY.class, 0x10A, idSet);

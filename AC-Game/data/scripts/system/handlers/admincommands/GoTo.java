@@ -601,9 +601,9 @@ public class GoTo extends AdminCommand {
         }/**
          * 4.0 Maps
          */
-        else if (destination.equalsIgnoreCase("katalamely")) {
+        else if (destination.equalsIgnoreCase("katalam1")) {
             goTo(player, 600050000, 398, 2718, 142);
-        } else if (destination.equalsIgnoreCase("katalamasmo")) {
+        } else if (destination.equalsIgnoreCase("katalam2")) {
             goTo(player, 600050000, 361, 383, 281);
         } else if (destination.equalsIgnoreCase("krerunerk")) {
             goTo(player, 600050000, 2787, 2577, 259);

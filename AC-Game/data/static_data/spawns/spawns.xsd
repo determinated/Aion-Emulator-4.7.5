@@ -163,6 +163,10 @@
             <xs:enumeration value="GUARD_VILLAGE"/>
             <xs:enumeration value="PORTAL"/>
 			<xs:enumeration value="CHIEF"/>
+			<xs:enumeration value="GUARD_RIVAR"/>
+			<xs:enumeration value="GUARD_KRALL"/>
+			<xs:enumeration value="GUARD_WEREWOLF"/>
+			<xs:enumeration value="GUARD_VILLAGE"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

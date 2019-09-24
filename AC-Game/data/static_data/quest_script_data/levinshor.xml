@@ -89,11 +89,9 @@
 	<report_to id="13700" start_npc_ids="800527" end_npc_ids="802350"/>
 	<report_to id="13701" start_npc_ids="798926" end_npc_ids="802350"/>
 	<report_to id="13704" start_npc_ids="802343" end_npc_ids="802343" item_id="182215527"/>
-	<report_to id="13708" start_npc_ids="802344" end_npc_ids="802344" item_id="182215529"/>
 	<report_to id="23700" start_npc_ids="800529" end_npc_ids="802353"/>
 	<report_to id="23701" start_npc_ids="800529" end_npc_ids="802353"/>
 	<report_to id="23704" start_npc_ids="802343" end_npc_ids="802343" item_id="182215533"/>
-	<report_to id="23708" start_npc_ids="802344" end_npc_ids="802344" item_id="182215535"/>
 	<!-- MONSTER HUNT QUESTS -->
 	<monster_hunt id="13702" start_npc_ids="802350" end_npc_ids="802352" end_dialog_id="2375">
 		<monster var="0" npc_ids="235346 235347 235348 235349" end_var="4"/>
@@ -121,7 +119,4 @@
 	<monster_hunt id="26931" start_npc_ids="804627">	
 		<monster var="0" npc_ids="234967" end_var="1"/>
 	</monster_hunt>
-	<!-- KILL IN WORLD QUESTS -->
-	<kill_in_world id="13744" start_npc_ids="832840" end_npc_ids="832840" worlds="600100000" amount="12"/>
-	<kill_in_world id="23744" start_npc_ids="832841" end_npc_ids="832841" worlds="600100000" amount="12"/>
 </quest_scripts>

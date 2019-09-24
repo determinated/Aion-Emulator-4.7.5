@@ -16,10 +16,6 @@
  */
 package com.aionemu.gameserver.services;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,15 +23,17 @@ import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.base.BaseLocation;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_FLAG_INFO;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_NPC_INFO;
 import com.aionemu.gameserver.services.base.Base;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.knownlist.Visitor;
 
-import javolution.util.FastMap;
+import java.util.Map;
 
+import javolution.util.FastMap;
 /**
+ *
  * @author Source
  */
 public class BaseService {
@@ -45,6 +43,7 @@ public class BaseService {
 	private Map<Integer, BaseLocation> bases;
 
 	public void initBaseLocations() {
+		log.info("Initializing bases world and katalam...");
 		bases = DataManager.BASE_DATA.getBaseLocations();
 		log.info("[BaseService] Loaded " + bases.size() + " Bases");
 	}
@@ -55,7 +54,7 @@ public class BaseService {
 			start(base.getId());
 		}
 	}
-
+	
 	public void basesDisabled() {
 		log.info("[BaseService] Disabled ...");
 	}
@@ -122,29 +121,26 @@ public class BaseService {
 	}
 
 	public void onEnterBaseWorld(Player player) {
-		for (BaseLocation baseLocation : getBaseLocations().values()) {
-			if (baseLocation.getWorldId() == player.getWorldId() && isActive(baseLocation.getId())) {
-				Base<?> base = getActiveBase(baseLocation.getId());
-				PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
-				player.getController().updateZone();
-				player.getController().updateNearbyQuests();
-			}
-		}
-	}
+        for (BaseLocation baseLocation : getBaseLocations().values()) {
+            if (baseLocation.getWorldId() == player.getWorldId() && isActive(baseLocation.getId())) {
+                Base<?> base = getActiveBase(baseLocation.getId());
+                PacketSendUtility.sendPacket(player, new SM_NPC_INFO(base.getFlag(), player));
+                player.getController().updateNearbyQuests();
+            }
+        }
+    }
 
-	public void broadcastUpdate(final BaseLocation baseLocation) {
-		World.getInstance().getWorldMap(baseLocation.getWorldId()).getMainWorldMapInstance().doOnAllPlayers(new Visitor<Player>() {
-
-			@Override
-			public void visit(Player player) {
-				if (isActive(baseLocation.getId())) {
-					Base<?> base = getActiveBase(baseLocation.getId());
-					PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
-					player.getController().updateZone();
-			        player.getController().updateNearbyQuests();
-				}
-			}
-		});
+    public void broadcastUpdate(final BaseLocation baseLocation) {
+        World.getInstance().getWorldMap(baseLocation.getWorldId()).getMainWorldMapInstance().doOnAllPlayers(new Visitor<Player>() {
+            @Override
+            public void visit(Player player) {
+                if (isActive(baseLocation.getId())) {
+                    Base<?> base = getActiveBase(baseLocation.getId());
+                    PacketSendUtility.sendPacket(player, new SM_NPC_INFO(base.getFlag(), player));
+                    player.getController().updateNearbyQuests();
+                }
+            }
+        });
 	}
 
 	public static BaseService getInstance() {
@@ -155,4 +151,5 @@ public class BaseService {
 
 		private static final BaseService INSTANCE = new BaseService();
 	}
+
 }
