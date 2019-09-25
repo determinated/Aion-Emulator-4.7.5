@@ -54,6 +54,8 @@ public class SiegeLocationTemplate {
     protected List<SiegeReward> siegeRewards;
     @XmlElement(name = "legion_reward")
     protected List<SiegeLegionReward> siegeLegionRewards;
+    @XmlElement(name = "legion_reward_on_occupy")
+    protected List<SiegeLegionReward> siegeLegionRewardsOnOccupy;
     @XmlAttribute(name = "name_id")
     protected int nameId = 0;
     @XmlAttribute(name = "repeat_count")
@@ -105,6 +107,13 @@ public class SiegeLocationTemplate {
      */
     public List<SiegeLegionReward> getSiegeLegionRewards() {
         return this.siegeLegionRewards;
+    }
+
+    /**
+     * @return the siege zone
+     */
+    public List<SiegeLegionReward> getSiegeLegionRewardsOnOccupy() {
+        return this.siegeLegionRewardsOnOccupy;
     }
 
     /**

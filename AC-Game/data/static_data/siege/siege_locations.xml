@@ -425,6 +425,7 @@
         <siege_reward top="30" itemid="169610150" m_count="1"/>   <!-- Покоритель Калдора -->
         <siege_reward top="40" itemid="169610150" m_count="1"/>   <!-- Покоритель Калдора -->
         <legion_reward itemid="188053139" m_count="1"/>           <!-- Сундук с припасами за защиту крепости Анохи -->
+        <legion_reward_on_occupy itemid="185000215" m_count="1"/>
     </siege_location>
     <siege_location id="7012" type="ARTIFACT" world="600090000" influence="1">
         <artifact_activation itemid="188020002" count="1" skill="12159" repeat_count="5" repeat_interval="3" cd="900"/>
