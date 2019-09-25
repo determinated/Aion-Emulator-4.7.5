@@ -805,7 +805,7 @@ public final class PlayerEnterWorldService {
             }
             client.sendPacket(new SM_MESSAGE(0, null, "Your account is " + accountType, ChatType.GOLDEN_YELLOW));
         }
-    }    
+    }
     
     /**
      * @param player

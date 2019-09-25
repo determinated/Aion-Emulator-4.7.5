@@ -48,7 +48,7 @@ import java.util.List;
 public class FortressLocation extends SiegeLocation {
 
     protected List<SiegeReward> siegeRewards;
-    protected List<SiegeLegionReward> siegeLegionRewards;
+    protected List<SiegeLegionReward> siegeLegionRewards, siegeLegionRewardsOnOccupy;
     protected boolean isUnderAssault;
 
     public FortressLocation() {
@@ -58,6 +58,7 @@ public class FortressLocation extends SiegeLocation {
         super(template);
         this.siegeRewards = template.getSiegeRewards() != null ? template.getSiegeRewards() : null;
         this.siegeLegionRewards = template.getSiegeLegionRewards() != null ? template.getSiegeLegionRewards() : null;
+        this.siegeLegionRewardsOnOccupy = template.getSiegeLegionRewardsOnOccupy() != null ? template.getSiegeLegionRewardsOnOccupy() : null;
     }
 
     public List<SiegeReward> getReward() {
@@ -66,6 +67,10 @@ public class FortressLocation extends SiegeLocation {
 
     public List<SiegeLegionReward> getLegionReward() {
         return this.siegeLegionRewards;
+    }
+
+    public List<SiegeLegionReward> getLegionRewardOnOccupy() {
+        return this.siegeLegionRewardsOnOccupy;
     }
 
     /**

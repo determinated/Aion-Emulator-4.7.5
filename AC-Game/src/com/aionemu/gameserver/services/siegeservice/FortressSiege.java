@@ -291,6 +291,7 @@ public class FortressSiege extends Siege<FortressLocation> {
         }
 
         List<SiegeLegionReward> legionRewards = getSiegeLocation().getLegionReward();
+        List<SiegeLegionReward> legionRewardsOnOccupy = getSiegeLocation().getLegionRewardOnOccupy();
         int legionBGeneral = LegionService.getInstance().getLegionBGeneral(getSiegeLocation().getLegionId());
         if (legionBGeneral != 0) {
             PlayerCommonData BGeneral = DAOManager.getDAO(PlayerDAO.class).loadPlayerCommonData(legionBGeneral);
@@ -305,7 +306,20 @@ public class FortressSiege extends Siege<FortressLocation> {
                                 + medalsType.getItemId() + " ITEM COUNT " + medalsType.getCount() * SiegeConfig.SIEGE_MEDAL_RATE);
                     }
                     MailFormatter.sendAbyssRewardMail(getSiegeLocation(), BGeneral, AbyssSiegeLevel.NONE, SiegeResult.PROTECT, System.currentTimeMillis(), medalsType.getItemId(), medalsType.getCount() * SiegeConfig.SIEGE_MEDAL_RATE, 0);
+                }
+            }
 
+            SiegeRaceCounter winner = getSiegeCounter().getWinnerRaceCounter();
+            if (legionRewardsOnOccupy != null &&
+                SiegeRace.BALAUR != winner.getSiegeRace() &&
+                getSiegeLocation().getLegionId() == winner.getWinnerLegionId()) {
+
+                for (SiegeLegionReward medalsType : legionRewardsOnOccupy) {
+                    if (LoggingConfig.LOG_SIEGE) {
+                        log.info("[SIEGE] > [Legion Reward on occupy to: " + BGeneral.getName() + "] ITEM RETURN "
+                                + medalsType.getItemId() + " ITEM COUNT " + 1);
+                    }
+                    MailFormatter.sendAbyssRewardMail(getSiegeLocation(), BGeneral, AbyssSiegeLevel.NONE, SiegeResult.OCCUPY, System.currentTimeMillis(), medalsType.getItemId(), 1, 0);
                 }
             }
         }
