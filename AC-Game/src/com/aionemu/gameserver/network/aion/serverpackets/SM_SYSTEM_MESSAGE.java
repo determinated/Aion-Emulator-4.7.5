@@ -21706,6 +21706,30 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
     public static SM_SYSTEM_MESSAGE STR_MSG_PACK_ITEM_WRONG_TARGET_ITEM_CATEGORY(int parentNameId, int targetNameId) {
         return new SM_SYSTEM_MESSAGE(1402018, parentNameId, targetNameId);
     }
+	
+	/**
+	 * Upgrade Arcade Game
+	 */
+	public static final SM_SYSTEM_MESSAGE STR_MSG_GACHA_ITEM_CHECK = new SM_SYSTEM_MESSAGE(1402581, "[item:" + 186000389 + "]"); // frenzy_coins
+
+	public static SM_SYSTEM_MESSAGE STR_MSG_GACHA_ITEM_REWARD(int itemId) {
+		return new SM_SYSTEM_MESSAGE(1402582, "[item:" + itemId + "]");
+	}
+
+	public static SM_SYSTEM_MESSAGE STR_MSG_GACHA_ITEM_REWARD_MULTI(int itemId, int count) {
+		return new SM_SYSTEM_MESSAGE(1402583, "[item:" + itemId + "]", count);
+	}
+
+	public static final SM_SYSTEM_MESSAGE STR_MSG_GACHA_FEVERTIME_START = new SM_SYSTEM_MESSAGE(1402608);
+	public static final SM_SYSTEM_MESSAGE STR_MSG_GACHA_TIME_END = new SM_SYSTEM_MESSAGE(14025858);
+
+	public static SM_SYSTEM_MESSAGE STR_MSG_GACHA_FEVER_ITEM_REWARD(int itemId) {
+		return new SM_SYSTEM_MESSAGE(1403137, "[item:" + itemId + "]");
+	}
+
+	public static SM_SYSTEM_MESSAGE STR_MSG_GACHA_FEVER_ITEM_REWARD_MULTI(int itemId, int count) {
+		return new SM_SYSTEM_MESSAGE(1403138, "[item:" + itemId + "]", count);
+	}
     
     /**
 	 * Bases

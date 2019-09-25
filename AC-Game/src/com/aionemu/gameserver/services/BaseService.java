@@ -23,6 +23,7 @@ import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.base.BaseLocation;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_FLAG_INFO;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_NPC_INFO;
 import com.aionemu.gameserver.services.base.Base;
 import com.aionemu.gameserver.utils.PacketSendUtility;
@@ -121,26 +122,31 @@ public class BaseService {
 	}
 
 	public void onEnterBaseWorld(Player player) {
-        for (BaseLocation baseLocation : getBaseLocations().values()) {
-            if (baseLocation.getWorldId() == player.getWorldId() && isActive(baseLocation.getId())) {
-                Base<?> base = getActiveBase(baseLocation.getId());
-                PacketSendUtility.sendPacket(player, new SM_NPC_INFO(base.getFlag(), player));
-                player.getController().updateNearbyQuests();
-            }
-        }
-    }
+		for (BaseLocation baseLocation : getBaseLocations().values()) {
+			if (baseLocation.getWorldId() == player.getWorldId() && isActive(baseLocation.getId())) {
+				Base<?> base = getActiveBase(baseLocation.getId());
+				PacketSendUtility.sendPacket(player, new SM_NPC_INFO(base.getFlag(), player));
+				PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
+				player.getController().updateZone();
+				player.getController().updateNearbyQuests();
+			}
+		}
+	}
 
-    public void broadcastUpdate(final BaseLocation baseLocation) {
-        World.getInstance().getWorldMap(baseLocation.getWorldId()).getMainWorldMapInstance().doOnAllPlayers(new Visitor<Player>() {
-            @Override
-            public void visit(Player player) {
-                if (isActive(baseLocation.getId())) {
-                    Base<?> base = getActiveBase(baseLocation.getId());
-                    PacketSendUtility.sendPacket(player, new SM_NPC_INFO(base.getFlag(), player));
-                    player.getController().updateNearbyQuests();
-                }
-            }
-        });
+	public void broadcastUpdate(final BaseLocation baseLocation) {
+		World.getInstance().getWorldMap(baseLocation.getWorldId()).getMainWorldMapInstance().doOnAllPlayers(new Visitor<Player>() {
+
+			@Override
+			public void visit(Player player) {
+				if (isActive(baseLocation.getId())) {
+					Base<?> base = getActiveBase(baseLocation.getId());
+					PacketSendUtility.sendPacket(player, new SM_NPC_INFO(base.getFlag(), player));
+					PacketSendUtility.sendPacket(player, new SM_FLAG_INFO(1, base.getFlag()));
+					player.getController().updateZone();
+			        player.getController().updateNearbyQuests();
+				}
+			}
+		});
 	}
 
 	public static BaseService getInstance() {

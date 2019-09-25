@@ -106,6 +106,7 @@ public class PlayerCommonData extends VisibleObjectTemplate {
     private int fatigue = 0;
     private int fatigueRecover = 0;
     private int fatigueReset = 0;
+	private PlayerUpgradeArcade upgradeArcade;
 
     // TODO: Move all function to playerService or Player class.
     public PlayerCommonData(int objId) {
@@ -409,6 +410,17 @@ public class PlayerCommonData extends VisibleObjectTemplate {
             setExp(getExp() + getCurrentEventExp());
         }
     }
+	
+	public PlayerUpgradeArcade getUpgradeArcade() {
+		if (upgradeArcade == null)
+			this.upgradeArcade = new PlayerUpgradeArcade();
+
+		return upgradeArcade;
+	}
+
+	public void setUpgradeArcade(PlayerUpgradeArcade upgradeArcade) {
+		this.upgradeArcade = upgradeArcade;
+	}
 
     /**
      * sets the exp value

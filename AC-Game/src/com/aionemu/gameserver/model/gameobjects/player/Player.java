@@ -1147,6 +1147,7 @@ public class Player extends Creature {
     public void setStartPrison(long start) {
         this.startPrison = start;
     }
+	
 
     /**
      * @return
@@ -1181,6 +1182,10 @@ public class Player extends Creature {
         return mailbox;
     }
 
+	public PlayerUpgradeArcade getUpgradeArcade() {
+		return playerCommonData.getUpgradeArcade();
+	}	
+		
     /**
      * @return the flyController
      */

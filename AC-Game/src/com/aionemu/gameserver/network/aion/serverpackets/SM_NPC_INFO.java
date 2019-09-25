@@ -193,13 +193,7 @@ public class SM_NPC_INFO extends AionServerPacket {
         writeH(npcTemplate.getAttackDelay());
         writeH(npcTemplate.getAttackDelay());
 
-        if (npcTemplate.getNpcTemplateType() == NpcTemplateType.FLAG) {
-			writeC(0x13);
-		} 
-		else {
-			writeC(_npc.isNewSpawn() ? 0x01 : 0x00);
-		}
-
+        writeC(_npc.isFlag() ? 0x13 : _npc.isNewSpawn() ? 0x01 : 0x00);
 
         /**
          * Movement
@@ -218,16 +212,10 @@ public class SM_NPC_INFO extends AionServerPacket {
         writeQ(0);
         writeC(_npc.getVisualState()); // visualState
 
-        /**
-         * 1 : normal (kisk too) 2 : summon 32 : trap 64 : skill area 1024 :
-         * holy servant, noble energy
-         */
-        if (npcTemplate.getNpcTemplateType() == NpcTemplateType.FLAG) {
-			writeH(0x13);
-		} 
-		else {
-			writeH(_npc.getNpcObjectType().getId());
-		}
+		/**
+		 * 1 : normal (kisk too) 2 : summon 32 : trap 64 : skill area 1024 : holy servant, noble energy
+		 */
+		writeH(_npc.getNpcObjectType().getId());
 		writeC(0x00); // unk
 		writeD(_npc.getTarget() == null ? 0 : _npc.getTarget().getObjectId());
 		writeD(TownService.getInstance().getTownIdByPosition(_npc));
