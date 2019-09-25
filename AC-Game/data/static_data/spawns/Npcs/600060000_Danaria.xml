@@ -1158,10 +1158,6 @@
         <spawn npc_id="800937" respawn_time="295">
             <spot x="1882.6017" y="1728.4149" z="155.125" h="60"/>
         </spawn>
-        <!-- Dalrinerk -->
-        <spawn npc_id="801475" respawn_time="295">
-            <spot x="2786.9023" y="592.19464" z="276.0" h="5"/>
-        </spawn>
         <!-- Damasias -->
         <spawn npc_id="801519" respawn_time="295">
             <spot x="2546.2456" y="1472.8536" z="92.3988" h="3"/>
@@ -7023,7 +7019,6 @@
 		</spawn>
 		<!-- Archways Vanguard Veteran Combatant -->
 		<spawn npc_id="232761" respawn_time="180">
-			<spot x="2890.9451" y="432.41342" z="269.17316" h="72"/>
 			<spot x="2893.5476" y="474.177" z="272.38171" h="45"/>
 			<spot x="2896.6621" y="460.17636" z="272.38171" h="45"/>
 			<spot x="2899.5132" y="449.04611" z="272.38171" h="60"/>

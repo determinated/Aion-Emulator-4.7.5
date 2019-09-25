@@ -705,7 +705,6 @@
                     <spot h="100" z="277.12845" y="588.233" x="2823.5898"/>
                 </spawn>
                 <spawn npc_id="232258" respawn_time="295">
-                    <spot h="110" z="274.875" y="570.1425" x="2814.2488"/>
                     <spot h="104" z="275.86536" y="623.3193" x="2820.112"/>
                 </spawn>
 				<!-- Teleport Device -->
@@ -745,32 +744,6 @@
 					<spot x="2814.5901" y="624.15607" z="277.2204" h="105"/>
 				</spawn>
 				<!-- End Base Spawns -->
-				<!-- Sub Camp Balaur Spawns -->
-				<!-- Archways Vanguard Veteran Combatant -->
-				<spawn npc_id="232761" respawn_time="295">
-					<spot x="2890.9451" y="432.41342" z="269.17316" h="72"/>
-					<spot x="2893.5476" y="474.177" z="272.38171" h="45"/>
-					<spot x="2896.6621" y="460.17636" z="272.38171" h="45"/>
-					<spot x="2899.5132" y="449.04611" z="272.38171" h="60"/>
-					<spot x="2906.5723" y="472.97574" z="272.38171" h="75"/>
-					<spot x="2914.1609" y="461.74167" z="272.38171" h="75"/>
-					<spot x="2915.7041" y="441.83411" z="272.38171" h="90"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Sentry -->
-				<spawn npc_id="232762" respawn_time="295">
-					<spot x="2916.1499" y="450.40463" z="272.38171" h="60"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Supervisor -->
-				<spawn npc_id="232763" respawn_time="295">
-					<spot x="2906.7817" y="458.54709" z="272.38171" h="75"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Gunslinger -->
-				<spawn npc_id="232764" respawn_time="295">
-					<spot x="2888.15" y="463.55716" z="272.3817" h="45"/>
-					<spot x="2904.036" y="443.89682" z="272.3817" h="83"/>
-					<spot x="2888.5508" y="435.51938" z="266.02686" h="75"/>
-				</spawn>
-				<!-- End Sub Camp Balaur Spawns -->
 				<!-- Sub Camp Asmodian Spawns -->
 				<!-- Archways Recon Veteran Combatant -->
 				<spawn npc_id="232578" respawn_time="295">
@@ -792,16 +765,7 @@
 				</spawn>
 				<!-- Archways Recon Veteran Gunslinger -->
 				<spawn npc_id="232581" respawn_time="295">
-					<spot x="2918.5117" y="613.5893" z="289.76263" h="75"/>
-					<spot x="2918.5117" y="613.58929" z="290.81882" h="75"/>
 					<spot x="2937.6785" y="626.1562" z="291.875" h="75"/>
-				</spawn>
-				<!-- Archways Recon Messenger -->
-				<spawn npc_id="233225" respawn_time="295">
-					<spot x="2882.4458" y="586.6429" z="283.75" h="75"/>
-					<spot x="2887.6445" y="620.59717" z="290.02222" h="60"/>
-					<spot x="2905.2307" y="560.2068" z="283.96484" h="6"/>
-					<spot x="2918.905" y="588.2076" z="286.32285" h="75"/>
 				</spawn>
 				<!-- End Sub Camp Asmodian Spawns -->
 			</simple_race>
@@ -842,7 +806,6 @@
                     <spot h="100" z="277.12845" y="588.233" x="2823.5898"/>
                 </spawn>
                 <spawn npc_id="232353" respawn_time="295">
-                    <spot h="110" z="274.875" y="570.1425" x="2814.2488"/>
                     <spot h="104" z="275.86536" y="623.3193" x="2820.112"/>
                 </spawn>
 				<!-- Teleport Device -->
@@ -882,35 +845,9 @@
 					<spot x="2814.5901" y="624.15607" z="277.2204" h="105"/>
 				</spawn>
 				<!-- End Base Spawns -->
-				<!-- Sub Camp Balaur Spawns -->
-				<!-- Archways Vanguard Veteran Combatant -->
-				<spawn npc_id="232761" respawn_time="295">
-					<spot x="2890.9451" y="432.41342" z="269.17316" h="72"/>
-					<spot x="2893.5476" y="474.177" z="272.38171" h="45"/>
-					<spot x="2896.6621" y="460.17636" z="272.38171" h="45"/>
-					<spot x="2899.5132" y="449.04611" z="272.38171" h="60"/>
-					<spot x="2906.5723" y="472.97574" z="272.38171" h="75"/>
-					<spot x="2914.1609" y="461.74167" z="272.38171" h="75"/>
-					<spot x="2915.7041" y="441.83411" z="272.38171" h="90"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Sentry -->
-				<spawn npc_id="232762" respawn_time="295">
-					<spot x="2916.1499" y="450.40463" z="272.38171" h="60"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Supervisor -->
-				<spawn npc_id="232763" respawn_time="295">
-					<spot x="2906.7817" y="458.54709" z="272.38171" h="75"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Gunslinger -->
-				<spawn npc_id="232764" respawn_time="295">
-					<spot x="2888.15" y="463.55716" z="272.3817" h="45"/>
-					<spot x="2904.036" y="443.89682" z="272.3817" h="83"/>
-					<spot x="2888.5508" y="435.51938" z="266.02686" h="75"/>
-				</spawn>
-				<!-- End Sub Camp Balaur Spawns -->
 				<!-- Sub Camp Elyos Spawns -->
 				<!-- Archways Pioneers Veteran Combatant -->
-				<spawn npc_id="232700" respawn_time="295">
+				<spawn npc_id="232517" respawn_time="295">
 					<spot x="2912.5488" y="632.6659" z="290.97775" h="75"/>
 					<spot x="2920.166" y="635.6257" z="291.8516" h="78"/>
 					<spot x="2922.3445" y="625.42377" z="291.34604" h="75"/>
@@ -920,25 +857,16 @@
 					<spot x="2940.8093" y="634.33215" z="291.875" h="75"/>
 				</spawn>
 				<!-- Archways Pioneers Veteran Sentry -->
-				<spawn npc_id="232701" respawn_time="295">
+				<spawn npc_id="232518" respawn_time="295">
 					<spot x="2929.471" y="635.04626" z="291.875" h="75"/>
 				</spawn>
 				<!-- Archways Pioneers Veteran Supervisor -->
-				<spawn npc_id="232702" respawn_time="295">
+				<spawn npc_id="232519" respawn_time="295">
 					<spot x="2937.5088" y="634.3495" z="291.875" h="75"/>
 				</spawn>
 				<!-- Archways Pioneers Veteran Gunslinger -->
-				<spawn npc_id="232703" respawn_time="295">
-					<spot x="2918.5117" y="613.5893" z="289.76263" h="75"/>
-					<spot x="2918.5117" y="613.58929" z="290.81882" h="75"/>
+				<spawn npc_id="232520" respawn_time="295">
 					<spot x="2937.6785" y="626.1562" z="291.875" h="75"/>
-				</spawn>
-				<!-- Archways Scout Envoy -->
-				<spawn npc_id="233206" respawn_time="295">
-					<spot x="2882.4458" y="586.6429" z="283.75" h="75"/>
-					<spot x="2887.6445" y="620.59717" z="290.02222" h="60"/>
-					<spot x="2905.2307" y="560.2068" z="283.96484" h="6"/>
-					<spot x="2918.905" y="588.2076" z="286.32285" h="75"/>
 				</spawn>
 				<!-- End Sub Camp Elyos Spawns -->
 			</simple_race>
@@ -979,62 +907,9 @@
                     <spot h="100" z="277.12845" y="588.233" x="2823.5898"/>
                 </spawn>
                 <spawn npc_id="232448" respawn_time="295">
-                    <spot h="110" z="274.875" y="570.1425" x="2814.2488"/>
                     <spot h="104" z="275.86536" y="623.3193" x="2820.112"/>
                 </spawn>
 				<!-- End Base Spawns -->
-				<!-- Sub Camp Balaur Spawns -->
-				<!-- Archways Vanguard Veteran Combatant -->
-				<spawn npc_id="232761" respawn_time="295">
-					<spot x="2890.9451" y="432.41342" z="269.17316" h="72"/>
-					<spot x="2893.5476" y="474.177" z="272.38171" h="45"/>
-					<spot x="2896.6621" y="460.17636" z="272.38171" h="45"/>
-					<spot x="2899.5132" y="449.04611" z="272.38171" h="60"/>
-					<spot x="2906.5723" y="472.97574" z="272.38171" h="75"/>
-					<spot x="2914.1609" y="461.74167" z="272.38171" h="75"/>
-					<spot x="2915.7041" y="441.83411" z="272.38171" h="90"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Sentry -->
-				<spawn npc_id="232762" respawn_time="295">
-					<spot x="2916.1499" y="450.40463" z="272.38171" h="60"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Supervisor -->
-				<spawn npc_id="232763" respawn_time="295">
-					<spot x="2906.7817" y="458.54709" z="272.38171" h="75"/>
-				</spawn>
-				<!-- Archways Vanguard Veteran Gunslinger -->
-				<spawn npc_id="232764" respawn_time="295">
-					<spot x="2888.15" y="463.55716" z="272.3817" h="45"/>
-					<spot x="2904.036" y="443.89682" z="272.3817" h="83"/>
-					<spot x="2888.5508" y="435.51938" z="266.02686" h="75"/>
-				</spawn>
-				<!-- End Sub Camp Balaur Spawns -->
-				<!-- Sub Camp Reian Spawns -->
-				<!-- Archways Pioneers Veteran Combatant -->
-				<spawn npc_id="232700" respawn_time="295">
-					<spot x="2912.5488" y="632.6659" z="290.97775" h="75"/>
-					<spot x="2920.166" y="635.6257" z="291.8516" h="78"/>
-					<spot x="2922.3445" y="625.42377" z="291.34604" h="75"/>
-					<spot x="2924.5923" y="644.2815" z="291.875" h="78"/>
-					<spot x="2931.1177" y="620.0489" z="291.69485" h="75"/>
-					<spot x="2934.894" y="643.14465" z="291.875" h="75"/>
-					<spot x="2940.8093" y="634.33215" z="291.875" h="75"/>
-				</spawn>
-				<!-- Archways Pioneers Veteran Sentry -->
-				<spawn npc_id="232701" respawn_time="295">
-					<spot x="2929.471" y="635.04626" z="291.875" h="75"/>
-				</spawn>
-				<!-- Archways Pioneers Veteran Supervisor -->
-				<spawn npc_id="232702" respawn_time="295">
-					<spot x="2937.5088" y="634.3495" z="291.875" h="75"/>
-				</spawn>
-				<!-- Archways Pioneers Veteran Gunslinger -->
-				<spawn npc_id="232703" respawn_time="295">
-					<spot x="2918.5117" y="613.5893" z="289.76263" h="75"/>
-					<spot x="2918.5117" y="613.58929" z="290.81882" h="75"/>
-					<spot x="2937.6785" y="626.1562" z="291.875" h="75"/>
-				</spawn>
-				<!-- End Sub Camp Reian Spawns -->
 			</simple_race>
 		</base_spawn>
 		<base_spawn id="84"> <!-- Eldris Valley Campsite -->
@@ -1104,30 +979,6 @@
 					<spot x="2653.8376" y="483.14407" z="234.75" h="15"/>
 				</spawn>
 				<!-- End Base Spawns -->
-				<!-- Sub Camp Balaur Spawns -->
-				<!-- Eldris Vanguard Combatant -->
-				<spawn npc_id="232765" respawn_time="295">
-					<spot x="2603.9287" y="289.00824" z="249.50446" h="60"/>
-					<spot x="2610.0784" y="303.26627" z="249.0049" h="60"/>
-					<spot x="2612.3496" y="273.25528" z="249.5" h="60"/>
-					<spot x="2626.574" y="285.98203" z="249.5" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Sentry -->
-				<spawn npc_id="232766" respawn_time="295">
-					<spot x="2614.3481" y="286.2441" z="249.5" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Supervisor -->
-				<spawn npc_id="232767" respawn_time="295">
-					<spot x="2619.9321" y="297.999" z="249.37506" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Rider -->
-				<spawn npc_id="233245" respawn_time="295">
-					<spot x="2576.9453" y="281.7418" z="251.40727" h="60"/>
-					<spot x="2587.4258" y="254.45088" z="259.90005" h="60"/>
-					<spot x="2589.0056" y="301.76135" z="249.31215" h="33"/>
-					<spot x="2601.44" y="323.1799" z="239.51375" h="50"/>
-				</spawn>
-				<!-- End Sub Camp Balaur Spawns -->
 				<!-- Sub Camp Asmodian Spawns -->
 				<!-- Eldris Recon Combatant -->
 				<spawn npc_id="232582" respawn_time="295">
@@ -1143,13 +994,6 @@
 				<!-- Eldris Recon Supervisor -->
 				<spawn npc_id="232584" respawn_time="295">
 					<spot x="2545.0925" y="388.2389" z="231.5"/>
-				</spawn>
-				<!-- Eldris Recon Messenger -->
-				<spawn npc_id="233226" respawn_time="295">
-					<spot x="2569.9717" y="392.2845" z="231.5" h="15"/>
-					<spot x="2576.3987" y="363.7152" z="231.625" h="96"/>
-					<spot x="2581.875" y="410.89172" z="214.7156" h="15"/>
-					<spot x="2602.8606" y="385.871" z="224.58734"/>
 				</spawn>
 				<!-- End Sub Camp Asmodian Spawns -->
 			</simple_race>
@@ -1194,10 +1038,6 @@
                     <spot x="2670.9626" y="473.8297" z="234.75" h="101"/>
                     <spot x="2669.5955" y="504.3677" z="234.75" h="67"/>
                 </spawn>
-				<!-- Eldris Healer -->
-				<spawn npc_id="232356" respawn_time="295">
-					<spot x="2667.769" y="471.12479" z="236.07442" h="102"/>
-				</spawn>
 				<!-- Eldris Sentry -->
 				<spawn npc_id="232357" respawn_time="295">
 					<spot x="2659.6743" y="474.52246" z="236.07442" h="102"/>
@@ -1227,52 +1067,21 @@
 					<spot x="2653.8376" y="483.14407" z="234.75" h="15"/>
 				</spawn>
 				<!-- End Base Spawns -->
-				<!-- Sub Camp Balaur Spawns -->
-				<!-- Eldris Vanguard Combatant -->
-				<spawn npc_id="232765" respawn_time="295">
-					<spot x="2603.9287" y="289.00824" z="249.50446" h="60"/>
-					<spot x="2610.0784" y="303.26627" z="249.0049" h="60"/>
-					<spot x="2612.3496" y="273.25528" z="249.5" h="60"/>
-					<spot x="2626.574" y="285.98203" z="249.5" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Sentry -->
-				<spawn npc_id="232766" respawn_time="295">
-					<spot x="2614.3481" y="286.2441" z="249.5" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Supervisor -->
-				<spawn npc_id="232767" respawn_time="295">
-					<spot x="2619.9321" y="297.999" z="249.37506" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Rider -->
-				<spawn npc_id="233245" respawn_time="295">
-					<spot x="2576.9453" y="281.7418" z="251.40727" h="60"/>
-					<spot x="2587.4258" y="254.45088" z="259.90005" h="60"/>
-					<spot x="2589.0056" y="301.76135" z="249.31215" h="33"/>
-					<spot x="2601.44" y="323.1799" z="239.51375" h="50"/>
-				</spawn>
-				<!-- End Sub Camp Balaur Spawns -->
 				<!-- Sub Camp Elyos Spawns -->
 				<!-- Eldris Pioneers Combatant -->
-				<spawn npc_id="232704" respawn_time="295">
+				<spawn npc_id="232521" respawn_time="295">
 					<spot x="2541.0815" y="380.2866" z="231.5"/>
 					<spot x="2551.3247" y="391.77744" z="231.38892"/>
 					<spot x="2556.3542" y="375.7626" z="231.5"/>
 					<spot x="2557.8079" y="384.16055" z="231.5"/>
 				</spawn>
 				<!-- Eldris Pioneers Sentry -->
-				<spawn npc_id="232705" respawn_time="295">
+				<spawn npc_id="232522" respawn_time="295">
 					<spot x="2548.5906" y="377.8509" z="231.5"/>
 				</spawn>
 				<!-- Eldris Pioneers Supervisor -->
-				<spawn npc_id="232706" respawn_time="295">
+				<spawn npc_id="232523" respawn_time="295">
 					<spot x="2545.0925" y="388.2389" z="231.5"/>
-				</spawn>
-				<!-- Eldris Scout Envoy -->
-				<spawn npc_id="233207" respawn_time="295">
-					<spot x="2569.9717" y="392.2845" z="231.5" h="15"/>
-					<spot x="2576.3987" y="363.7152" z="231.625" h="96"/>
-					<spot x="2581.875" y="410.89172" z="214.7156" h="15"/>
-					<spot x="2602.8606" y="385.871" z="224.58734"/>
 				</spawn>
 				<!-- End Sub Camp Elyos Spawns -->
 			</simple_race>
@@ -1319,44 +1128,6 @@
                     <spot h="101" z="234.75" y="473.8297" x="2670.9626"/>
                 </spawn>
 				<!-- End Base Spawns -->
-				<!-- Sub Camp Balaur Spawns -->
-				<!-- Eldris Vanguard Combatant -->
-				<spawn npc_id="232765" respawn_time="295">
-					<spot x="2603.9287" y="289.00824" z="249.50446" h="60"/>
-					<spot x="2610.0784" y="303.26627" z="249.0049" h="60"/>
-					<spot x="2612.3496" y="273.25528" z="249.5" h="60"/>
-					<spot x="2626.574" y="285.98203" z="249.5" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Sentry -->
-				<spawn npc_id="232766" respawn_time="295">
-					<spot x="2614.3481" y="286.2441" z="249.5" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Supervisor -->
-				<spawn npc_id="232767" respawn_time="295">
-					<spot x="2619.9321" y="297.999" z="249.37506" h="60"/>
-				</spawn>
-				<!-- Eldris Vanguard Rider -->
-				<spawn npc_id="233245" respawn_time="295">
-					<spot x="2576.9453" y="281.7418" z="251.40727" h="60"/>
-					<spot x="2587.4258" y="254.45088" z="259.90005" h="60"/>
-					<spot x="2589.0056" y="301.76135" z="249.31215" h="33"/>
-					<spot x="2601.44" y="323.1799" z="239.51375" h="50"/>
-				</spawn>
-				<!-- End Sub Camp Balaur Spawns -->
-				<!-- Sub Camp Reians Spawns -->
-				<spawn npc_id="232704" respawn_time="295">
-                    <spot x="2541.0815" y="380.2866" z="231.5"/>
-                    <spot x="2551.3247" y="391.77744" z="231.38892"/>
-                    <spot x="2556.3542" y="375.7626" z="231.5"/>
-                    <spot x="2557.8079" y="384.16055" z="231.5"/>
-                </spawn>
-                <spawn npc_id="232705" respawn_time="295">
-                    <spot x="2548.5906" y="377.8509" z="231.5"/>
-                </spawn>
-                <spawn npc_id="232706" respawn_time="295">
-                    <spot x="2545.0925" y="388.2389" z="231.5"/>
-                </spawn>
-				<!-- End Sub Camp Reians Spawns -->
 			</simple_race>
 		</base_spawn>
 		<base_spawn id="85"> <!-- Earthshaped Promontory -->
@@ -1379,7 +1150,7 @@
                 </spawn>
                 <!-- Kalennos -->
                 <spawn npc_id="801041" respawn_time="180">
-                    <spot x="1817.8" y="792.86993" z="154.26164" h="60"/>
+                    <spot x="1820.0276" y="809.3871" z="153.73985" h="68"/>
                 </spawn>
                 <!-- Ararinerk Battlefield Equipment Vendor -->
                 <spawn npc_id="801480" respawn_time="180">
@@ -1575,19 +1346,6 @@
                 <spawn npc_id="232458" handler="GUARD">
                     <spot h="67" z="153.34886" y="794.322" x="1794.1362"/>
                     <spot h="9" z="153.89473" y="810.54675" x="1832.8358"/>
-                </spawn>
-                <!-- GUARD VILLAGE -->
-                <spawn npc_id="232707" respawn_time="295" handler="GUARD_VILLAGE">
-                    <spot x="1840.7599" y="927.7241" z="114.0" h="45"/>
-                    <spot x="1843.5859" y="903.322" z="114.0" h="83"/>
-                    <spot x="1850.3479" y="921.54694" z="114.0" h="66"/>
-                    <spot x="1851.5546" y="907.9055" z="114.0" h="76"/>
-                </spawn>
-                <spawn npc_id="232708" respawn_time="295" handler="GUARD_VILLAGE">
-                    <spot x="1837.2941" y="916.62714" z="114.0" h="60"/>
-                </spawn>
-                <spawn npc_id="232709" respawn_time="295" handler="GUARD_VILLAGE">
-                    <spot x="1845.2094" y="913.9503" z="114.0" h="58"/>
                 </spawn>
                 <!-- Balaur Territory -->
                 <spawn npc_id="801644">
