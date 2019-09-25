@@ -10,22 +10,22 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
+  
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
- *
- * 
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
+  
+   
+																	 
+																										
+																									  
+																		   
+				 
+				   
+			   
+				
+				
+				  
  */
 package quest.morheim;
 
@@ -95,6 +95,8 @@ public class _2033DestroyingtheCurse extends QuestHandler {
                         case SETPRO1: {
                             return defaultCloseDialog(env, 0, 1); // 1
                         }
+					default:
+						break;
                     }
                     break;
                 }
@@ -125,6 +127,8 @@ public class _2033DestroyingtheCurse extends QuestHandler {
                         case FINISH_DIALOG: {
                             return defaultCloseDialog(env, 2, 2);
                         }
+					default:
+						break;
                     }
                     break;
                 }
@@ -144,6 +148,8 @@ public class _2033DestroyingtheCurse extends QuestHandler {
                         case SETPRO5: {
                             return defaultCloseDialog(env, 4, 5); // 5
                         }
+					default:
+						break;
                     }
                     break;
                 }
@@ -161,6 +167,8 @@ public class _2033DestroyingtheCurse extends QuestHandler {
                         case SETPRO6: {
                             return defaultCloseDialog(env, 5, 6); // 6
                         }
+					default:
+						break;
                     }
                 }
             }

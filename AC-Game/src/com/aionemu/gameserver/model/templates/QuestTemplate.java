@@ -133,6 +133,8 @@ public class QuestTemplate {
     protected QuestMentorType mentorType = QuestMentorType.NONE;
     @XmlAttribute(name = "target")
     private QuestTarget target = QuestTarget.NONE;
+    @XmlAttribute(name = "titleId")
+    protected int titleId;
 
     /**
      * Gets the value of the collectItems property.
@@ -263,6 +265,11 @@ public class QuestTemplate {
     public QuestWorkItems getQuestWorkItems() {
         return questWorkItems;
     }
+    
+    public int getTitleId() {
+        return titleId;
+    }
+
 
     /**
      * Gets the value of the fighterSelectableReward property.

@@ -10,26 +10,11 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
- *
- *
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.questEngine.task;
-
-import java.util.concurrent.Future;
 
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -37,6 +22,8 @@ import com.aionemu.gameserver.model.templates.spawns.SpawnSearchResult;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.zone.ZoneName;
+
+import java.util.concurrent.Future;
 
 /**
  * @author ATracer
@@ -92,4 +79,8 @@ public class QuestTasks {
         return ThreadPoolManager.getInstance().scheduleAtFixedRate(
                 new FollowingNpcCheckTask(env, new ZoneChecker(npc, zoneName)), 1000, 1000);
     }
+
+	public static final Future<?> newFollowingToTargetCheckTask(final QuestEnv env, Npc npc, ZoneName zoneName1, ZoneName zoneName2) {
+      return ThreadPoolManager.getInstance().scheduleAtFixedRate(new FollowingNpcCheckTask(env, new ZoneChecker2(npc, zoneName1, zoneName2)), 1000, 1000);
+   }
 }
