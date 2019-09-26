@@ -106,26 +106,22 @@ public class FortressSiege extends Siege<FortressLocation> {
         GlobalCallbackHelper.addCallback(addAPListener);
         GlobalCallbackHelper.addCallback(addGPListener);
 
-        // Remove all and spawn siege NPCs
+     // Remove all and spawn siege NPCs
         deSpawnNpcs(getSiegeLocationId());
         spawnNpcs(getSiegeLocationId(), getSiegeLocation().getRace(), SiegeModType.SIEGE);
         initSiegeBoss();
+		
+		if (getSiegeLocation().getLocationId() == 7011) {
+			captureBasePosts();
+        }
     }
 
-    private void captureGatePosts() {
-        Base<?> base1 = BaseService.getInstance().getActiveBase(90);
-        Base<?> base2 = BaseService.getInstance().getActiveBase(91);
-        Base<?> base3 = BaseService.getInstance().getActiveBase(92);
-        if (base1.getRace() != Race.getRaceByString(getSiegeLocation().getRace().toString())) {
-            BaseService.getInstance().capture(90, Race.getRaceByString(getSiegeLocation().getRace().toString()));
-        } else if (base2.getRace() != Race.getRaceByString(getSiegeLocation().getRace().toString())) {
-            BaseService.getInstance().capture(91, Race.getRaceByString(getSiegeLocation().getRace().toString()));
-        } else if (base3.getRace() != Race.getRaceByString(getSiegeLocation().getRace().toString())) {
-            BaseService.getInstance().capture(92, Race.getRaceByString(getSiegeLocation().getRace().toString()));
-        } else {
-            return;
-        }
-
+	private void captureBasePosts() {
+		BaseService.getInstance().capture(90, Race.ASMODIANS);
+		BaseService.getInstance().capture(91, Race.ELYOS);
+		BaseService.getInstance().capture(113, Race.getRaceByString(getSiegeLocation().getRace().toString()));
+		BaseService.getInstance().capture(114, Race.getRaceByString(getSiegeLocation().getRace().toString()));
+		BaseService.getInstance().capture(115, Race.getRaceByString(getSiegeLocation().getRace().toString()));
     }
 
     @Override
@@ -171,11 +167,6 @@ public class FortressSiege extends Siege<FortressLocation> {
             giveRewardsToPlayers(getSiegeCounter().getRaceCounter(getSiegeLocation().getRace()));
         }
 
-        // Remove gp for players that lost the fortress
-        if (winner.getSiegeRace() != looser) {
-            giveLossToPlayers(looser);
-        }
-
         // Update outpost status
         // Certain fortresses are changing outpost ownership
         updateOutpostStatusByFortress(getSiegeLocation());
@@ -192,10 +183,12 @@ public class FortressSiege extends Siege<FortressLocation> {
                 }
             }
         });
-
-        if (getSiegeLocation().getLocationId() == 7011) {
-            captureGatePosts();
-        }
+		
+		if (getSiegeLocation().getLocationId() == 7011) {
+			BaseService.getInstance().capture(113, Race.NPC);
+			BaseService.getInstance().capture(114, Race.NPC);
+			BaseService.getInstance().capture(115, Race.NPC);
+		}
     }
 
     protected SiegeAbyssRace getPlayerReward(Integer object) {
@@ -247,7 +240,7 @@ public class FortressSiege extends Siege<FortressLocation> {
             }
         });
 
-        // If new race is balaur
+     // If new race is balaur
         if (SiegeRace.BALAUR == winner.getSiegeRace()) {
             getSiegeLocation().setLegionId(0);
             getArtifact().setLegionId(0);
@@ -256,7 +249,14 @@ public class FortressSiege extends Siege<FortressLocation> {
             getSiegeLocation().setLegionId(topLegionId != null ? topLegionId : 0);
             getArtifact().setLegionId(topLegionId != null ? topLegionId : 0);
         }
+		
+		if (getSiegeLocation().getLocationId() == 7011) {
+			BaseService.getInstance().capture(113, Race.NPC);
+			BaseService.getInstance().capture(114, Race.NPC);
+			BaseService.getInstance().capture(115, Race.NPC);
+		}
     }
+		
 
     @Override
     public boolean isEndless() {
@@ -324,52 +324,6 @@ public class FortressSiege extends Siege<FortressLocation> {
             }
         }
     }
-
-    protected void giveLossToPlayers(final SiegeRace race) {
-        if (race == SiegeRace.BALAUR)// this shouldn't happen, but secure is secure :)
-            return;
-        getSiegeLocation().doOnAllPlayers(new Visitor<Player>() {
-            @Override
-            public void visit(Player player) {
-                if (player.getRace().name() == race.name()) {//dont know if this works...
-                    switch (player.getAbyssRank().getRank()) {
-                        case SUPREME_COMMANDER:
-                            AbyssPointsService.addGp(player, -300);
-                            break;
-                        case COMMANDER:
-                            AbyssPointsService.addGp(player, -250);
-                            break;
-                        case GREAT_GENERAL:
-                            AbyssPointsService.addGp(player, -200);
-                            break;
-                        case GENERAL:
-                            AbyssPointsService.addGp(player, -150);
-                            break;
-                        case STAR5_OFFICER:
-                            AbyssPointsService.addGp(player, -100);
-                            break;
-                        case STAR4_OFFICER:
-                            AbyssPointsService.addGp(player, -50);
-                            break;
-                        case STAR3_OFFICER:
-                            AbyssPointsService.addGp(player, -25);
-                            break;
-                        case STAR2_OFFICER:
-                            AbyssPointsService.addGp(player, -20);
-                            break;
-                        case STAR1_OFFICER:
-                            AbyssPointsService.addGp(player, -10);
-                            break;
-                        default:
-                            break;
-                    }
-                } else {
-                    return;
-                }
-            }
-        });
-    }
-
     protected void giveRewardsToPlayers(SiegeRaceCounter winnerDamage) {
         // Get the map with playerId to siege reward
         Map<Integer, Long> playerAbyssPoints = winnerDamage.getPlayerAbyssPoints();

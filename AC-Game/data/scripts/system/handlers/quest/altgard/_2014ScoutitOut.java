@@ -10,12 +10,11 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
+  
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  *
- * 
  * Credits goes to all Open Source Core Developer Groups listed below
  * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
@@ -104,6 +103,8 @@ public class _2014ScoutitOut extends QuestHandler {
                         case FINISH_DIALOG: {
                             return sendQuestSelectionDialog(env);
                         }
+					default:
+						break;
                     }
                     break;
                 }
@@ -125,6 +126,8 @@ public class _2014ScoutitOut extends QuestHandler {
                         case SETPRO3: {
                             return defaultCloseDialog(env, 3, 4); // 4
                         }
+					default:
+						break;
                     }
                 }
             }

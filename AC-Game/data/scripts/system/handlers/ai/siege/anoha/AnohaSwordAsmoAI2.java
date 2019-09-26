@@ -34,76 +34,62 @@ import com.aionemu.gameserver.model.Race;
  * @author yayaya
  */
  
-@AIName("Anoha_sword_asmo") // 804577 
+@AIName("Anoha_sword_asmo") // 804577
 public class AnohaSwordAsmoAI2 extends NpcAI2 {	
 
-    @Override
+	@Override
     protected void handleDialogStart(Player player) {
-	
-
-        if (player.getInventory().getItemCountByItemId(185000215) >= 1 && player.getRace() == Race.ASMODIANS) {	
-	
-
-        TalkEventHandler.onTalk(this, player);
-		
+        if (player.getInventory().getFirstItemByItemId(185000215) != null) { //Anoha Sealing Stone.
+            PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(getObjectId(), 10));
         } else {
-			if (player.getRace() != Race.ASMODIANS) {
-			 PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(getObjectId(), 1011));	
-			}else{
-			
             PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(getObjectId(), 27));
-			}
-        } 
-    }
-
-    @Override
-    public boolean onDialogSelect(Player player, int dialogId, int questId, int extendedRewardIndex) {
-		// 
-		if (dialogId == 10000) {
-			
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-					}
-				});	
-	
-        SpawnAhoha();		
-
-		despawn();
-        spawn(702618, 791.27985f, 489.02353f, 142.90796f, (byte) 77);    //todo despawn (mapNPC) 
         }
+    }
+	
+	@Override
+    public boolean onDialogSelect(final Player player, int dialogId, int questId, int extendedRewardIndex) {
+		if (dialogId == 10000 && player.getInventory().decreaseByItemId(185000215, 1)) { //Anoha Sealing Stone.
+		    switch (getNpcId()) {
+			    case 804577: //Anoha Sword [Asmodians]
+					announceBerserkAnoha30Min();
+					spawn(702644, getOwner().getX(), getOwner().getY(), getOwner().getZ(), (byte) getOwner().getHeading());
+					spawn(702618, 791.27985f, 489.02353f, 142.90796f, (byte) 77);
+					ThreadPoolManager.getInstance().schedule(new Runnable() {
+						@Override
+						public void run() {
+							announceReleaseAnoha();
+							spawn(855263, getOwner().getX(), getOwner().getY(), getOwner().getZ(), (byte) getOwner().getHeading()); //Berserk Anoha.
+						}
+					}, 1800000); //30 Minutes.
+				break;
+			}
+		}
+		//The Anoha Sealing Stone was used to release Anoha.
+		PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Named_Spawn_Item);
+		PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(getObjectId(), 0));
+		AI2Actions.deleteOwner(this);
+		AI2Actions.scheduleRespawn(this);
 		return true;
 	}
-
-    private void SpawnAhoha() {
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-
-        spawn(855263, 791.27985f, 489.02353f, 142.90796f, (byte) 77);	
-
-				World.getInstance().doOnAllPlayers(new Visitor<Player>() {
-					@Override
-					public void visit(Player player) {
-						PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_Anoha_Spawn);
-					}
-				});	
-            }
-        }, 1800 * 1000); //1800 * 1000 = 30min
-    }		
 	
-		
+	private void announceBerserkAnoha30Min() {
+		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+			@Override
+			public void visit(Player player) {
+				//Berserk Anoha will return to Kaldor in 30 minutes.
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_Anoha_Spawn);
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Named_Spawn_System);
+			}
+		});
+	}
 	
-    private void despawn() {
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-            @Override
-            public void run() {
-                if (!isAlreadyDead()) {
-                    AI2Actions.deleteOwner(AnohaSwordAsmoAI2.this);
-                }
-            }
-        }, 500);
-    }
-	
-	
+	private void announceReleaseAnoha() {
+		World.getInstance().doOnAllPlayers(new Visitor<Player>() {
+			@Override
+			public void visit(Player player) {
+				//Release Anoha.				
+				PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_LDF5_Fortress_Named_Spawn);
+			}
+		});
+	}
 }

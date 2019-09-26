@@ -10,12 +10,11 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
- *
+  
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  *
- * 
  * Credits goes to all Open Source Core Developer Groups listed below
  * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
@@ -42,7 +41,7 @@ import com.aionemu.gameserver.world.zone.ZoneName;
 
 /**
  * @author MrPoke + Dune11
- * @rework pralinka
+				   
  */
 public class _2300MorheimCommandersCall extends QuestHandler {
 
@@ -97,9 +96,12 @@ public class _2300MorheimCommandersCall extends QuestHandler {
 
     @Override
     public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
-        Player player = env.getPlayer();
+		Player player = env.getPlayer();
         PlayerClass playerClass = player.getCommonData().getPlayerClass();
-            if (playerClass == PlayerClass.RIDER) {
+            if (playerClass == PlayerClass.WARRIOR || playerClass == PlayerClass.SCOUT || playerClass == PlayerClass.MAGE || playerClass == PlayerClass.PRIEST
+                || playerClass == PlayerClass.ENGINEER || playerClass == PlayerClass.ARTIST || playerClass == PlayerClass.GLADIATOR || playerClass == PlayerClass.TEMPLAR
+                || playerClass == PlayerClass.ASSASSIN  || playerClass == PlayerClass.RANGER || playerClass == PlayerClass.SORCERER || playerClass == PlayerClass.SPIRIT_MASTER
+                || playerClass == PlayerClass.CHANTER || playerClass == PlayerClass.CLERIC || playerClass == PlayerClass.GUNNER || playerClass == PlayerClass.BARD || playerClass == PlayerClass.RIDER) {
             return false;
             }
         return defaultOnEnterZoneEvent(env, zoneName, ZoneName.get("MORHEIM_ICE_FORTRESS_220020000"));

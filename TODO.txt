@@ -1,4 +1,4 @@
-GiGatR00n Emulator Reworking Proccess.
+GiGatR00n Emulator Reworking Proccess. / Reworked by Jasonguns, Swasun
 ~Current Version 4.7.5~
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
@@ -17,13 +17,42 @@ THANKS FOR YOUR CAREFULLY READING!
 ///////////////////////////////////////////////////////////////
 
 - (100%) x86 and x64 Packets and Crypt Finished by GiGatR00n
+
 - Need to making parsers for Items and Skills
+
 - Need to check datapack (since patch 4.7.5 some parts got changed)
+
 - Need to rewrite GeoDataBuilderJ tool for compiling meshes.geo (new maps don't have collision detection vetores)
+
 - Need to check core side for Aethertech skill (Backlash I - ID:3742) for activate
+
 - Need to check why Assasin class are setting runes at level 1 (Must be checked at core side)
-- Need to check the Glory Points everyday reduce. The GP discount aren't working.
+
 - Need to check the server start. Some troubles with the memory. Just can be seing with more players.
+
+- Supplements  are not working.
+
+- When you disconnect and are grouped, at the last second you can see the other player disconnected.
+
+- Sometimes, a dead mob stay standing.
+
+- Sometimes the fly time generation animation is bugging (but not the actual value).
+
+- In case of full inventory, you can get a quest item (even if you have enough space in your quest inventory).
+
+- When you identify an object, there is no animation (but the identification is working).
+
+- Some geodata bugs (without giving the whole list).
+
+- When you learn a new skill, the notification doesn't appear all the times.
+
+- No game music after the first quest "Prologue", because it's stopped by the movie, and it's not playing after
+
+- Manastone remover price (I guess we have to guess the algorithm, all the public code I found so far have hardcoded values)
+
+- When you have skill cooldowns and you logout and then login, the animation of the remaining time is bugging (keep turning around instead of doing it slowly)
+
+- Some campaing quest icons dont show up in the map. Even on the npcs when you are near them.
 
 ///////////////////////////////////////////////////////////////
 
@@ -47,15 +76,23 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 
 - Need to check all the Instances Scrolls Reset
 
-- Need to check all the instances cooldowntime inside static_data
-
 (All the instances files need to be checked.)
 
-- The bases flags doesnt stay on your map after relog. You need to go to all the map so they can show up again.
-
-- Atreian Passport need to be check.
+- Stamp need to be check.
 
 - Arcade Token system need to be check.
+
+- Kaldor base flags (When you port to Kaldor you just see 2 flags instead of 4. Seems that can only show 1 flag per base)
+
+- In Ishalgen, the quest "Where's Rae this time". In the step "Talk with Ulgorn", you have to locate the NPC cause his yellow mark doesn't show up.
+
+- Some mobs (at Altgard, but maybe elsewhere) give double kinahs. I guess it just need to remove one of the kinah reward in the reward list of a given NPC; besides I think it exists a drop parser.
+
+- Quest "Scout it Out" (id 2014): the dialog shows a fail error.
+
+- In Morheim, the quest "Morheim Commander's Call": after the validation of the first step, the description of the second step doesn't show up.
+
+- Quest "Destroying the curse": a pet among 5 is designed to be follow in a cave, but he's not (pet selected: "Baba ring").
 
 ///////////////////////////////////////////////////////////////
 
