@@ -175,7 +175,7 @@
                         <spot x="770.4316" y="248.5618" z="156.9872" h="61"/>
                     </spawn>
                     <!-- Меч Анохи -->
-                    <spawn npc_id="804577" respawn_time="295">
+                    <spawn npc_id="804577" respawn_time="5400">
                         <spot x="791.27985" y="489.02353" z="142.90796" static_id="77"/>
                     </spawn>
 					<!-- Wealhtheow's Keep Tank -->
@@ -577,7 +577,7 @@
                         <spot x="770.4316" y="248.5618" z="156.9872" h="61"/>
                     </spawn>
                     <!-- Anoha Sword (Object Normal lvl:3) -->
-                    <spawn npc_id="804576" respawn_time="295">
+                    <spawn npc_id="804576" respawn_time="5400">
                         <spot x="791.27985" y="489.02353" z="142.90796" static_id="77"/>
                     </spawn>
                     <!-- Garrison Elite Templar -->
