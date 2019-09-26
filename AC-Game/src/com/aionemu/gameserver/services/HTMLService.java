@@ -265,4 +265,13 @@ public class HTMLService {
 
         return sb.toString();
     }
+    
+    public static void sendGuideHtml(Player player, String title) {
+        GuideTemplate template = DataManager.GUIDE_HTML_DATA.getTemplateByTitle(title);
+        if (template != null) {
+            int id = IDFactory.getInstance().nextId();
+            DAOManager.getDAO(GuideDAO.class).saveGuide(id, player, title);
+            sendData(player, id, getHTMLTemplate(template));
+        }
+	}
 }
