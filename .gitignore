@@ -12,3 +12,4 @@
 hs_err_pid*
 build/
 target/
+AC-Login/build/build_rev.txt
