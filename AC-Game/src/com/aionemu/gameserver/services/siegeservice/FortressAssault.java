@@ -219,8 +219,20 @@ public class FortressAssault extends Assault<FortressSiege> {
                 return 19;
             case 1011:
                 return 20;
-            default:
-                return 1;
+              //KALDOR
+			case 7011: //Wealhtheow's Keep.
+				return 10;
+			//PANESTERRA
+			case 10111: //Arcadian Fortress.
+				return 10;
+			case 10211: //Umbral Fortress.
+				return 10;
+			case 10311: //Eternum Fortress.
+				return 10;
+			case 10411: //Skyclash Fortress.
+				return 10;
+			default:
+				return 1;
         }
     }
 
@@ -410,8 +422,27 @@ public class FortressAssault extends Assault<FortressSiege> {
                 Spawns.add(272304);
                 Spawns.add(272305);
                 return Spawns;
-            default:
-                return Spawns;
+            case 7011: //Wealhtheow's Keep.
+                Spawns.add(252000);
+				Spawns.add(252010);
+				Spawns.add(252020);
+				Spawns.add(252025);
+				Spawns.add(252030);
+				Spawns.add(252035);
+				return Spawns;
+			case 10111: //Arcadian Fortress.
+			case 10211: //Umbral Fortress.
+			case 10311: //Eternum Fortress.
+			case 10411: //Skyclash Fortress.
+                Spawns.add(880813);
+				Spawns.add(880814);
+				Spawns.add(880817);
+				Spawns.add(880818);
+				Spawns.add(880819);
+				Spawns.add(880820);
+				return Spawns;
+			default:
+				return Spawns;
         }
     }
 

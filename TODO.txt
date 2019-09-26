@@ -54,6 +54,8 @@ THANKS FOR YOUR CAREFULLY READING!
 
 - Some campaing quest icons dont show up in the map. Even on the npcs when you are near them.
 
+- Need to check the influence ratio because is not counting right.
+
 ///////////////////////////////////////////////////////////////
 
 --------------------------------------------------------------------------------------------------
