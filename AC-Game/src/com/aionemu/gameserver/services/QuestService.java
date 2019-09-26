@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -580,7 +580,7 @@ public final class QuestService {
     }
 
     /*
-     * Check the starting conditions and start a quest Reworked 12.06.2011
+     * Check the starting conditions and start a quest reworked 12.06.2011
      * @author vlog
      */
 
@@ -632,7 +632,7 @@ public final class QuestService {
     }
 
     /*
-     * Check the starting conditions and start a quest Reworked 12.06.2011
+     * Check the starting conditions and start a quest reworked 12.06.2011
      * @author vlog
      */
     public static boolean startQuest(QuestEnv env) {

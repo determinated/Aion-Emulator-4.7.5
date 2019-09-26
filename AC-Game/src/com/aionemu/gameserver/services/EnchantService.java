@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -505,7 +505,6 @@ public class EnchantService {
      * @param targetWeapon   fusioned weapon
      */
     public static boolean socketManastone(Player player, Item parentItem, Item targetItem, Item supplementItem, int targetWeapon) {
-
         int targetItemLevel = 1;
 
         // Fusioned weapon. Primary weapon level.
@@ -645,7 +644,6 @@ public class EnchantService {
     }
 
     public static void socketManastoneAct(Player player, Item parentItem, Item targetItem, int targetWeapon, boolean result) {
-
         // Decrease required supplements
         player.updateSupplements();
 
@@ -830,5 +828,4 @@ public class EnchantService {
             log.error("Error on item equip.", ex);
         }
     }
-
 }

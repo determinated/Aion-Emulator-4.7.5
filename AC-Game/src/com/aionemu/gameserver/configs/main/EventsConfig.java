@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -93,17 +93,17 @@ public class EventsConfig {
     @Property(key = "gameserver.loginreward.enabled", defaultValue = "true")
     public static boolean LOGIN_REWARD_ENABLED;
     /**
-	 * Arcade Event
-	 */
-	@Property(key = "gameserver.event.arcade.enable", defaultValue = "false")
-	public static boolean ENABLE_EVENT_ARCADE;
+     * Arcade Event
+     */
+     @Property(key = "gameserver.event.arcade.enable", defaultValue = "false")
+     public static boolean ENABLE_EVENT_ARCADE;
 
-	@Property(key = "gameserver.event.arcade.chance", defaultValue = "70")
-	public static int EVENT_ARCADE_CHANCE;
+     @Property(key = "gameserver.event.arcade.chance", defaultValue = "70")
+     public static int EVENT_ARCADE_CHANCE;
 
-	@Property(key = "gameserver.event.arcade.onlyFrenzyRewardChance", defaultValue = "50")
-	public static int EVENT_ARCADE_FRENZYITEM_CHANCE;
+     @Property(key = "gameserver.event.arcade.onlyFrenzyRewardChance", defaultValue = "50")
+     public static int EVENT_ARCADE_FRENZYITEM_CHANCE;
 
-	@Property(key = "gameserver.event.arcade.frenzy_time", defaultValue = "90")
-	public static int EVENT_ARCADE_FRENZY_TIME;
+     @Property(key = "gameserver.event.arcade.frenzy_time", defaultValue = "90")
+     public static int EVENT_ARCADE_FRENZY_TIME;
 }

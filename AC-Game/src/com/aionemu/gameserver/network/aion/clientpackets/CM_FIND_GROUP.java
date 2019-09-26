@@ -10,9 +10,22 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
+ *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ * Credits goes to all Open Source Core Developer Groups listed below
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
+ * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
+ * Everybody knows that this Emulator Core was developed by Aion Lightning 
+ * @-Aion-Unique-
+ * @-Aion-Lightning
+ * @Aion-Engine
+ * @Aion-Extreme
+ * @Aion-NextGen
+ * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.network.aion.clientpackets;
 
@@ -101,7 +114,7 @@ public class CM_FIND_GROUP extends AionClientPacket {
 				classId = readC();
 				level = readC();
 				break;
-			case 0x08: // TODO - register InstanceGroup
+			case 0x08: // register InstanceGroup
 				instanceId = readD(); // correct = InstanceId
 				unk = readC(); // Todo = 0
 				message = readS(); // correct = Message
@@ -109,7 +122,7 @@ public class CM_FIND_GROUP extends AionClientPacket {
 				unk = readD(); // Todo = 0
 				unk = readD(); // Todo = 0
 				break;
-			case 0x09: // TODO New
+			case 0x09: // New
 				unk = readD(); // correct = ??
 				instanceId = readD(); // correct = InstanceId
 				break;
@@ -148,7 +161,7 @@ public class CM_FIND_GROUP extends AionClientPacket {
 			case 0x07:
 				FindGroupService.getInstance().updateFindGroupList(player, message, action, groupType, playerObjId);
 				break;
-			case 0x08: // Todo
+			case 0x08:
 				FindGroupService.getInstance().registerInstanceGroup(player, 0x0E, instanceId, message, minMembers, groupType);
 				break;
 			case 0x14:
@@ -157,7 +170,7 @@ public class CM_FIND_GROUP extends AionClientPacket {
 			case 0x0A: // search
 				FindGroupService.getInstance().sendFindGroups(player, action);
 				break;
-			case 0x0D: // Todo
+			case 0x0D:
 				FindGroupService.getInstance().sendFindGroups(player, action);
 				break;
 			default:

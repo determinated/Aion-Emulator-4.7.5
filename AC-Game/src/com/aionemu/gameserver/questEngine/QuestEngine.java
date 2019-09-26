@@ -10,22 +10,22 @@
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details. *
-  
+ *
  *  You should have received a copy of the GNU General Public License
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
-  
-  
-																	 
-																										
-																									  
-																		   
-				 
-				   
-			   
-				
-				
-				  
+ *
+ *
+ * Credits goes to all Open Source Core Developer Groups listed below
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
+ * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
+ * Everybody knows that this Emulator Core was developed by Aion Lightning 
+ * @-Aion-Unique-
+ * @-Aion-Lightning
+ * @Aion-Engine
+ * @Aion-Extreme
+ * @Aion-NextGen
+ * @Aion-Core Dev.
  */
 package com.aionemu.gameserver.questEngine;
 
@@ -254,20 +254,19 @@ public class QuestEngine implements GameEngine {
         }
     }
 
-	public void onNpcReachTarget(QuestEnv env) {
-      try {
-         for (int index = 0; index < reachTarget.size(); index++) {
-            QuestHandler questHandler = getQuestHandlerByQuestId(reachTarget.get(index));
-            if (questHandler != null && env.getQuestId() == reachTarget.get(index)) {
-               env.setQuestId(reachTarget.get(index));
-               questHandler.onNpcReachTargetEvent(env);
-				 
+    public void onNpcReachTarget(QuestEnv env) {
+        try {
+            for (int index = 0; index < reachTarget.size(); index++) {
+                QuestHandler questHandler = getQuestHandlerByQuestId(reachTarget.get(index));
+                if (questHandler != null && env.getQuestId() == reachTarget.get(index)) {
+                    env.setQuestId(reachTarget.get(index));
+                    questHandler.onNpcReachTargetEvent(env);
+                }
             }
-         }
-      } catch (Exception ex) {
-         log.error("QE: exception in onProtectEndEvent", ex);
-      }
-   }
+        } catch (Exception ex) {
+            log.error("QE: exception in onProtectEndEvent", ex);
+        }
+    }
 
     public void onNpcLostTarget(QuestEnv env) {
         try {
