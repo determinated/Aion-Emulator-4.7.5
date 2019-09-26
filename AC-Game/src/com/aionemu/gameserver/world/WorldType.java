@@ -34,10 +34,11 @@ package com.aionemu.gameserver.world;
  */
 public enum WorldType {
 
-    ASMODAE,
-    ELYSEA,
-    ABYSS,
-    BALAUREA,
-    PRISON,
-    NONE
+	NONE,
+	ABYSS,
+	PRISON,
+	ELYSEA,
+	ASMODAE,
+	BALAUREA,
+	PANESTERRA
 }

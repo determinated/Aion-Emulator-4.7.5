@@ -20623,6 +20623,31 @@ public final class SM_SYSTEM_MESSAGE extends AionServerPacket {
     public static SM_SYSTEM_MESSAGE STR_MSG_DAY_CANNOT_OWN_TRADE(String value0) {
         return new SM_SYSTEM_MESSAGE(1400944, value0);
     }
+    
+    /**
+   	 * [Kaldor] 4.7
+   	 */
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_RuneElite = new SM_SYSTEM_MESSAGE(1402542);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Li_Center = new SM_SYSTEM_MESSAGE(1402462);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Li_Up = new SM_SYSTEM_MESSAGE(1402463);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Li_Down = new SM_SYSTEM_MESSAGE(1402464);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Da_Center = new SM_SYSTEM_MESSAGE(1402465);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Da_Up = new SM_SYSTEM_MESSAGE(1402466);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Da_Down = new SM_SYSTEM_MESSAGE(1402467);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Dr_Center = new SM_SYSTEM_MESSAGE(1402468);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Dr_Up = new SM_SYSTEM_MESSAGE(1402469);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_LDF5_Fortress_Dr_Down = new SM_SYSTEM_MESSAGE(1402470);
+   	
+       /**
+   	 * [Wealhtheow's Keep] 4.7
+   	 */
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_01_1_Item = new SM_SYSTEM_MESSAGE(1402492);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_01_2_Item = new SM_SYSTEM_MESSAGE(1402493);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_02_1_Item = new SM_SYSTEM_MESSAGE(1402494);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_02_2_Item = new SM_SYSTEM_MESSAGE(1402495);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_03_1_Item = new SM_SYSTEM_MESSAGE(1402496);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_03_2_Item = new SM_SYSTEM_MESSAGE(1402497);
+   	public static final SM_SYSTEM_MESSAGE STR_MSG_7011_Mercenary_Chief_03_3_Item = new SM_SYSTEM_MESSAGE(1402498);
 
     /**
      * You have reached the daily Broker limit of %0 Kinah, so the item cannot
