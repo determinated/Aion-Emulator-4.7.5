@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -64,7 +64,7 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 /**
  * @author Dns, ginho1, nrg, xTz
  * @author GiGatR00n v4.7.5.x
- * @Reworked Eloann
+ * @reworked Eloann
  */
 @SuppressWarnings("rawtypes")
 public class SM_INSTANCE_SCORE extends AionServerPacket {

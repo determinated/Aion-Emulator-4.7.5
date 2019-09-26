@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -38,9 +38,12 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.aionemu.gameserver.configs.main.CustomConfig;
 import com.aionemu.gameserver.configs.main.EnchantsConfig;
+import com.aionemu.gameserver.model.actions.PlayerMode;
+import com.aionemu.gameserver.model.actions.PlayerActions;
 import com.aionemu.gameserver.model.TaskId;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
 import com.aionemu.gameserver.model.templates.item.ItemCategory;
 import com.aionemu.gameserver.model.templates.item.ItemTemplate;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_ITEM_USAGE_ANIMATION;
@@ -73,6 +76,10 @@ public class EnchantItemAction extends AbstractItemAction {
 
     @Override
     public boolean canAct(Player player, Item parentItem, Item targetItem) {
+        if (player.getInventory().getItemByObjId(parentItem.getObjectId()) == null || player.isInState(CreatureState.GLIDING)) {
+            return false;
+        }
+
         if (isSupplementAction()) {
             return false;
         }
@@ -98,7 +105,6 @@ public class EnchantItemAction extends AbstractItemAction {
 
     // necessary overloading to not change AbstractItemAction
     public void act(final Player player, final Item parentItem, final Item targetItem, final Item supplementItem, final int targetWeapon) {
-
         if (supplementItem != null && !checkSupplementLevel(player, supplementItem.getItemTemplate(), targetItem.getItemTemplate())) {
             return;
         }

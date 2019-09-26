@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -258,7 +258,7 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(SM_INSTANCE_STAGE_INFO.class, 0x8C, idSet);
         addPacketOpcode(SM_HOUSE_BIDS.class, 0x100, idSet);
         addPacketOpcode(SM_RECEIVE_BIDS.class, 0x103, idSet);
-		addPacketOpcode(SM_HOUSE_PAY_RENT.class, 0x106, idSet); // 4.7 ?
+	addPacketOpcode(SM_HOUSE_PAY_RENT.class, 0x106, idSet); // 4.7 ?
         addPacketOpcode(SM_HOUSE_OWNER_INFO.class, 0x107, idSet);
         addPacketOpcode(SM_OBJECT_USE_UPDATE.class, 0x108, idSet);
         addPacketOpcode(SM_PACKAGE_INFO_NOTIFY.class, 0x10A, idSet);

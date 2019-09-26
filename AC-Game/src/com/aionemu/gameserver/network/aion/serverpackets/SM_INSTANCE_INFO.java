@@ -52,15 +52,15 @@ public class SM_INSTANCE_INFO extends AionServerPacket {
         this.cooldownId = DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instanceId) != null ? DataManager.INSTANCE_COOLTIME_DATA.getInstanceCooltimeByWorldId(instanceId).getId() : 0;
     }
 
-    @Override
+	@Override
 	protected void writeImpl(AionConnection con) {
 		boolean hasTeam = playerTeam != null;
 		writeC(!isAnswer ? 2 : hasTeam ? 1 : 0); // unk
 		writeD(0); // unk (unused?)
 		writeC(cooldownId); // unk
 		writeH(1); // countOfEntries
-        writeD(player.getObjectId()); // playerObjId
-        // When you enter the game for example (to notify the client all the instance cooldowns)
+		writeD(player.getObjectId()); // playerObjId
+		// When you enter the game for example (to notify the client all the instance cooldowns)
 		if (cooldownId == 0) {
 			writeH(DataManager.INSTANCE_COOLTIME_DATA.size()); // countOfSomething
 			PortalCooldownList cooldownList = player.getPortalCooldownList(); // The cooldown of all instances of the current player
@@ -80,8 +80,8 @@ public class SM_INSTANCE_INFO extends AionServerPacket {
 				writeD(cooldownList.getPortalCooldownItem(e.getValue().getWorldId()) != null ? cooldownList.getPortalCooldownItem(e.getValue().getWorldId()).getEntryCount() * -1 : 0);
 				writeC(1); // activated (to get the instance visible in the cooldown status)
 			}
-        }
-        // When you try to get into an instance portal
+		}
+		// When you try to get into an instance portal
 		else {
 			writeH(player.getPortalCooldownList().size());
 			for (int i = 0; i < player.getPortalCooldownList().size(); i++) {

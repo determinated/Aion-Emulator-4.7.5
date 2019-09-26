@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -187,7 +187,7 @@ public class PortalService {
                     return;
                 } else {
                     reenter = true;
-                    log.debug(player.getName() + "has been in intance and also have cd, can reenter.");
+                    log.debug(player.getName() + "has been in instance and also have cd, can reenter.");
                 }
             }
         } else {
@@ -532,12 +532,12 @@ public class PortalService {
         InstanceService.registerPlayerWithInstance(instance, player);
         TeleportService2.teleportTo(player, loc.getWorldId(), instance.getInstanceId(), loc.getX(), loc.getY(), loc.getZ(), loc.getH(), TeleportAnimation.BEAM_ANIMATION);
 
-        if(!reenter) {
-
-            if(player.getPortalCooldownList().getPortalCooldownItem(loc.getWorldId()) == null) {
+        if (!reenter) {
+            if (player.getPortalCooldownList().getPortalCooldownItem(loc.getWorldId()) == null) {
                 player.getPortalCooldownList().addPortalCooldown(loc.getWorldId(), 1, DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, loc.getWorldId()));
             } else {
                 player.getPortalCooldownList().addEntry(loc.getWorldId());
+                PacketSendUtility.sendPacket(player, SM_SYSTEM_MESSAGE.STR_MSG_INSTANCE_DUNGEON_COUNT_USE);
             }
         }
     }
