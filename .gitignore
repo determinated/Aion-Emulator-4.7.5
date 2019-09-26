@@ -15606,3 +15606,7 @@ AL-EventEngine/EventEngine/src/pirate/events/xml/EventTemplate.java
 AL-EventEngine/EventEngine/src/pirate/utils/TimeUtil.java
 build_rev.txt
 LICENSE
+AC-Chat/build/dist/AC-Chat.zip
+AC-Chat/libs/jsr166/jsr166/1.0.0/jsr166-1.0.0.pom
+AC-Login/build/AC-Login.zip
+AC-Login/build/build_rev.txt
