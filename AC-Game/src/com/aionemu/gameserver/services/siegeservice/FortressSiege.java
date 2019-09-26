@@ -274,14 +274,6 @@ public class FortressSiege extends Siege<FortressLocation> {
     }
 
     protected void giveRewardsToLegion() {
-        // We do not give rewards if fortress was captured for first time
-        if (isBossKilled()) {
-            if (LoggingConfig.LOG_SIEGE) {
-                log.info("[SIEGE] > [FORTRESS:" + getSiegeLocationId() + "] [RACE: " + getSiegeLocation().getRace() + "] [LEGION :" + getSiegeLocation().getLegionId() + "] Legion Reward not sending because fortress was captured(siege boss killed).");
-            }
-            return;
-        }
-
         // Legion with id 0 = not exists?
         if (getSiegeLocation().getLegionId() == 0) {
             if (LoggingConfig.LOG_SIEGE) {
