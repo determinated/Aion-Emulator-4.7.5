@@ -1,3 +1,4 @@
+(https://i.imgur.com/YWWnPay.png)
 
 # Aion Steel Cavalry
 ### Version: 4.7.5x
@@ -6,3 +7,8 @@
 
 
 [TODO](https://github.com/determinated/Aion-Emulator-4.7.5/issues)
+
+[SOURCE BUG](https://github.com/determinated/Aion-Emulator-4.7.5/issues?q=is%3Aopen+is%3Aissue+label%3A%22Source+Bug%22)
+
+[DATA BUG](https://github.com/determinated/Aion-Emulator-4.7.5/issues?q=is%3Aopen+is%3Aissue+label%3A"Data+Bug")
+
