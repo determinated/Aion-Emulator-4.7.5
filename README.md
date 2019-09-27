@@ -15,17 +15,6 @@ Launcher Settings (add this to your config File):
 **Help and Support:** [Aion EU Forum](http://falke34.bplaced.net)
 
 ### Todo:
-```sh
-Static Data:
-* update Static Data Files
-* add new Instances
-```
 
-```sh
-Source:
-* add/write/rework Packets
-* rework Player and Creature Stats
-* add Transformations System (Account)
-* rework Cubics System (Account)
-* rework Minions System
-```
+[Todo](https://github.com/determinated/Aion-Emulator-4.7.5/issues)
+
