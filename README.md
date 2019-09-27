@@ -1,6 +1,6 @@
-![](http://falke34.bplaced.net/Splash01.png)
+![] https://imgur.com/YWWnPay
 
-# Aion EU Emulator
+# Aion Steel Cavalry
 ### Version: 7.0
 
 **Client:** [Gameforge](https://de.aion.gameforge.com/website/download/) **+** [Launcher](https://github.com/AionGermany/aion-germany/blob/master/AL-Tools/AionLauncherEU_5.x.rar)
