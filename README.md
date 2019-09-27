@@ -1,4 +1,4 @@
-(https://i.imgur.com/YWWnPay.png)
+![](images/anoha.png)
 
 # Aion Steel Cavalry
 ### Version: 4.7.5x
