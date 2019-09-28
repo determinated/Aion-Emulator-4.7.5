@@ -1125,17 +1125,16 @@ public class SiegeService {
             case 101:
                 return 6021; // Pradeth Fortress
               //4.7
-            case 322:
-			case 323:
-				return 7011; //Kaldor
-			case 103:
-				return 10111;
-			case 104:
-				return 10211;	
-			case 105:
-				return 10311;
-			case 106:
-				return 10411;
+            case 102:
+                return 7011; // Anoha Fortress
+            case 103:
+                return 10111; // Belus Fortress
+            case 104:
+                return 10211; // Aspida Fortress
+            case 105:
+                return 10311; // Atanaos Fortress
+            case 106:
+                return 10411;// Disillon Fortress
         }
         return 0;
     }

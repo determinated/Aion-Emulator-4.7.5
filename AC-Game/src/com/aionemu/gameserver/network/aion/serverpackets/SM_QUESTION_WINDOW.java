@@ -263,6 +263,15 @@ public class SM_QUESTION_WINDOW extends AionServerPacket {
     /**
      * %0 declined your trade offer. TODO: make it a simple box, not a question.
      */
+    //PANESTERRA 4.7
+  	public static final int STR_ASK_PASS_BY_SVS_DIRECT_PORTAL = 905067;
+  	public static final int STR_CONFIRM_SVS_DIRECT_PORTAL_OUT = 905068;
+  	public static final int STR_MSG_SVS_DIRECT_PORTAL_OPEN_NOTICE = 1402418;
+  	
+  	//UPGRADE ARCADE 4.7
+  	public static final int STR_POPUP_GACHA_FEVER_TIME_CHECK = 905394;
+  	public static final int STR_POPUP_GACHA_USER_WEB_SHOP_GO = 906302;
+  	
     public static final int STR_EXCHANGE_HE_REJECTED_EXCHANGE = 1300354;
     private int code;
     private int senderId;

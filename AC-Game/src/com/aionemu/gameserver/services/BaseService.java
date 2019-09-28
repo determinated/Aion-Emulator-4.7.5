@@ -46,7 +46,7 @@ public class BaseService {
 	public void initBaseLocations() {
 		log.info("Initializing bases world and katalam...");
 		bases = DataManager.BASE_DATA.getBaseLocations();
-		log.info("[BaseService] Loaded " + bases.size() + " Bases");
+		log.info("Loaded " + bases.size() + " Bases");
 	}
 
 	public void initBases() {

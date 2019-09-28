@@ -26206,4 +26206,308 @@
 			<item id="186000019" rnd_min="3" rnd_max="25"/>
 		</items>
 	</decomposable>
+	<decomposable item_id="188053117">
+		<items chance="85.0">
+			<item id="169610148"/>
+			<item id="186000242" count="4"/>
+			<item id="188053109"/>
+			<item id="188053110"/>
+			<item id="188053090"/>
+			<item id="188053112"/>
+			<item id="188053113"/>
+		</items>
+		<items chance="15.0">
+			<item id="169610148"/>
+			<item id="186000242" count="4"/>
+			<item id="188053109"/>
+			<item id="188053110"/>
+			<item id="188053090"/>
+			<item id="188053112"/>
+			<item id="188053113"/>
+			<item id="188053115"/>
+			<item id="188053116"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053109">
+		<items>
+			<item id="188053106"/>
+		</items>
+		<items>
+			<item id="188053107"/>
+		</items>
+		<items>
+			<item id="188053108"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053110">
+		<items>
+			<item id="152012598"/>
+		</items>
+		<items>
+			<item id="152012599"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053090">
+		<items>
+			<item id="166050127"/>
+		</items>
+		<items>
+			<item id="166050128"/>
+		</items>
+		<items>
+			<item id="166050129"/>
+		</items>
+		<items>
+			<item id="166050130"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053115">
+		<items>
+			<item id="168000161"/>
+		</items>
+		<items>
+			<item id="168000162"/>
+		</items>
+		<items>
+			<item id="168000163"/>
+		</items>
+		<items>
+			<item id="168000164"/>
+		</items>
+		<items>
+			<item id="168000165"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053116">
+		<items>
+			<item id="168310016"/>
+		</items>
+		<items>
+			<item id="168310017"/>
+		</items>
+		<items>
+			<item id="168310018"/>
+		</items>
+		<items>
+			<item id="168310019"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053112" decomposable_name="Ahserion's Flight Composite Manastone Bundle">
+        <items>
+            <random_item type="MANASTONE_LEGEND_GRADE_60"/>
+        </items>
+    </decomposable>
+	<decomposable item_id="188053106" decomposable_name="Ahserion's Weapon Box">
+        <items chance="100.0">
+            <item id="100901312" name="Awakened Ahserion's Greatsword" player_class="TEMPLAR"/>
+            <item id="101301217" name="Awakened Ahserion's Polearm" player_class="GLADIATOR"/>
+            <item id="100201457" name="Awakened Ahserion's Dagger" player_class="ASSASSIN"/>
+            <item id="101701321" name="Awakened Ahserion's Bow" player_class="RANGER"/>
+            <item id="100601380" name="Awakened Ahserion's Spellbook" player_class="SORCERER"/>
+            <item id="100501270" name="Awakened Ahserion's Orb" player_class="SPIRIT_MASTER"/>
+            <item id="101501306" name="Awakened Ahserion's Staff" player_class="CHANTER"/>
+            <item id="100101283" name="Awakened Ahserion's Mace" player_class="CLERIC"/>
+            <item id="102001199" name="Awakened Ahserion's Harp" player_class="BARD"/>
+            <item id="101901083" name="Awakened Ahserion's Aethercannon" player_class="GUNNER"/>
+            <item id="102101005" name="Awakened Ahserion's Cipher-Blade" player_class="RIDER"/>
+        </items>
+        <items chance="100.0">
+            <item id="100101283" name="Awakened Ahserion's Mace" player_class="TEMPLAR"/>
+            <item id="100901312" name="Awakened Ahserion's Greatsword" player_class="GLADIATOR"/>
+            <item id="101701321" name="Awakened Ahserion's Bow" player_class="ASSASSIN"/>
+            <item id="100201457" name="Awakened Ahserion's Dagger" player_class="RANGER"/>
+            <item id="100501270" name="Awakened Ahserion's Orb" player_class="SORCERER"/>
+            <item id="100601380" name="Awakened Ahserion's Spellbook" player_class="SPIRIT_MASTER"/>
+            <item id="100101283" name="Awakened Ahserion's Mace" player_class="CHANTER"/>
+            <item id="101501306" name="Awakened Ahserion's Staff" player_class="CLERIC"/>
+			<item id="102001199" name="Awakened Ahserion's Harp" player_class="BARD"/>
+            <item id="101801172" name="Awakened Ahserion's Pistol" player_class="GUNNER"/>
+            <item id="101801172" name="Awakened Ahserion's Pistol" player_class="RIDER"/>
+        </items>
+        <items chance="100.0">
+            <item id="115001704" name="Awakened Ahserion's Shield" player_class="TEMPLAR"/>
+            <item id="101701321" name="Awakened Ahserion's Bow" player_class="GLADIATOR"/>
+            <item id="100001684" name="Awakened Ahserion's Sword" player_class="ASSASSIN"/>
+            <item id="100001684" name="Awakened Ahserion's Sword" player_class="RANGER"/>
+			<item id="100501270" name="Awakened Ahserion's Orb" player_class="SORCERER"/>
+            <item id="100601380" name="Awakened Ahserion's Spellbook" player_class="SPIRIT_MASTER"/>
+			<item id="115001704" name="Awakened Ahserion's Shield" player_class="CHANTER"/>
+            <item id="115001704" name="Awakened Ahserion's Shield" player_class="CLERIC"/>
+			<item id="102001199" name="Awakened Ahserion's Harp" player_class="BARD"/>
+			<item id="101901083" name="Awakened Ahserion's Aethercannon" player_class="GUNNER"/>
+            <item id="102101005" name="Awakened Ahserion's Cipher-Blade" player_class="RIDER"/>
+        </items>
+        <items chance="100.0">
+			<item id="100001684" name="Awakened Ahserion's Sword" player_class="TEMPLAR"/>
+            <item id="100001684" name="Awakened Ahserion's Sword" player_class="GLADIATOR"/>
+			<item id="100001684" name="Awakened Ahserion's Sword" player_class="ASSASSIN"/>
+            <item id="101701321" name="Awakened Ahserion's Bow" player_class="RANGER"/>
+			<item id="100501270" name="Awakened Ahserion's Orb" player_class="SORCERER"/>
+            <item id="100601380" name="Awakened Ahserion's Spellbook" player_class="SPIRIT_MASTER"/>
+			<item id="101501306" name="Awakened Ahserion's Staff" player_class="CHANTER"/>
+            <item id="100101283" name="Awakened Ahserion's Mace" player_class="CLERIC"/>
+			<item id="102001199" name="Awakened Ahserion's Harp" player_class="BARD"/>
+			<item id="101801172" name="Awakened Ahserion's Pistol" player_class="GUNNER"/>
+            <item id="101801172" name="Awakened Ahserion's Pistol" player_class="RIDER"/>
+		</items>	
+    </decomposable>
+	<decomposable item_id="188053107" decomposable_name="Ahserion's Armor Box">
+		<items>
+			<item id="125004009" player_class="GLADIATOR"/>
+			<item id="125004009" player_class="TEMPLAR"/>
+			<item id="125004010" player_class="CHANTER"/>
+			<item id="125004010" player_class="CLERIC"/>
+			<item id="125004010" player_class="RIDER"/>
+			<item id="125004012" player_class="GUNNER"/>
+			<item id="125004011" player_class="ASSASSIN"/>
+			<item id="125004011" player_class="RANGER"/>
+			<item id="125004012" player_class="SORCERER"/>
+			<item id="125004012" player_class="SPIRIT_MASTER"/>
+			<item id="125004012" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="110601562" player_class="GLADIATOR"/>
+			<item id="110601562" player_class="TEMPLAR"/>
+			<item id="110551090" player_class="CHANTER"/>
+			<item id="110551090" player_class="CLERIC"/>
+			<item id="110551090" player_class="RIDER"/>
+			<item id="110101772" player_class="GUNNER"/>
+			<item id="110301757" player_class="ASSASSIN"/>
+			<item id="110301757" player_class="RANGER"/>
+			<item id="110101772" player_class="SORCERER"/>
+			<item id="110101772" player_class="SPIRIT_MASTER"/>
+			<item id="110101772" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="113601508" player_class="GLADIATOR"/>
+			<item id="113601508" player_class="TEMPLAR"/>
+			<item id="113501667" player_class="CHANTER"/>
+			<item id="113501667" player_class="CLERIC"/>
+			<item id="113501667" player_class="RIDER"/>
+			<item id="113101604" player_class="GUNNER"/>
+			<item id="113301726" player_class="ASSASSIN"/>
+			<item id="113301726" player_class="RANGER"/>
+			<item id="113101604" player_class="SORCERER"/>
+			<item id="113101604" player_class="SPIRIT_MASTER"/>
+			<item id="113101604" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="111601525" player_class="GLADIATOR"/>
+			<item id="111601525" player_class="TEMPLAR"/>
+			<item id="111501649" player_class="CHANTER"/>
+			<item id="111501649" player_class="CLERIC"/>
+			<item id="111501649" player_class="RIDER"/>
+			<item id="111101592" player_class="GUNNER"/>
+			<item id="111301695" player_class="ASSASSIN"/>
+			<item id="111301695" player_class="RANGER"/>
+			<item id="111101592" player_class="SORCERER"/>
+			<item id="111101592" player_class="SPIRIT_MASTER"/>
+			<item id="111101592" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="114601515" player_class="GLADIATOR"/>
+			<item id="114601515" player_class="TEMPLAR"/>
+			<item id="114501677" player_class="CHANTER"/>
+			<item id="114501677" player_class="CLERIC"/>
+			<item id="114501677" player_class="RIDER"/>
+			<item id="114101638" player_class="GUNNER"/>
+			<item id="114301763" player_class="ASSASSIN"/>
+			<item id="114301763" player_class="RANGER"/>
+			<item id="114101638" player_class="SORCERER"/>
+			<item id="114101638" player_class="SPIRIT_MASTER"/>
+			<item id="114101638" player_class="BARD"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053113">
+		<items>
+			<item id="167020072"/>
+		</items>
+		<items>
+			<item id="167020079"/>
+		</items>
+		<items>
+			<item id="167020075"/>
+		</items>
+		<items>
+			<item id="167020074"/>
+		</items>
+		<items>
+			<item id="167020073"/>
+		</items>
+		<items>
+			<item id="167020083"/>
+		</items>
+		<items>
+			<item id="167020081"/>
+		</items>
+		<items>
+			<item id="167020082"/>
+		</items>
+		<items>
+			<item id="167020080"/>
+		</items>
+		<items>
+			<item id="167020077"/>
+		</items>
+		<items>
+			<item id="167020078"/>
+		</items>
+		<items>
+			<item id="167020076"/>
+		</items>
+	</decomposable>
+	<decomposable item_id="188053108" decomposable_name="Ahserion's Accessory Box">
+		<items>
+			<item id="123001421" player_class="GLADIATOR"/>
+			<item id="123001421" player_class="TEMPLAR"/>
+			<item id="123001421" player_class="CHANTER"/>
+			<item id="121001376" player_class="CLERIC"/>
+			<item id="121001376" player_class="RIDER"/>
+			<item id="121001376" player_class="GUNNER"/>
+			<item id="123001421" player_class="ASSASSIN"/>
+			<item id="123001421" player_class="RANGER"/>
+			<item id="121001376" player_class="SORCERER"/>
+			<item id="121001376" player_class="SPIRIT_MASTER"/>
+			<item id="121001376" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="121001375" player_class="GLADIATOR"/>
+			<item id="121001375" player_class="TEMPLAR"/>
+			<item id="121001375" player_class="CHANTER"/>
+			<item id="122001645" player_class="CLERIC"/>
+			<item id="122001645" player_class="RIDER"/>
+			<item id="122001645" player_class="GUNNER"/>
+			<item id="121001375" player_class="ASSASSIN"/>
+			<item id="121001375" player_class="RANGER"/>
+			<item id="122001645" player_class="SORCERER"/>
+			<item id="122001645" player_class="SPIRIT_MASTER"/>
+			<item id="122001645" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="122001644" player_class="GLADIATOR"/>
+			<item id="122001644" player_class="TEMPLAR"/>
+			<item id="122001644" player_class="CHANTER"/>
+			<item id="120001504" player_class="CLERIC"/>
+			<item id="120001504" player_class="RIDER"/>
+			<item id="120001504" player_class="GUNNER"/>
+			<item id="122001644" player_class="ASSASSIN"/>
+			<item id="122001644" player_class="RANGER"/>
+			<item id="120001504" player_class="SORCERER"/>
+			<item id="120001504" player_class="SPIRIT_MASTER"/>
+			<item id="120001504" player_class="BARD"/>
+		</items>
+		<items>
+			<item id="120001503" player_class="GLADIATOR"/>
+			<item id="120001503" player_class="TEMPLAR"/>
+			<item id="120001503" player_class="CHANTER"/>
+			<item id="123001422" player_class="CLERIC"/>
+			<item id="123001422" player_class="RIDER"/>
+			<item id="123001422" player_class="GUNNER"/>
+			<item id="120001503" player_class="ASSASSIN"/>
+			<item id="120001503" player_class="RANGER"/>
+			<item id="123001422" player_class="SORCERER"/>
+			<item id="123001422" player_class="SPIRIT_MASTER"/>
+			<item id="123001422" player_class="BARD"/>
+		</items>
+	</decomposable>	
 </decomposable_items>

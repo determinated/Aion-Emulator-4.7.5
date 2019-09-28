@@ -28,6 +28,7 @@ import com.aionemu.gameserver.controllers.NpcController;
 import com.aionemu.gameserver.controllers.movement.NpcMoveController;
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.Race;
+import com.aionemu.gameserver.model.NpcType;
 import com.aionemu.gameserver.model.TribeClass;
 import com.aionemu.gameserver.model.drop.NpcDrop;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -73,6 +74,7 @@ public class Npc extends Creature {
 	private String masterName = StringUtils.EMPTY;
 	private int creatorId = 0;
 	private int townId;
+	private NpcType npcType;
 	private byte oldHeading = 0;
 	private ItemAttackType attacktype = ItemAttackType.PHYSICAL;
 	private int aRange = getObjectTemplate().getAggroRange();
@@ -374,6 +376,15 @@ public class Npc extends Creature {
 	public void setNpcType(int newType) {
 		type = newType;
 	}
+	
+	public NpcType getNpcType() {
+		return npcType;
+	}
+	
+	public void setNpcType(NpcType newType) {
+	   npcType = newType;
+	}
+
 
 	public boolean isRewardAP() {
 		if (this instanceof SiegeNpc) {

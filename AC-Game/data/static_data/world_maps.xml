@@ -317,7 +317,7 @@
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE"/>
     <map id="400020000" name="Belus" death_level="0" water_level="16" world_size="3072"
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
-    <map id="400030000" name="Transidium Annex" death_level="0" water_level="16" world_size="3072"
+    <map id="400030000" name="Transidium Annex" instance="true" death_level="0" water_level="16" world_size="3072"
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
     <map id="400040000" name="Aspida" death_level="0" water_level="16" world_size="3072"
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>

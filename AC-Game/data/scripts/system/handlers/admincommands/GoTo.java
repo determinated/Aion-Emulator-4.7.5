@@ -747,7 +747,7 @@ public class GoTo extends AdminCommand {
             goTo(player, 600100000, 1842, 1782, 305);
         } else if (destination.equalsIgnoreCase("pangea") || destination.equalsIgnoreCase("Belus")) { //Belus
             goTo(player, 400020000, 1238, 1232, 1518);
-        } else if (destination.equalsIgnoreCase("pangeasub") || destination.equalsIgnoreCase("TransidiumAnnex")) { //Transidium Annex
+        } else if (destination.equalsIgnoreCase("annex") || destination.equalsIgnoreCase("TransidiumAnnex")) { //Transidium Annex
             goTo(player, 400030000, 509, 513, 675);
         } else if (destination.equalsIgnoreCase("pangea2") || destination.equalsIgnoreCase("Aspida")) { //Aspida
             goTo(player, 400040000, 1238, 1232, 1518);

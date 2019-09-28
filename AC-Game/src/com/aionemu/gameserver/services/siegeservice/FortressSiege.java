@@ -166,6 +166,11 @@ public class FortressSiege extends Siege<FortressLocation> {
             giveRewardsToLegion();
             giveRewardsToPlayers(getSiegeCounter().getRaceCounter(getSiegeLocation().getRace()));
         }
+        
+        // Remove gp for players that lost the fortress
+        if (winner.getSiegeRace() != looser) {
+            giveLossToPlayers(looser);
+        }
 
         // Update outpost status
         // Certain fortresses are changing outpost ownership
@@ -315,6 +320,78 @@ public class FortressSiege extends Siege<FortressLocation> {
                 }
             }
         }
+    }
+    
+    protected void giveLossToPlayers(final SiegeRace race) {
+        if (race == SiegeRace.BALAUR)// this shouldn't happen, but secure is secure :)
+            return;
+        getSiegeLocation().doOnAllPlayers(new Visitor<Player>() {
+            @Override
+            public void visit(Player player) {
+                if (player.getRace().name() == race.name()) {//dont know if this works...
+                    switch (player.getAbyssRank().getRank()) {
+                        case SUPREME_COMMANDER:
+                            AbyssPointsService.addGp(player, 40);
+                            break;
+                        case COMMANDER:
+                            AbyssPointsService.addGp(player, 40);
+                            break;
+                        case GREAT_GENERAL:
+                            AbyssPointsService.addGp(player, 35);
+                            break;
+                        case GENERAL:
+                            AbyssPointsService.addGp(player, 35);
+                            break;
+                        case STAR5_OFFICER:
+                            AbyssPointsService.addGp(player, 30);
+                            break;
+                        case STAR4_OFFICER:
+                            AbyssPointsService.addGp(player, 25);
+                            break;
+                        case STAR3_OFFICER:
+                            AbyssPointsService.addGp(player, 20);
+                            break;
+                        case STAR2_OFFICER:
+                            AbyssPointsService.addGp(player, 20);
+                            break;
+                        case STAR1_OFFICER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE1_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE2_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE3_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE4_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE5_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE6_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE7_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE8_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        case GRADE9_SOLDIER:
+                            AbyssPointsService.addGp(player, 10);
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    return;
+                }
+            }
+        });
     }
     protected void giveRewardsToPlayers(SiegeRaceCounter winnerDamage) {
         // Get the map with playerId to siege reward

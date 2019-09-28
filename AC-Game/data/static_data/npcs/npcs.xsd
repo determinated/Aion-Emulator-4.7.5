@@ -169,6 +169,15 @@
             <xs:enumeration value="MASTER"/>
         </xs:restriction>
     </xs:simpleType>
+	<xs:simpleType name="npcType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PEACE"/>
+			<xs:enumeration value="ATTACKABLE"/>
+			<xs:enumeration value="AGGRESSIVE"/>
+			<xs:enumeration value="INVULNERABLE"/>
+			<xs:enumeration value="NON_ATTACKABLE"/>
+		</xs:restriction>
+	</xs:simpleType>
     <xs:simpleType name="NpcRating">
         <xs:restriction base="xs:string">
             <xs:enumeration value="JUNK"/>

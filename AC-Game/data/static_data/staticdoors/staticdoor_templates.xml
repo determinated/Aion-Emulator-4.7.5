@@ -6388,6 +6388,13 @@
             <box x1="565.7424" y1="849.2315" z1="199.4101" x2="566.822449" y2="854.050049" z2="207.167862"/>
         </staticdoor>
     </world>
+	<!-- TRANSIDIUM ANNEX 4.7 -->
+	<world world="400030000">
+		<staticdoor keyid="1" doorid="176" x="344.46024" y="677.22339" z="693.19470" mesh="Gab1_sub_Door_01.cga"/>
+		<staticdoor keyid="1" doorid="177" x="345.21420" y="348.80945" z="693.14233" mesh="Gab1_sub_Door_01.cga"/>
+		<staticdoor keyid="1" doorid="178" x="673.67615" y="349.61661" z="693.20197" mesh="Gab1_sub_Door_01.cga"/>
+		<staticdoor keyid="1" doorid="179" x="672.80969" y="677.90179" z="693.15594" mesh="Gab1_sub_Door_01.cga"/>
+	</world>
     <!-- Lucky Ophidan Bridge -->
     <world world="301320000">
         <staticdoor doorid="47" x="370.8" y="491.55" z="606.01" mesh="vritra_bridge_01a.cga">
@@ -6407,6 +6414,12 @@
         <staticdoor type="ABYSS" doorid="1668" x="2103.358" y="1872.5542" z="317.128" mesh="rune_castle_door.cgf">
             <box x1="2099.15869" y1="1867.27368" z1="317.065338" x2="2107.437" y2="1877.67493" z2="327.847321"/>
         </staticdoor>
+    </world>
+	<!-- Trillonerks Gold Vault -->
+    <world world="301400000">
+        <staticdoor doorid="428" x="531.41571" y="587.64551" z="395.35168" mesh="IDSweep_Door02.cga" state="0x8"/>
+        <staticdoor doorid="430" x="549.19397" y="315.47" z="399.00632" mesh="IDSweep_Door01.cga" state="0xA"/>
+        <staticdoor doorid="431" x="549.89807" y="429.91913" z="395.21143" mesh="IDSweep_Door02.cga" state="0x8"/>
     </world>
     <world world="600060000">
         <staticdoor type="ABYSS" doorid="1321" x="2728.29956" y="2768.66821" z="254.653625"
