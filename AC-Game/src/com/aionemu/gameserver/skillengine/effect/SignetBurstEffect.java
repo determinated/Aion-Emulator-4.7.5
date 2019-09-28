@@ -97,19 +97,19 @@ public class SignetBurstEffect extends DamageEffect {
             int mAccurancy = effect.getEffector().getGameStats().getMainHandMAccuracy().getCurrent();
             switch (level) {
                 case 1:
-                    accmod = (int) (-0.8f * mAccurancy);
+                    accmod = (int) (-10.5f * mAccurancy);
                     break;
                 case 2:
-                    accmod = (int) (-0.5f * mAccurancy);
+                    accmod = (int) (-10.5f * mAccurancy);
                     break;
                 case 3:
-                    accmod = 0;
+                    accmod = (int) (-0.8f * mAccurancy);
                     break;
                 case 4:
                     accmod = (int) (0.2f * mAccurancy);
                     break;
                 case 5:
-                    accmod = (int) (0.5f * mAccurancy);
+                    accmod = (int) (10.5f * mAccurancy);
                     break;
             }
             effect.setAccModBoost(accmod);
