@@ -88,9 +88,9 @@ public class ResurrectBaseEffect extends ResurrectEffect {
     @Override
     public void endEffect(Effect effect) {
         super.endEffect(effect);
-
-        if (!effect.getEffected().getLifeStats().isAlreadyDead() && effect.getActionObserver(position) != null) {
-            effect.getEffected().getObserveController().removeObserver(effect.getActionObserver(position));
+        if (!effect.getEffected().getLifeStats().isAlreadyDead() && effect.getEffected() instanceof Player) {
+            if (effect.getActionObserver(position) != null)
+			    effect.getEffected().getObserveController().removeObserver(effect.getActionObserver(position));
         }
     }
 }
