@@ -17,7 +17,7 @@
  *
  *
  * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
+ * Please do not change here something, ragarding the developer credits, except the "developed by XXXX".
  * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
  * Everybody knows that this Emulator Core was developed by Aion Lightning 
  * @-Aion-Unique-
@@ -88,9 +88,9 @@ public class ResurrectBaseEffect extends ResurrectEffect {
     @Override
     public void endEffect(Effect effect) {
         super.endEffect(effect);
-
-        if (!effect.getEffected().getLifeStats().isAlreadyDead() && effect.getActionObserver(position) != null) {
-            effect.getEffected().getObserveController().removeObserver(effect.getActionObserver(position));
+        if (!effect.getEffected().getLifeStats().isAlreadyDead() && effect.getEffected() instanceof Player) {
+            if (effect.getActionObserver(position) != null)
+			    effect.getEffected().getObserveController().removeObserver(effect.getActionObserver(position));
         }
     }
 }
