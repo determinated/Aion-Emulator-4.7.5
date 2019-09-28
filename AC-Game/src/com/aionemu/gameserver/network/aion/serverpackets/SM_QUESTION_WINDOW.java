@@ -263,6 +263,21 @@ public class SM_QUESTION_WINDOW extends AionServerPacket {
     /**
      * %0 declined your trade offer. TODO: make it a simple box, not a question.
      */
+    
+    //INSTANCES
+  	public static final int STR_INSTANT_DUNGEON_RESURRECT = 901874;
+  	public static final int STR_INSTANT_DUNGEON_IDLF1_RESURRECT = 901891;
+  	public static final int STR_IDARENA_RESURRECT = 903241;
+  	public static final int STR_IDARENA_PVP_RESURRECT = 903487;
+  	public static final int STR_INSTANT_DUNGEON_RESURRECT_RESURRECT_POINT = 904731;
+  	public static final int STR_INDUN_COOLTIME_RESET_CONFIRM_MONEY = 906115;
+  	public static final int STR_INDUN_COOLTIME_RESET_CONFIRM_MONEY_2 = 906151;
+  	public static final int STR_INDUN_COOLTIME_RESET_CONFIRM_ITEM = 906153;
+  	public static final int STR_INDUN_COOLTIME_RESET_CONFIRM_ITEM_2 = 906154;
+  	public static final int STR_INDUN_COOLTIME_RESET_CONFIRM_ITEM_3 = 906535;
+  	public static final int STR_INDUN_COOLTIME_RESET_SELECT_1 = 906171;
+  	public static final int STR_INDUN_COOLTIME_RESET_SELECT_2 = 906172;
+  	
     //PANESTERRA 4.7
   	public static final int STR_ASK_PASS_BY_SVS_DIRECT_PORTAL = 905067;
   	public static final int STR_CONFIRM_SVS_DIRECT_PORTAL_OUT = 905068;

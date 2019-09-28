@@ -45,6 +45,7 @@ public class SpawnTemplate {
     private float z;
     private byte h;
     private int staticId;
+    private int entityId;
     private int randomWalk;
     private String walkerId;
     private int walkerIdx;
@@ -236,6 +237,14 @@ public class SpawnTemplate {
     public void setEventTemplate(EventTemplate eventTemplate) {
         this.eventTemplate = eventTemplate;
     }
+    
+    public int getEntityId() {
+		return entityId;
+	}
+	
+	public void setEntityId(int entityId) {
+		this.entityId = entityId;
+	}
 
     public SpawnModel getModel() {
         return model;
