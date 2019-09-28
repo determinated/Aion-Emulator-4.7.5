@@ -1687,8 +1687,5 @@
         <spawn npc_id="831343" respawn_time="295">
             <spot x="1160.2662" y="1367.7075" z="209.67438" h="11"/>
         </spawn>  
-        <spawn npc_id="700962" respawn_time="295">
-            <spot x="1685.49" y="1400.5" z="195.486" h="90"/>
-        </spawn>		
     </spawn_map>
 </spawns>
