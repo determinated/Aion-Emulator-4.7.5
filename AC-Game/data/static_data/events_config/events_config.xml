@@ -3969,25 +3969,25 @@
 		  </spawns>
 		</event>
         <!-- Symphony of Legend - The First Movement -->
-        <event name="Symphony of Legend - The First Movement" start="2015-05-01T00:00:00+00:00" end="2050-09-04T00:00:00+00:00">
+        <event name="Symphony of Legend - The First Movement" start="2015-05-01T00:00:00+00:00" end="2010-09-04T00:00:00+00:00">
            <event_drops>
              <event_drop item_id="188100252" count="1" chance="5" minDiff="-29" maxDiff="20"/>
            </event_drops>
         </event>
         <!-- Symphony of Legend - The Second Movement -->
-        <event name="Symphony of Legend - The Second Movement" start="2015-05-01T00:00:00+00:00" end="2050-09-04T00:00:00+00:00">
+        <event name="Symphony of Legend - The Second Movement" start="2015-05-01T00:00:00+00:00" end="2010-09-04T00:00:00+00:00">
            <event_drops>
              <event_drop item_id="188100253" count="1" chance="5" minDiff="-29" maxDiff="20"/>
            </event_drops>
         </event>       
         <!-- Symphony of Legend - The Third Movement -->
-        <event name="Symphony of Legend - The Third Movement" start="2015-05-01T00:00:00+00:00" end="2050-09-04T00:00:00+00:00">
+        <event name="Symphony of Legend - The Third Movement" start="2015-05-01T00:00:00+00:00" end="2010-09-04T00:00:00+00:00">
            <event_drops>
              <event_drop item_id="188100254" count="1" chance="5" minDiff="-29" maxDiff="20"/>
            </event_drops>
         </event>
         <!-- Symphony of Legend - The Fourth Movement -->
-        <event name="Symphony of Legend - The Fourth Movement" start="2015-05-01T00:00:00+00:00" end="2050-09-04T00:00:00+00:00">
+        <event name="Symphony of Legend - The Fourth Movement" start="2015-05-01T00:00:00+00:00" end="2010-09-04T00:00:00+00:00">
            <event_drops>
              <event_drop item_id="188100255" count="1" chance="5" minDiff="-29" maxDiff="20"/>
            </event_drops>

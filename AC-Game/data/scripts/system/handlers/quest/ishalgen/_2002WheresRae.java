@@ -1,39 +1,40 @@
-/**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+/*
+ * Copyright (c) 2015, TypeZero Engine (game.developpers.com)
+ * All rights reserved.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  *
- * 
- * Credits goes to all Open Source Core Developer Groups listed below
- * Please do not change here something, regarding the developer credits, except the "developed by XXXX".
- * Even if you edit a lot of files in this source, you still have no rights to call it as "your Core".
- * Everybody knows that this Emulator Core was developed by Aion Lightning 
- * @-Aion-Unique-
- * @-Aion-Lightning
- * @Aion-Engine
- * @Aion-Extreme
- * @Aion-NextGen
- * @Aion-Core Dev.
+ * Neither the name of TypeZero Engine nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
  */
+
 package quest.ishalgen;
 
 import com.aionemu.gameserver.model.EmotionType;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.model.gameobjects.state.CreatureState;
-import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_DIALOG_WINDOW;
 import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
 import com.aionemu.gameserver.questEngine.handlers.QuestHandler;
@@ -48,6 +49,7 @@ import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
+
 
 /**
  * @author Mr. Poke
@@ -68,9 +70,8 @@ public class _2002WheresRae extends QuestHandler {
 		qe.registerOnLevelUp(questId);
 		qe.registerQuestNpc(210377).addOnKillEvent(questId);
 		qe.registerQuestNpc(210378).addOnKillEvent(questId);
-		for (int npc_id : npc_ids) {
+		for (int npc_id : npc_ids)
 			qe.registerQuestNpc(npc_id).addOnTalkEvent(questId);
-		}
 	}
 
 	@Override
@@ -78,23 +79,20 @@ public class _2002WheresRae extends QuestHandler {
 		final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		final QuestEnv qEnv = env;
-		if (qs == null) {
+		if (qs == null)
 			return false;
-		}
 
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
-		if (env.getVisibleObject() instanceof Npc) {
+		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		}
 		if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 203519: { // Nobekk
+				case 203519: {
 					switch (env.getDialog()) {
 						case QUEST_SELECT:
-							if (var == 0) {
+							if (var == 0)
 								return sendQuestDialog(env, 1011);
-							}
 						case SETPRO1:
 							if (var == 0) {
 								qs.setQuestVarById(0, var + 1);
@@ -102,16 +100,13 @@ public class _2002WheresRae extends QuestHandler {
 								PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 								return true;
 							}
-						default:
-							break;
 					}
 				}
-				case 203534: { // Dabi
+				case 203534: {
 					switch (env.getDialog()) {
 						case QUEST_SELECT:
-							if (var == 1) {
+							if (var == 1)
 								return sendQuestDialog(env, 1352);
-							}
 						case SELECT_ACTION_1353:
 							playQuestMovie(env, 52);
 							break;
@@ -122,24 +117,21 @@ public class _2002WheresRae extends QuestHandler {
 								PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 								return true;
 							}
-						default:
-							break;
 					}
 				}
-				case 790002: { // Verdandi
+				case 790002: {
 					switch (env.getDialog()) {
 						case QUEST_SELECT:
-							if (var == 2) {
+							if (var == 2)
 								return sendQuestDialog(env, 1693);
-							} else if (var == 10) {
+							else if (var == 10)
 								return sendQuestDialog(env, 2034);
-							} else if (var == 11) {
+							else if (var == 11)
 								return sendQuestDialog(env, 2375);
-							} else if (var == 12) {
+							else if (var == 12)
 								return sendQuestDialog(env, 2462);
-							} else if (var == 13) {
+							else if (var == 13)
 								return sendQuestDialog(env, 2716);
-							}
 						case SETPRO3:
 						case SETPRO4:
 						case SETPRO6:
@@ -148,7 +140,8 @@ public class _2002WheresRae extends QuestHandler {
 								updateQuestStatus(env);
 								PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 								return true;
-							} else if (var == 13) {
+							}
+							else if (var == 13) {
 								qs.setQuestVarById(0, 14);
 								updateQuestStatus(env);
 								PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
@@ -156,12 +149,14 @@ public class _2002WheresRae extends QuestHandler {
 							}
 							break;
 						case SETPRO5:
-							if (var == 12 || var == 99) {
+							if (var == 12 || var == 99 ) {
 								qs.setQuestVar(99);
 								updateQuestStatus(env);
 								PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
+								// Create instance
 								WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(320010000);
-								TeleportService2.teleportTo(player, 320010000, newInstance.getInstanceId(), 457.5762f, 426.71606f, 230.38448f, (byte) 76, TeleportAnimation.BEAM_ANIMATION);
+								InstanceService.registerPlayerWithInstance(newInstance, player);
+								TeleportService2.teleportTo(player, 320010000, newInstance.getInstanceId(), 457.65f, 426.8f, 230.4f);
 								return true;
 							}
 						case CHECK_USER_HAS_QUEST_ITEM:
@@ -170,38 +165,36 @@ public class _2002WheresRae extends QuestHandler {
 									qs.setQuestVarById(0, 12);
 									updateQuestStatus(env);
 									return sendQuestDialog(env, 2461);
-								} else {
-									return sendQuestDialog(env, 2376);
 								}
+								else
+									return sendQuestDialog(env, 2376);
 							}
-						default:
-							break;
 					}
 				}
 					break;
-				case 700045: // Sticky Mushroom
+				case 700045:
 					if (var == 11 && env.getDialog() == DialogAction.USE_OBJECT) {
 						SkillEngine.getInstance().applyEffectDirectly(8343, player, player, 0);
 						return true;
 					}
-				case 203538: // Cute Ribbit
+				case 203538:
 					if (var == 14 && env.getDialog() == DialogAction.USE_OBJECT) {
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
 						Npc npc = (Npc) env.getVisibleObject();
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-						QuestService.addNewSpawn(player.getWorldId(), player.getInstanceId(), 203553, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading());
+						QuestService.addNewSpawn(player.getWorldId(), player.getInstanceId(), 203553, npc.getX(), npc.getY(),
+							npc.getZ(), npc.getHeading());
 						npc.getController().onDie(npc);
-						// playQuestMovie(env, 256);
+						//playQuestMovie(env, 256);
 						return true;
 					}
 					break;
-				case 203553: // Rae
+				case 203553:
 					switch (env.getDialog()) {
 						case QUEST_SELECT:
-							if (var == 15) {
+							if (var == 15)
 								return sendQuestDialog(env, 3057);
-							}
 						case SETPRO7:
 							if (var == 15) {
 								env.getVisibleObject().getController().onDelete();
@@ -210,10 +203,8 @@ public class _2002WheresRae extends QuestHandler {
 								PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 								return true;
 							}
-						default:
-							break;
 					}
-				case 205020: // Hagen
+				case 205020:
 					switch (env.getDialog()) {
 						case QUEST_SELECT:
 							if (var >= 12) {
@@ -221,30 +212,30 @@ public class _2002WheresRae extends QuestHandler {
 								player.unsetState(CreatureState.ACTIVE);
 								player.setFlightTeleportId(3001);
 								PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.START_FLYTELEPORT, 3001, 0));
-								ThreadPoolManager.getInstance().schedule(new Runnable() {
+								ThreadPoolManager.getInstance().schedule(new Runnable(){
 									@Override
 									public void run() {
-										TeleportService2.teleportTo(player, 220010000, 940.15f, 2295.64f, 265.7f, (byte) 43, TeleportAnimation.BEAM_ANIMATION);
+										TeleportService2.teleportTo(player, 220010000, 940.15f, 2295.64f, 265.7f, (byte) 43);
 										qs.setQuestVar(13);
 										updateQuestStatus(qEnv);
 									}
 								}, 40000);
 								return true;
-							}
-							return false;
-						default:
-							return false;
+						}
+						return false;
+					default:
+						return false;
 					}
 			}
-		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203516) { // Ulgorn
-				if (env.getDialog() == DialogAction.USE_OBJECT || env.getDialog() == DialogAction.QUEST_SELECT) {
+		}
+		else if (qs.getStatus() == QuestStatus.REWARD) {
+			if (targetId == 203516) {
+				if (env.getDialog() == DialogAction.USE_OBJECT || env.getDialog() == DialogAction.QUEST_SELECT)
 					return sendQuestDialog(env, 3398);
-				} else if (env.getDialog() == DialogAction.SETPRO8) {
+				else if (env.getDialog() == DialogAction.SETPRO8)
 					return sendQuestDialog(env, 5);
-				} else {
+				else
 					return sendQuestEndDialog(env);
-				}
 			}
 		}
 		return false;
@@ -254,22 +245,19 @@ public class _2002WheresRae extends QuestHandler {
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (qs == null) {
+		if (qs == null)
 			return false;
-		}
 
 		int var = qs.getQuestVarById(0);
 		int targetId = 0;
-		if (env.getVisibleObject() instanceof Npc) {
+		if (env.getVisibleObject() instanceof Npc)
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
-		}
 
-		if (qs.getStatus() != QuestStatus.START) {
+		if (qs.getStatus() != QuestStatus.START)
 			return false;
-		}
 		switch (targetId) {
-			case 210377: // Whitefoot Daru
-			case 210378: // Whitefoot Daru
+			case 210377:
+			case 210378:
 				if (var >= 3 && var < 10) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
