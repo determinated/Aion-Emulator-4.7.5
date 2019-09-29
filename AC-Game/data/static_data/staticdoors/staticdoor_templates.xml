@@ -6417,9 +6417,9 @@
     </world>
 	<!-- Trillonerks Gold Vault -->
     <world world="301400000">
-        <staticdoor doorid="428" x="531.41571" y="587.64551" z="395.35168" mesh="IDSweep_Door02.cga" state="0x8"/>
-        <staticdoor doorid="430" x="549.19397" y="315.47" z="399.00632" mesh="IDSweep_Door01.cga" state="0xA"/>
-        <staticdoor doorid="431" x="549.89807" y="429.91913" z="395.21143" mesh="IDSweep_Door02.cga" state="0x8"/>
+        <staticdoor keyid="1" doorid="428" x="531.41571" y="587.64551" z="395.35168" mesh="IDSweep_Door02.cga" state="0x8"/>
+        <staticdoor keyid="1" doorid="430" x="549.19397" y="315.47" z="399.00632" mesh="IDSweep_Door01.cga" state="0xA"/>
+        <staticdoor keyid="1" doorid="431" x="549.89807" y="429.91913" z="395.21143" mesh="IDSweep_Door02.cga" state="0x8"/>
     </world>
     <world world="600060000">
         <staticdoor type="ABYSS" doorid="1321" x="2728.29956" y="2768.66821" z="254.653625"

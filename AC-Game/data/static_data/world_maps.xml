@@ -254,7 +254,7 @@
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
     <map id="301390000" name="IDSeal" death_level="0" water_level="16" world_size="1024"
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
-	<map id="301400000" name="The Shugo Emperor's Vault" instance="true" death_level="0" water_level="16" world_size="3072" flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
+	<map id="301400000" name="The Shugo Emperor's Vault" instance="true" death_level="0" water_level="16" world_size="2048" except_buff="true" flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
 	<map id="301500000" name="IDLegion" death_level="0" water_level="16" world_size="512"
          flags="BIND RECALL GLIDE FLY RIDE FLY_RIDE PVP DUEL_SAME_RACE DUEL_OTHER_RACE"/>
     <map id="310010000" name="Karamatis A" beginner_twin_count="2" instance="true" death_level="0" water_level="16"

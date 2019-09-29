@@ -101,7 +101,6 @@
             </fileset>
         </copy>
 
-        <zip destfile="${build}/AL-Game.zip" basedir="${build.dist}" />
     </target>
 
 </project>

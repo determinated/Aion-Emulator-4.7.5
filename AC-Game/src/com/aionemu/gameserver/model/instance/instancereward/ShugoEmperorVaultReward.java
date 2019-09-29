@@ -1,52 +1,58 @@
-/**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+/*
+ * This file is part of Encom. **ENCOM FUCK OTHER SVN**
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
+ *  Encom is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Lesser Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  Aion-Lightning is distributed in the hope that it will be useful,
+ *  Encom is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  GNU Lesser Public License for more details.
+ *
+ *  You should have received a copy of the GNU Lesser Public License
+ *  along with Encom.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.aionemu.gameserver.model.instance.instancereward;
 
-/**
- * @author Lyras
- */
-@SuppressWarnings("rawtypes")
-public class ShugoEmperorVaultReward extends InstanceReward {
+import com.aionemu.gameserver.model.instance.playerreward.ShugoEmperorVaultPlayerReward;
 
-    private int points;
-    private int rank = 7;
-    private int keys = 0;
+/****/
+/** Author Rinzler (Encom)
+/****/
 
-    public ShugoEmperorVaultReward(Integer mapId, int instanceId) {
-        super(mapId, instanceId);
-    }
-
-    public void addPoints(int points) {
-        this.points += points;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void addKeys(int keys) { this.keys += keys; }
-
-    public int getKeys() { return keys; }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
-    public int getRank() {
-        return rank;
-    }
+public class ShugoEmperorVaultReward extends InstanceReward<ShugoEmperorVaultPlayerReward>
+{
+	private int points;
+	private int npcKills;
+	private int rank = 7;
+	
+	public ShugoEmperorVaultReward(Integer mapId, int instanceId) {
+		super(mapId, instanceId);
+	}
+	
+	public void addPoints(int points) {
+		this.points += points;
+	}
+	
+	public int getPoints() {
+		return points;
+	}
+	
+	public void addNpcKill() {
+		npcKills++;
+	}
+	
+	public int getNpcKills() {
+		return npcKills;
+	}
+	
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	
+	public int getRank() {
+		return rank;
+	}
 }

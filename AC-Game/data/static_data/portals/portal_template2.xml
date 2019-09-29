@@ -128,6 +128,11 @@
             <portal_req min_level="40"/>
         </portal_path>
     </portal_use>
+	<!-- Shugo Emperor's Vault Exit -->
+	<portal_use npc_id="832950">
+        <portal_path loc_id="3014003" race="ASMODIANS"/>
+        <portal_path loc_id="3014004" race="ELYOS"/>
+    </portal_use>
     <!-- The Brig Exit -->
     <portal_use npc_id="730201">
         <portal_path loc_id="3001003" player_count="6" instance="true">
@@ -1908,12 +1913,6 @@
         </portal_path>
     </portal_dialog>         	
     <!-- Shugo Emperor's Vault END -->
-	
-	<!-- Shugo Emperor's Vault Exit -->
-	<portal_dialog npc_id="832950">
-        <portal_path loc_id="3014003" race="ASMODIANS"/>
-        <portal_path loc_id="3014004" race="ELYOS"/>
-    </portal_dialog>
 
     <!-- LUCKY OPHIDAN BRIDGE 4.5 -->
     <!-- Lucky Ophidan Bridge Gatekeeper -->

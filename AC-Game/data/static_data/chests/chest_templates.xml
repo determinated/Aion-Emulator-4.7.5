@@ -2016,5 +2016,17 @@
     </chest>
     <chest npcid="702583">
         <keyitem id="1" itemid="0" quantity="1"/>
-    </chest>	
+    </chest>
+	<!-- Emperor's Treasure Box -->
+	<chest npcid="832929">
+        <keyitem id="1" itemid="185000222" quantity="2"/>
+    </chest>
+	<!-- Emperor's Quality Treasure Box -->
+	<chest npcid="832930">
+        <keyitem id="1" itemid="185000222" quantity="4"/>
+    </chest>
+	<!-- Emperor's Premium Treasure Box -->
+	<chest npcid="832931">
+        <keyitem id="1" itemid="185000221" quantity="1"/>
+    </chest>
 </chest_templates>

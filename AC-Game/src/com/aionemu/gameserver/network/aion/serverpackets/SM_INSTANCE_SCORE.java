@@ -47,6 +47,7 @@ import com.aionemu.gameserver.model.instance.instancereward.HarmonyArenaReward;
 import com.aionemu.gameserver.model.instance.instancereward.IdgelDomeReward;
 import com.aionemu.gameserver.model.instance.instancereward.IdgelResearchCenterReward;
 import com.aionemu.gameserver.model.instance.instancereward.InstanceReward;
+import com.aionemu.gameserver.model.instance.instancereward.ShugoEmperorVaultReward;
 import com.aionemu.gameserver.model.instance.instancereward.KamarBattlefieldReward;
 import com.aionemu.gameserver.model.instance.instancereward.PvPArenaReward;
 import com.aionemu.gameserver.model.instance.instancereward.VoidCubeReward;
@@ -57,6 +58,8 @@ import com.aionemu.gameserver.model.instance.playerreward.IdgelDomePlayerReward;
 import com.aionemu.gameserver.model.instance.playerreward.InstancePlayerReward;
 import com.aionemu.gameserver.model.instance.playerreward.KamarBattlefieldPlayerReward;
 import com.aionemu.gameserver.model.instance.playerreward.PvPArenaPlayerReward;
+import com.aionemu.gameserver.model.instance.instancereward.*;
+import com.aionemu.gameserver.model.instance.playerreward.*;
 import com.aionemu.gameserver.network.PacketLoggerService;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
@@ -626,6 +629,37 @@ public class SM_INSTANCE_SCORE extends AionServerPacket {
                 writeD(0);
                 writeD(0);
                 break;
+            case 301400000: //The Shugo Emperor's Vault 4.7.5
+            	for (ShugoEmperorVaultPlayerReward playerReward : (FastList<ShugoEmperorVaultPlayerReward>) instanceReward.getInstanceRewards()) {
+    				ShugoEmperorVaultReward sevr = (ShugoEmperorVaultReward) instanceReward;
+    				writeD(sevr.getPoints());
+    			    writeD(sevr.getNpcKills());
+    			    writeD(0);
+    			    writeD(sevr.getRank());
+    				writeD(0);
+    			    writeD(playerReward.getScoreAP());
+    				writeD(0);
+    				writeD(0);
+    				writeD(0);
+    			    if (sevr.getPoints() >= 165100) {
+    				    writeD(185000222); //Rusted Vault Key.
+    				    writeD(playerReward.getRustedVaultKey());
+    			    } else {
+    				    writeD(0);
+    				    writeD(0);
+    				    writeD(0);
+    				    writeD(0);
+    				    writeD(0);
+    			    } if (sevr.getPoints() >= 878600) {
+    				    writeD(185000222); //Rusted Vault Key.
+    				    writeD(playerReward.getRustedVaultKey());
+    			    } else {
+    				    writeD(0);
+    			        writeD(0);
+    			        writeD(0);
+    				}
+    			}
+    		break; 
             case 300350000: //Arena Of Chaos.
             case 300360000: //Arena Of Discipline.
             case 300420000: //Chaos Training Grounds.

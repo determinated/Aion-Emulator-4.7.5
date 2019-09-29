@@ -1530,8 +1530,8 @@
     <!-- v4.7.5.14 -->
     <!-- The Shugo Emperor's Vault -->
     <instance_cooltime race="PC_ALL" worldId="301400000" id="136">
-        <type>RELATIVE</type>
-        <ent_cool_time>0</ent_cool_time>
+        <type>DAILY</type>
+        <ent_cool_time>900</ent_cool_time>
         <indun_type>NORMAL</indun_type>
         <max_member_light>3</max_member_light>
         <max_member_dark>3</max_member_dark>
