@@ -26,8 +26,6 @@ THANKS FOR YOUR CAREFULLY READING!
 
 - Need to check core side for Aethertech skill (Backlash I - ID:3742) for activate
 
-- Need to check why Assasin class are setting runes at level 1 (Must be checked at core side)
-
 - Need to check the server start. Some troubles with the memory. Just can be seing with more players.
 
 - Supplements  are not working.
@@ -95,6 +93,8 @@ the state of these fortresses (95% Done by GiGatR00n - left some testing)
 - In Morheim, the quest "Morheim Commander's Call": after the validation of the first step, the description of the second step doesn't show up.
 
 - Quest "Destroying the curse": a pet among 5 is designed to be follow in a cave, but he's not (pet selected: "Baba ring").
+
+- Return User system need to be added.
 
 ///////////////////////////////////////////////////////////////
 
