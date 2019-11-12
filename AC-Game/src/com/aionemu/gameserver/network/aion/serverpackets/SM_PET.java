@@ -399,37 +399,40 @@ public class SM_PET extends AionServerPacket {
                 }
                 break;
             case 13:
-                writeC(subType);
-                if (subType == 2) {
-                    writeC(dopeAction);
-                    switch (dopeAction) {
-                        case 0: // add item
-                            writeD(itemObjectId);
-                            writeD(dopeSlot);
-                            break;
-                        case 1: // remove item
-                            writeD(0);
-                            break;
-                        case 2: // TODO: move item from one slot to other
-                            break;
-                        case 3: // use item
-                            writeD(itemObjectId);
-                            break;
-                    }
-                } else if (subType == 3) {
-                    // looting NPC
-                    if (lootNpcId > 0) {
-                        writeC(isActing ? 1 : 2); // 0x02 display looted msg.
-                        writeD(lootNpcId);
-                    } else {
-                        // loot function activation
-                        writeC(0);
-                        writeC(isActing ? 1 : 0);
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-    }
+				writeC(subType);
+				if (subType == 2) {
+					writeC(dopeAction);
+					switch (dopeAction) {
+						case 0:
+							writeD(itemObjectId);
+							writeD(dopeSlot);
+						break;
+						case 1:
+							writeD(0);
+						break;
+						case 2:
+						break;
+						case 3:
+							writeD(itemObjectId);
+						break;
+					}
+				} else if (subType == 3) {
+					if (lootNpcId > 0) {
+						writeC(isActing ? 1 : 2);
+						writeD(lootNpcId);
+					} else {
+						writeC(0);
+						writeC(isActing ? 1 : 0);
+					}
+				} else if (subType == 4) {
+					writeC(0);
+					writeC(isActing ? 1 : 0);
+				} else if (subType == 5) {
+					writeC(isActing ? 0 : 1);
+				}
+			break;
+			default:
+				break;
+		}
+	}
 }
